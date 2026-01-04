@@ -1,0 +1,13 @@
+# .env
+venv
+__pycache__
+_design
+_trash
+_html_layout/
+git-crypt-key
+media/
+django_app/media/
+*.log
+debug.log
+# media/
+django_app/debug.log

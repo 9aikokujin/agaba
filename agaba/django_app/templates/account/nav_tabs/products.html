@@ -1,0 +1,110 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _acc_order_delivery">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _order_delivery _acc_order_delivery">
+    <h2>Товары</h2>
+
+    <nav class="acc__order_tabs __tabs_cntr _seller_tabs">
+        <button class="order__tab_btn _AMCD_seller _tab_btn orange-text-btn undeline-btn" type="button"
+            tab-index="1"><strong>Активные <i class="_item_counter"></i></strong></button>
+        <button class="order__tab_btn _AMCD_seller _tab_btn orange-text-btn undeline-btn" type="button"
+            tab-index="2"><strong>На модерации <i class="_item_counter"></i></strong></button>
+        <button class="order__tab_btn _AMCD_seller _tab_btn orange-text-btn undeline-btn" type="button"
+            tab-index="3"><strong>Отклонено <i class="_item_counter"></i></strong></button>
+        <button class="order__tab_btn _AMCD_seller _tab_btn orange-text-btn undeline-btn" type="button"
+            tab-index="4"><strong>Сняты с продажи <i class="_item_counter"></i></strong></button>
+    </nav>
+
+
+    <ul class="acc__order_filter_list">
+        <li class="acc_main-item _order_fil _filters _seller_filters">
+            <ul class="acc__order_filter_list">
+                <li class="acc__order_filter_item _all_orders">
+                    <button onclick="window.location.href='{% url 'add_new_product' %}'"  class="acc__all_orders_btn _color_fff _bg_f35b1a btn acc__od" type="button">
+                        <img src="{% static 'website/img/marks/plusLight.svg' %}" alt="">
+                        <strong>Добавить товар</strong>
+                    </button>
+                </li>
+                <li class="acc__order_filter_item _all_orders">
+                    <button class="acc__all_orders_btn white-btn btn acc__od" type="button">
+                        <img src="{% static 'website/img/marks/filterListViewSvg.svg' %}" alt="filterListViewSvg">
+                        <strong>Все категории</strong>
+                        <i class="__count _color_fff _bg_f35b1a">2</i>
+                    </button>
+                    <div class="acc__all_orders_select">
+                        <ul class="filter_select-list">
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории 1</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории 2</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории 3</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории 4</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории 5</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Название категории 6</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <div class="acc__order_delivery _seller_orders _acc-list" tab-index="1">
+        <ul class="catalog__list _seller_orders">
+            {% for product in products.active %}
+                {% include "account/_product_item.html" with product=product %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="acc__order_delivery _seller_orders _acc-list" tab-index="2">
+        <ul class="catalog__list _seller_orders">
+            {% for product in products.on_mod %}
+                {% include "account/_product_item.html" with product=product %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="acc__order_delivery _seller_orders _acc-list" tab-index="3">
+        <ul class="catalog__list _seller_orders">
+            {% for product in products.rejected %}
+                {% include "account/_product_item.html" with product=product %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="acc__order_delivery _seller_orders _acc-list" tab-index="4">
+        <ul class="catalog__list _seller_orders">
+            {% for product in products.withdrawn %}
+                {% include "account/_product_item.html" with product=product %}
+            {% endfor %}
+        </ul>
+    </div>
+
+</div> 
+{% endblock %}

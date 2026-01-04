@@ -1,0 +1,258 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _messages_sect">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _column_cntr">
+    <h2>Сообщения</h2>
+
+    <div class="agaba_chat _message_style">
+        <div class="_message_img">
+            <img src="{%static 'website/img/messages_img/iconMessage_1.svg' %}" alt="agaba icon">
+        </div>
+        <div class="agaba_bot _messaage_name">
+            <h4>Поддержка AGABA</h4>
+        </div>
+        <a href="" class="agaba_message _support _message_item">
+            Пишите, мы онлайн!
+        </a>
+    </div>
+
+    <ul class="acc_message_list _acc-list">
+        {% for room in rooms %}
+        <li class="acc_main-item _message_block">
+            <div class="agaba_chat _message_style _message_column">                              
+                <div class="agaba_name _messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_1.svg' %}" alt="agaba icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>{{ room }}</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="{% url 'chat-room' room_name=room.name %}" class="agaba_message _message_item">
+                        Уточните подробности, пожалуйста  
+                    </a>
+                    <div class="agaba_count _message_count">
+                        <p>2</p>
+                    </div>
+                </div>                            
+            </div>
+        </li>
+        {% endfor %}
+        {% comment "" %}<li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_2.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Авторекс</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item">
+                        Проводили оплату через расчетный счет, но деньги до сих пор не поступили. Платежку об оплате об оплате приложили.
+                    </a>
+                    <div class="defult_count _message_count">
+                        <p>2</p>
+                    </div>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_3.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Восток Импорт</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item">
+                        Проводили оплату через расчетный счет
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">                             
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_4.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Авторекс</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Проводили оплату через расчетный счет, но деньги до сих пор не поступили. Платежку об оплате об оплате приложили.
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column _checked">                             
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_3.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Восток Импорт</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Спасибо!
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">                              
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_4.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Проводили оплату через расчетный счет, но деньги до сих пор не поступили. Платежку об оплате об оплате приложили.
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">                              
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_3.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Спасибо!
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">                             
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_4.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Проводили оплату через расчетный счет, но деньги до сих пор не поступили. Платежку об оплате об оплате приложили.
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">                             
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_3.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Спасибо!
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="{% static 'website/img/messages_img/iconMessage_3.svg' %}" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Спасибо!
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="/img/messages_img/iconMessage_4.svg" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Проводили оплату через расчетный счет, но деньги до сих пор не поступили. Платежку об оплате об оплате приложили.
+                    </a>
+                </div>                            
+            </div>
+        </li>
+        <li class="acc_main-item _message_block">
+            <div class="default_message _message_style _message_column">
+                <div class="_messaage_name">
+                    <div class="_message_img">
+                        <img src="/img/messages_img/iconMessage_3.svg" alt="house icon">
+                    </div>
+                    <div class="_massage_inf">
+                        <h4>Поддержка AGABA</h4>
+                        <time datetime="">03 июня, 12:04</time>
+                    </div>
+                </div>
+                <div class="_message_count_cntr">
+                    <a href="" class="defult_item _message_item _reply">
+                        <i>Вы:</i> Спасибо!
+                    </a>
+                </div>                            
+            </div>
+        </li>{% endcomment %}
+        <li class="acc_main-item _show_more_cntr">
+            <button class="show_more_massages_btn big_btn">
+                Показать ещё
+            </button>
+        </li>
+    </ul>
+
+    <script src="{% static 'website/js/funcs/accountMessageActions/funcs/SearchAndConnectRooms.js' %}"></script>
+</div>
+{% endblock %}

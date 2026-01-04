@@ -1,0 +1,227 @@
+/* ====================== General rules ============================ */
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Roboto", sans-serif;
+  --third-family: "Commissioner", sans-serif;
+
+  --auto: auto;
+}
+
+body {
+  background-color: var(--colorfff);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1472px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+}
+
+select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: var(--color000);
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+._flex {
+  display: flex;
+}
+
+._flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+._flex_column_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+._flex_column_start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+._flex_column_sb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+._flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+._flex_jc_center {
+  display: flex;
+  justify-content: center;
+}
+
+._flex_jc_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+._flex_jc_end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+._flex_jc_start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+._flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._flex_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+._flex_start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+._flex_end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+._flex_start_start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+._flex_start_stretch {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+._flex_stretch_sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+._flex_start_sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+._flex_al_start {
+  display: flex;
+  align-items: flex-start;
+}
+
+._flex_al_end {
+  display: flex;
+  align-items: flex-end;
+}
+
+._flex_al_center {
+  display: flex;
+  align-items: center;
+}
+
+._flex_al_between {
+  display: flex;
+  align-items: space-between;
+}
+
+._flex_al_stretch {
+  display: flex;
+  align-items: stretch;
+}
+
+._wrap {
+  flex-wrap: wrap;
+}
+
+._nowrap {
+  flex-wrap: nowrap;
+}
+
+._column {
+  flex-direction: column;
+}
+
+._al_start {
+  align-items: flex-start;
+}
+
+._d_block {
+  display: block;
+}
+
+._pos_rel {
+  position: relative;
+}
+
+._pos_abs {
+  position: absolute;
+}
+/* ====================== General rules ============================ */

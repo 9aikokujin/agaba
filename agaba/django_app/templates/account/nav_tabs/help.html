@@ -1,0 +1,84 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _help_sect">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _acc__help_cntr">
+                
+    <ul class="acc__help_list _acc-list">
+        <li class="acc_main-item">
+            <div class="acc__help_header">
+                <h2>Помощь</h2>
+                <div class="acc__help_header_text">
+                    <p>Введите ваш вопрос или выберите тему справа</p>
+                </div>                    
+            </div>
+        </li>
+        <li class="acc_main-item">
+            <div class="acc__help_field">
+                <input 
+                    class="acc__help_input big_input _grey_input"
+                    type="text"
+                    placeholder="Введите ваш вопрос"    
+                >
+            </div>
+        </li>
+        <li class="acc_main-item _acc__help_search">
+            <div class="acc__help_search_header">
+                <h3>Частые вопросы</h3>
+            </div>
+            <div class="acc__help_search_cntr">
+                <ul class="acc__help_search_list _column_cntr">
+                    <li class="acc__help_search_item">
+                        <a class="search__result_link" href="">Куда и когда вернутся деньги за возвращенный товар?</a>
+                    </li>
+                    <li class="acc__help_search_item">
+                        <a class="search__result_link" href="">Как можно оплатить заказ?</a>
+                    </li>
+                    <li class="acc__help_search_item">
+                        <a class="search__result_link" href="">Оплата заказа</a>
+                    </li>
+                    <li class="acc__help_search_item">
+                        <a class="search__result_link" href="">Как будут возвращены деньги при возврате товара?</a>
+                    </li>
+                    <li class="acc__help_search_item">
+                        <a class="search__result_link" href="">В какие сроки осуществляется возврат денег?</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="acc_side-info_list _acc_help_aside _acc-list">
+        <li class="acc_side-info_item ">
+            <div class="acc__side_help_cntr _flex_column">
+                <div class="acc__side_help_header">
+                    <h4>Работа с сайтом</h4>
+                </div>
+                <nav class="acc__side_help_nav _flex_column">
+                    <a href="" class="acc__side_help_link _grey_text">Поиск и выбор товара</a>
+                    <a href="" class="acc__side_help_link _grey_text">Регистрация</a>
+                    <a href="" class="acc__side_help_link _grey_text">Оформление заказа</a>
+                    <a href="" class="acc__side_help_link _grey_text">Управление кабинетом</a>
+                </nav>
+            </div>
+        </li>
+        <li class="acc_side-info_item ">
+            <div class="acc__side_help_cntr _flex_column">
+                <div class="acc__side_help_header">
+                    <h4>Работа с сайтом</h4>
+                </div>
+                <nav class="acc__side_help_nav _flex_column">
+                    <a href="" class="acc__side_help_link _grey_text">Поиск и выбор товара</a>
+                    <a href="" class="acc__side_help_link _grey_text">Регистрация</a>
+                    <a href="" class="acc__side_help_link _grey_text">Оформление заказа</a>
+                    <a href="" class="acc__side_help_link _grey_text">Управление кабинетом</a>
+                </nav>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}

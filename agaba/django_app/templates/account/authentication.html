@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header header_auth">
+            <nav class="header__nav mid">
+                <a href="/" class="header__logo logo">
+                    <img src="{% static 'website/img/details/logoBlackSvg.svg' %}" alt="logoBlackSvg" />
+                </a>
+            </nav>
+        </header>
+
+        <main class="main _main_auth">
+
+            <section class="autorization_sect">
+                <div class="autorization_cntr">
+
+                    <div class="autorization_items-switch">
+                        <form id="buyerForm" class="autorization_form buyer auth_form _show" action="" method="post">
+                            {% csrf_token %}
+                            <!-- Hidden input to include the form name -->
+                            <input type="hidden" name="user_type" value="buyer">
+
+                            <fieldset class="autorization_field">
+                                <legend class="autorization_legend">Аутентификация</legend>
+                                <p class="autorization_title-text">Вход или регистрация нового покупателя</p>
+
+                                <input id="buyerMobileNumber" name="mobile_number" class="auth_input big_input"
+                                    type="text" value="+7" required />
+
+                                <button class="autorization_btn big_btn" type="submit">
+                                    <strong>Получить код</strong>
+                                </button>
+
+                                <div class="autorization_mark-cntr">
+                                    <input class="autorization_checkbox filter_select-checkbox"
+                                        id="buyerPersonalDataInp" type="checkbox">
+                                    <label class="autorization_label" for="buyerPersonalDataInp">Согласен на обработку
+                                        <a href=""
+                                            class="autorization_personal-link undeline-btn grey-underline">персональных
+                                            данных</a>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <button class="switch_form-btn change_inp-btn" type="button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 21V19C19 17.9391 18.5786 16.9217 17.8284 16.1716C17.0783 15.4214 16.0609 15 15 15H9C7.93913 15 6.92172 15.4214 6.17157 16.1716C5.42143 16.9217 5 17.9391 5 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                        stroke="black" stroke-widsellerFormth="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <strong>Регистрация нового продавца</strong>
+                            </button>
+
+                        </form>
+
+                        <form id="sellerForm" class="autorization_form seller auth_form" action="" method="post">
+                            {% csrf_token %}
+                            <!-- Hidden input to include the form name -->
+                            <input type="hidden" name="user_type" value="seller">
+
+                            <fieldset class="autorization_field">
+                                <legend class="autorization_legend">Регистрация продавца</legend>
+                                <p class="autorization_title-text">Введите название или ИНН — остальное мы сами</p>
+
+                                <ul class="autorization_input-list">
+                                    <li class="autorization_input-item">
+                                        <input id="sellerCompanyName" name="company_name" class="org_name auth_input big_input" placeholder="Название компании"
+                                            type="text" />
+                                    </li>
+                                    <li class="autorization_input-item">
+                                        <input id="sellerINN" name="company_inn" class="org_inn-input auth_input big_input" placeholder="ИНН"
+                                            type="text" />
+                                            {% comment %} ДАДАТА {% endcomment %}
+                                        <div class="org_inn-cntr org_hidden-cntr">
+                                            <p class="org_title">Глобальный поиск</p>
+                                            <ul class="org_hidden-list">
+                                                <li class="org_hidden-item">
+                                                    <h5 class="org_list-name">Название компании</h5>
+                                                    <div class="org_list-value">
+                                                        <p>ИНН 64654654</p>
+                                                        <p>КПП 5646548</p>
+                                                    </div>
+                                                </li>
+                                                <li class="org_hidden-item">
+                                                    <h5 class="org_list-name">Название компании</h5>
+                                                    <div class="org_list-value">
+                                                        <p>ИНН 64654654</p>
+                                                        <p>КПП 5646548</p>
+                                                    </div>
+                                                </li>
+                                                <li class="org_hidden-item">
+                                                    <h5 class="org_list-name">Название компании</h5>
+                                                    <div class="org_list-value">
+                                                        <p>ИНН 64654654</p>
+                                                        <p>КПП 5646548</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="autorization_input-item _half-input">
+                                        <input class="org_kpp-input auth_input big_input" placeholder="КПП"
+                                            type="text" />
+                                    </li>
+                                    <li class="autorization_input-item _half-input">
+                                        <input class="org_ogrn-input auth_input big_input" placeholder="ОГРН"
+                                            type="text" />
+                                    </li>
+                                    <li class="autorization_input-item _half-input">
+                                        <input class="org_acc-input auth_input big_input" placeholder="Счет"
+                                            type="text" />
+                                    </li>
+                                    <li class="autorization_input-item _half-input">
+                                        <input class="org_bik-input auth_input big_input" placeholder="БИК"
+                                            type="text" />
+                                    </li>
+                                    <li class="autorization_input-item">
+                                        <input class="org_law-adrr-input auth_input big_input"
+                                            placeholder="Юридический адрес" type="text" />
+                                    </li>
+                                    <li class="autorization_input-item">
+                                        <input class="org_id-edo-input auth_input big_input"
+                                            placeholder="Введите идентификатор ЭДО" type="text" />
+                                    </li>
+                                    <li class="autorization_input-item">
+                                        <input id="sellerMobileNumber" name="mobile_number" class="auth_input big_input"
+                                            type="text" value="+7" />
+                                    </li>
+                                </ul>
+
+                                <button class="autorization_btn big_btn" type="submit">
+                                    <strong>Получить код</strong>
+                                </button>
+
+                                <div class="autorization_mark-cntr">
+                                    <input class="autorization_checkbox filter_select-checkbox" id="sellerPersonalDataInp"
+                                        type="checkbox" name="">
+                                    <label class="autorization_label" for="sellerPersonalDataInp">Согласен на обработку
+                                        <a href=""
+                                            class="autorization_personal-link undeline-btn grey-underline">персональных
+                                            данных</a>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <button class="switch_form-btn change_inp-btn" type="button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 21V19C19 17.9391 18.5786 16.9217 17.8284 16.1716C17.0783 15.4214 16.0609 15 15 15H9C7.93913 15 6.92172 15.4214 6.17157 16.1716C5.42143 16.9217 5 17.9391 5 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                        stroke="black" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <strong>Вход пользователя</strong>
+                            </button>
+
+
+                        </form>
+                    </div>
+
+                    <form id="verifyUserForm" class="confirm_form auth_form" method="post">
+                        {% csrf_token %}
+                        <fieldset class="autorization_field">
+                            <legend class="autorization_legend">Код подтверждения</legend>
+                            <p class="autorization_title-text">Вам поступил код для подтверждения</p>
+
+                            <div class="confirm_input-cntr">
+                                {% for i in "x"|ljust:5 %}
+                                    <input
+                                    class="confirm_input auth_input big_input"
+                                    type="text"
+                                    maxlength="1"
+                                    name="digit_{{ forloop.counter0 }}"
+                                    />
+                                {% endfor %}               
+                            </div>
+                    
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const inputs = document.querySelectorAll('.confirm_input-cntr .confirm_input');
+                    
+                                    inputs.forEach((input, index) => {
+                                        input.addEventListener('input', function() {
+                                            if (this.value.length === parseInt(this.getAttribute('maxlength'))) {
+                                                if (index < inputs.length - 1) {
+                                                    inputs[index + 1].focus();
+                                                    inputs[index + 1].select();
+                                                }
+                                            }
+                                        });
+                                        input.addEventListener('click', function() {
+                                            this.select(); 
+                                        });
+                                    });
+                                });
+                            </script>
+
+
+                            <button class="confirm_btn big_btn" type="submit">
+                                <strong>Подтвердить</strong>
+                            </button>
+
+                            <button class="resend_btn undeline-btn grey-underline" type="submit">
+                                Отправить код повторно
+                            </button>
+                        </fieldset>
+
+                        <button class="auth_back-btn change_inp-btn" type="button">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.5001 16.6664H18.0001M14.1468 3.01811C14.4786 2.68637 14.9285 2.5 15.3976 2.5C15.8668 2.5 16.3167 2.68637 16.6485 3.01811C16.9802 3.34985 17.1666 3.79979 17.1666 4.26895C17.1666 4.7381 16.9802 5.18804 16.6485 5.51978L6.64014 15.5289C6.44189 15.7272 6.19683 15.8722 5.92764 15.9506L3.53431 16.6489C3.4626 16.6699 3.38659 16.6711 3.31423 16.6526C3.24188 16.634 3.17583 16.5964 3.12302 16.5436C3.0702 16.4908 3.03255 16.4247 3.01401 16.3524C2.99547 16.28 2.99673 16.204 3.01764 16.1323L3.71598 13.7389C3.79449 13.4701 3.93952 13.2253 4.13764 13.0273L14.1468 3.01811Z"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Вернуться назад</strong>
+                        </button>
+
+                        <h1 id='received_mobile_otp' style="text-align: center;color: crimson;"></h1>
+
+                    </form>
+
+                    <div class="autorization_cntr-img">
+                        <img src="{% static 'website/img/authorize/autorizePng.png' %}" alt="autorizePng">
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer footer_auth">
+            <ul class="footer__service-list">
+                <li>
+                    <a href="" class="footer_service-link">
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M2.64437 0.789062H0.675168C0.112534 0.789062 0 1.04729 0 1.33194C0 1.84044 0.667608 4.36228 3.10849 7.69762C4.73574 9.97538 7.02838 11.2101 9.11463 11.2101C10.3664 11.2101 10.5212 10.9359 10.5212 10.4635V8.74197C10.5212 8.19349 10.6398 8.08402 11.0361 8.08402C11.3282 8.08402 11.8289 8.2264 12.9972 9.32462C14.3324 10.6262 14.5525 11.2101 15.3035 11.2101H17.2727C17.8354 11.2101 18.1167 10.9359 17.9544 10.3947C17.7768 9.85532 17.1394 9.0727 16.2935 8.14506C15.8345 7.61628 15.146 7.04685 14.9374 6.76208C14.6454 6.39603 14.7288 6.23329 14.9374 5.90794C14.9374 5.90794 17.3366 2.61324 17.5869 1.49473C17.7121 1.08793 17.5869 0.789062 16.9914 0.789062H15.0222C14.5215 0.789062 14.2907 1.04729 14.1655 1.33194C14.1655 1.33194 13.1641 3.71145 11.7455 5.25712C11.2865 5.70451 11.0779 5.84689 10.8275 5.84689C10.7023 5.84689 10.5212 5.70451 10.5212 5.29781V1.49473C10.5212 1.00659 10.3759 0.789062 9.95855 0.789062H6.86407C6.55121 0.789062 6.363 1.01558 6.363 1.23031C6.363 1.69301 7.07231 1.79974 7.14543 3.10133V5.92829C7.14543 6.54807 7.03057 6.66045 6.78026 6.66045C6.11268 6.66045 4.4888 4.2703 3.52569 1.53537C3.33697 1.00379 3.14764 0.789062 2.64437 0.789062V0.789062Z"
+                                fill="black" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer_service-link">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_2140_1502)">
+                                <path
+                                    d="M8.99993 0C6.51822 0 4.5 2.01822 4.5 4.49993C4.5 6.98164 6.51822 8.99986 8.99993 8.99986C11.4816 8.99986 13.4999 6.98164 13.4999 4.49993C13.4999 2.01822 11.4816 0 8.99993 0ZM8.99993 6.74989C7.75907 6.74989 6.74996 5.74079 6.74996 4.49993C6.74996 3.25907 7.75907 2.24996 8.99993 2.24996C10.2408 2.24996 11.2499 3.25907 11.2499 4.49993C11.2499 5.74079 10.2408 6.74989 8.99993 6.74989Z"
+                                    fill="black" />
+                                <path
+                                    d="M14.9667 8.87482C14.5268 8.43495 13.8158 8.43495 13.376 8.87482C10.964 11.2868 7.03782 11.2868 4.62473 8.87482C4.18486 8.43495 3.47387 8.43495 3.034 8.87482C2.59413 9.31469 2.59413 10.0257 3.034 10.4667C4.43348 11.8662 6.20758 12.6638 8.0368 12.8719L4.82947 16.0792C4.38961 16.5191 4.38961 17.2301 4.82947 17.6699C5.26934 18.1098 5.98033 18.1098 6.4202 17.6699L8.99979 15.0904L11.5794 17.6699C11.7987 17.8893 12.0867 17.9996 12.3747 17.9996C12.6627 17.9996 12.9507 17.8893 13.1701 17.6699C13.61 17.2301 13.61 16.5191 13.1701 16.0792L9.96277 12.8719C11.792 12.6638 13.5661 11.8662 14.9656 10.4667C15.4054 10.0268 15.4054 9.31469 14.9667 8.87482Z"
+                                    fill="black" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2140_1502">
+                                    <rect width="18" height="18" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer_service-link">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.23701 7.8879C6.06722 5.62992 9.28817 4.1413 10.8997 3.42214C15.5011 1.36867 16.4573 1.01193 17.0804 1.00012C17.2175 0.997554 17.524 1.03401 17.7225 1.20686C18.017 1.46325 18.0187 2.01978 17.986 2.38811C17.7366 5.19922 16.6577 12.021 16.1087 15.1694C15.8764 16.5017 15.4191 16.9484 14.9764 16.9921C14.0142 17.0871 13.2836 16.3098 12.3516 15.6544C10.8934 14.6287 10.0695 13.9902 8.65394 12.9894C7.01807 11.8327 8.07856 11.197 9.01083 10.158C9.25483 9.88617 13.4943 5.74874 13.5763 5.37339C13.5866 5.32644 13.5961 5.15144 13.4992 5.05908C13.4023 4.96672 13.2594 4.99825 13.1562 5.02339C13.0099 5.05901 10.6803 6.71117 6.16729 9.97978C5.50601 10.467 4.90707 10.7044 4.37045 10.6919C3.77881 10.6783 2.64085 10.333 1.79486 10.038C0.757221 9.6761 -0.0674798 9.48471 0.00436272 8.87012C0.0417726 8.54992 0.452634 8.22256 1.23701 7.8879V7.8879Z"
+                                fill="black" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer_service-link">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.235 4.005C16.7467 3.1365 16.2169 2.97675 15.138 2.916C14.0603 2.84288 11.3501 2.8125 9.00225 2.8125C6.64987 2.8125 3.93862 2.84288 2.862 2.91488C1.78537 2.97675 1.25437 3.13537 0.761625 4.005C0.25875 4.87237 0 6.36638 0 8.99663C0 8.99888 0 9 0 9C0 9.00225 0 9.00338 0 9.00338V9.00563C0 11.6246 0.25875 13.1299 0.761625 13.9883C1.25437 14.8568 1.78425 15.0143 2.86087 15.0874C3.93862 15.1504 6.64987 15.1875 9.00225 15.1875C11.3501 15.1875 14.0602 15.1504 15.1391 15.0885C16.218 15.0154 16.7479 14.8579 17.2361 13.9894C17.7435 13.131 18 11.6257 18 9.00675C18 9.00675 18 9.00338 18 9.00113C18 9.00113 18 8.99888 18 8.99775C18 6.36638 17.7435 4.87237 17.235 4.005ZM6.75 12.375V5.625L12.375 9L6.75 12.375Z"
+                                fill="black" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <nav class="footer__mobile">
+                <p>«Agaba», все права защищены © 2024</p>
+            </nav>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="{% static 'website/js/slick.min.js' %}"></script>
+        <script src="{% static 'website/js/slider.js' %}"></script>
+        <script type="module" src="{% static 'website/js/main.js' %}"></script>
+        <script src="{% static 'website/js/funcs/djangoFuncs.js' %}"></script>
+        <script>
+            document.getElementById('buyerForm').addEventListener('submit', postForm);
+            document.getElementById('sellerForm').addEventListener('submit', postForm);
+            
+            function postForm(event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+
+                console.log("Post form buyer/seller form");
+
+                if (window.formValid) {
+                    // If the form is valid, post the data
+                    console.log("Form is valid");
+                    const formData = new FormData(event.currentTarget);
+
+                    // Using fetch to post the data
+                    fetch("{% url 'auth_user' %}", {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('received_mobile_otp').innerText = data.received_mobile_otp;
+                        console.log("OTP inesrted");
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                } else {
+                    console.log("Form not valid!")
+                }
+            }
+
+        </script>
+        <script>
+            document.getElementById('verifyUserForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+
+                const formData = new FormData(event.currentTarget);
+
+                // Using fetch to post the data
+                fetch("{% url 'auth_user_verify_otp' %}", {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    redirect_url = data.redirect_url
+                    if (redirect_url) {
+                        window.location.href = redirect_url;
+                    }
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // alert('An error occurred while submitting the form.');
+                });
+
+            });
+
+        </script>
+
+    </div>
+</body>
+
+</html>

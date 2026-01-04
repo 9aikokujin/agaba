@@ -1,0 +1,43 @@
+{% load static %}
+<div class="search__result-wrap _show">
+    {% if products %}
+    <ul class="search__result-list">
+        {% for product in products %}
+        <li class="search__result-item">
+            <a href='{% url "product" slug=product.slug %}' class="search__result-link">
+                <div class="search__result-img">
+                    <img
+                        src="{{ product.product_images.first.image.url }}"
+                        alt="{{ product.name }}"
+                    />
+                </div>
+                <div class="search__result-title">
+                    <h5>{{ product.name }}</h5>
+                    <strong class="search__result-price"
+                        >{{ product.cur_price }} ₽</strong
+                    >
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href='{% url "search_results" %}' class="search__result-show_more">
+        <strong><i>{{ count }}</i> результатов</strong>
+    </a>
+    <ul class="search__result-similiar_list">
+        {% for category in categories %}
+        <li class="search__result-similiar_item">
+            <a
+                href='{% url "catalog" slug=category.0.slug %}'
+                class="search__result-similiar_link _flex_between"
+            >
+                <strong>{{ category.0.name }}</strong>
+                <i>{{ category.1 }}</i>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Ничего не найдено</p>
+    {% endif %}
+</div>

@@ -1,0 +1,408 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<main class="main" id="main_fetch">
+
+    <section class="catalog_section _search">
+            
+        <div class="search_cntr _search-page-mob _main">
+            <div class="search__input-wrap">
+                <label class="search_label" for="serachSm">
+                    <img src="{% static 'website/img/marks/searchSvh.svg' %}" alt="searchSvh">
+                    </label>
+                <input class="header_search" type="text" name="serachCatalog" id="serachSm" placeholder="Искать на AGABA" {% if query_request %}value={{ query_request }} {% endif %}>
+            </div>
+        </div>
+
+        <div class="catalog_filters-cntr">
+            <h1 class="search__result">Поиск: <strong>{{ query_request }}</strong> <i>{{ products_count }} результатов</i></h1>
+
+            <ul class="filter__feature-items">
+                <li class="filter__item select mod category">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="1" type="button">
+                        <strong>Все категории</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="1">
+                        <ul class="filter_select-list">
+                            {% for item in root_categories %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="root_category" value="{{ item.slug }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.name }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item select mod type _inactive">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="2" type="button">
+                        <strong>Тип техники</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="2">
+                        <ul class="filter_select-list">
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox" >
+                                <label class="filter_select-label">Все</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox" >
+                                <label class="filter_select-label">Тип</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox" >
+                                <label class="filter_select-label">Тип</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox" >
+                                <label class="filter_select-label">Тип</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox" >
+                                <label class="filter_select-label">Тип</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Тип</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox" >
+                                <label class="filter_select-label">Тип</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item select mod year">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="3" type="button">
+                        <strong>Год</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="3">
+                        <ul class="filter_select-list">
+                            {% for item in filters.prod_year %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="prod_year" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item select mod state">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="4" type="button">
+                        <strong>Состояние</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="4">
+                        <ul class="filter_select-list">
+                            {% for item in filters.condition %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="condition" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item select mod delivery">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="5" type="button">
+                        <strong>Срок доставки</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="5">
+                        <ul class="filter_select-list">
+                            {% for item in filters.delivery_time_days %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="delivery_time_days" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>                    
+                <li class="filter__item select mod marks">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="6" type="button">
+                        <strong>Марка</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="6">
+                        <ul class="filter_select-list">
+                            {% for item in filters.brand %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="brand" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item jus-b filsters_aside">
+                    <button class="filter_feature-btn btn white-btn filters" type="button">
+                        <img src="{% static 'website/img/marks/filtersSvg.svg' %}" alt="filtersSvg">
+                        <strong>Фильтры</strong>
+                    </button>
+                </li>
+                <li class="filter__item">
+                    <button class="filter_feature-btn btn white-btn pref" type="button">
+                        <img src="{% static 'website//img/marks/filterListViewSvg.svg' %}" alt="filterListViewSvg">
+                        <strong>Сначала новые</strong>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        {% include "website/_search_list_fetch.html" %}
+
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block modals %}
+
+<aside class="filters_sidebar">
+    <div class="filters_overlay-bg"></div>
+    <div class="filters_cntr">
+        <div class="filters_head">
+            <h3>Фильтры</h3>
+        </div>
+        <div class="filters_body">
+            <ul class="filters_off-list">
+                <li class="filter_off-item _sort">
+                    <div class="off_cntr">
+                        <button class="off-btn _sort btn" type="button"><strong>Сортировать по новизне</strong></button>
+                        <div class="category_select _sort">
+                            <ul class="category_list">
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">Все</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">Сначала старые</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">Сначала молодые</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">4</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="filter_off-item type">
+                    <h4>Тип техники</h4>
+                    <div class="off_cntr ">
+                        <button class="off-btn category btn" type="button"><strong>Категория</strong></button>
+                        <div class="category_select category">
+                            <ul class="category_list">
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">1</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">2</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">3</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">4</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">5</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">6</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">7</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">8</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">9</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">10</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="off_cntr">
+                        <button class="off-btn subcategory btn" type="button"><strong>Подкатегория</strong></button>
+                        <div class="category_select subcategory">
+                            <ul class="category_list">
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">1</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">2</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">3</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">4</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">5</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">6</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">7</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">8</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">9</label>
+                                </li>
+                                <li class="category_item">
+                                    <input class="off_checkbox circle" type="checkbox">
+                                    <label class="off_label" for="">10</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="filter_off-item price">
+                    <h4>Цена</h4>
+                    <div class="off_cntr">
+                        <input class="off-input from btn" type="text" name="" id="" placeholder="от">
+                        <input class="off-input to btn" type="text" name="" id="" placeholder="до">
+                    </div>
+                </li>
+                <li class="filter_off-item year">
+                    <h4>Год выпусука</h4>
+                    <div class="off_cntr">
+                        <input class="off-input from btn" type="text" name="" id="" placeholder="от">
+                        <input class="off-input to btn" type="text" name="" id="" placeholder="до">
+                    </div>
+                </li>
+                <li class="filter_off-item state">
+                    <h4>Состояние</h4>
+                    <div class="off_cntr">
+                        <ul class="off_check-list">
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox" checked>
+                                <label class="off_label" for="">Новый</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">Б/у</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter_off-item delivery">
+                    <h4>Срок доставки</h4>
+                    <div class="off_cntr">
+                        <ul class="off_check-list">
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox" checked>
+                                <label class="off_label" for="">неважно</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">в наличии</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">до 15 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">до 30 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">до 45 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">до 60 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle" type="checkbox">
+                                <label class="off_label" for="">до 90 дней</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter_off-item brand">
+                    <h4>Марка</h4>
+                    <div class="off_cntr">
+                        <ul class="off_check-list">
+                            <li class="off_check-item">
+                                <input class="off-input delivery_date btn" type="text" name="" id="" placeholder="Название">
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox" checked>
+                                <label class="off_label" for="">1BQX109</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox">
+                                <label class="off_label" for="">Metal-Fach40</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox">
+                                <label class="off_label" for="">Mv-Groupp47</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox">
+                                <label class="off_label" for="">SKR42</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox">
+                                <label class="off_label" for="">Strumyk43</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox">
+                                <label class="off_label" for="">Strumyk43</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox square" type="checkbox">
+                                <label class="off_label" for="">Показать все</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="filters_footer">
+            <button class="show_all-btn" type="button">
+                <strong>Показать <span>05 товаров</span></strong>
+            </button>
+        </div>
+    </div>
+</aside>
+
+{% endblock %}

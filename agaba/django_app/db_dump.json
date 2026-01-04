@@ -1,0 +1,2078 @@
+[
+    {
+      "model": "admin.logentry",
+      "pk": 1,
+      "fields": {
+        "action_time": "2025-03-21T15:26:32.638Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Коммерческий транспорт",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 2,
+      "fields": {
+        "action_time": "2025-03-21T15:29:00.814Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Строительная техника",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 3,
+      "fields": {
+        "action_time": "2025-03-21T15:29:42.393Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Коммунальная техника",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 4,
+      "fields": {
+        "action_time": "2025-03-21T15:30:17.674Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Сельхозтехника",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 5,
+      "fields": {
+        "action_time": "2025-03-21T15:31:19.256Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Складская техника",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 6,
+      "fields": {
+        "action_time": "2025-03-21T15:32:03.007Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "Мотоциклы и мототехника",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 7,
+      "fields": {
+        "action_time": "2025-03-21T15:32:15.657Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "Автомобили",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 8,
+      "fields": {
+        "action_time": "2025-03-21T15:35:33.571Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "8",
+        "object_repr": "Трактора",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 9,
+      "fields": {
+        "action_time": "2025-03-21T15:37:31.056Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "9",
+        "object_repr": "Комбайны",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 10,
+      "fields": {
+        "action_time": "2025-03-24T07:37:33.775Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "8",
+        "object_repr": "Трактора",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0445\\u0430\\u0440\\u0430\\u043a\\u0442\\u0435\\u0440\\u0438\\u0441\\u0442\\u0438\\u043a\\u0438\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 11,
+      "fields": {
+        "action_time": "2025-03-24T07:38:26.967Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Килограммы (кг)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 12,
+      "fields": {
+        "action_time": "2025-03-24T07:38:47.688Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Главные характеристики",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u041c\\u0430\\u0441\\u0441\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 13,
+      "fields": {
+        "action_time": "2025-03-24T07:55:46.128Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Километры в час (км/ч)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 14,
+      "fields": {
+        "action_time": "2025-03-24T07:56:02.894Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Главные характеристики",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u041c\\u0430\\u043a\\u0441. \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u044c\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 15,
+      "fields": {
+        "action_time": "2025-03-24T07:58:44.326Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Миллиметры (мм)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 16,
+      "fields": {
+        "action_time": "2025-03-24T07:59:24.760Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Главные характеристики",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0414\\u043b\\u0438\\u043d\\u0430\"}}, {\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0428\\u0438\\u0440\\u0438\\u043d\\u0430\"}}, {\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0412\\u044b\\u0441\\u043e\\u0442\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 17,
+      "fields": {
+        "action_time": "2025-03-24T09:15:28.589Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "10",
+        "object_repr": "Экскаваторы",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0441\\u0432\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 18,
+      "fields": {
+        "action_time": "2025-03-24T09:15:50.417Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Главные свойства",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u041c\\u0430\\u0441\\u0441\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 19,
+      "fields": {
+        "action_time": "2025-03-24T09:21:49.528Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "11",
+        "object_repr": "Бульдозеры",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 20,
+      "fields": {
+        "action_time": "2025-03-24T09:28:36.326Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "12",
+        "object_repr": "Автобусы",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0441\\u0432\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 21,
+      "fields": {
+        "action_time": "2025-03-24T09:28:58.870Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Главные свойства",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0414\\u043b\\u0438\\u043d\\u043d\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 22,
+      "fields": {
+        "action_time": "2025-03-24T09:31:32.629Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Главные свойства",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"name\": \"attribute template\", \"object\": \"text: \\u0414\\u043b\\u0438\\u043d\\u0430\", \"fields\": [\"Name\", \"Desc\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 23,
+      "fields": {
+        "action_time": "2025-03-24T09:34:15.796Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "13",
+        "object_repr": "Фургоны",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0441\\u0432\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 24,
+      "fields": {
+        "action_time": "2025-03-24T09:34:39.730Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Главные свойства",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0413\\u0440\\u0443\\u0437\\u043e\\u043f\\u043e\\u0434\\u044a\\u0435\\u043c\\u043d\\u043e\\u0441\\u0442\\u044c\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 25,
+      "fields": {
+        "action_time": "2025-03-24T09:40:45.682Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "14",
+        "object_repr": "Уборочные машины",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 26,
+      "fields": {
+        "action_time": "2025-03-24T09:41:00.214Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "14",
+        "object_repr": "Уборочные машины",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0441\\u0432\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 27,
+      "fields": {
+        "action_time": "2025-03-24T09:41:23.428Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Главные свойства",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0428\\u0438\\u0440\\u0438\\u043d\\u0430 \\u0443\\u0431\\u043e\\u0440\\u043a\\u0438\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 28,
+      "fields": {
+        "action_time": "2025-03-24T09:45:02.754Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "15",
+        "object_repr": "Погрузчики вилочные",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0445\\u0430\\u0440\\u0430\\u043a\\u0442\\u0435\\u0440\\u0438\\u0441\\u0442\\u0438\\u043a\\u0438\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 29,
+      "fields": {
+        "action_time": "2025-03-24T09:47:33.616Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Главные характеристики",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u0412\\u044b\\u0441\\u043e\\u0442\\u0430 \\u043f\\u043e\\u0434\\u044a\\u0435\\u043c\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 30,
+      "fields": {
+        "action_time": "2025-03-24T09:51:07.353Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "16",
+        "object_repr": "Мотоциклы гоночные",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0445\\u0430\\u0440\\u0430\\u043a\\u0442\\u0435\\u0440\\u0438\\u0441\\u0442\\u0438\\u043a\\u0438\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 31,
+      "fields": {
+        "action_time": "2025-03-24T09:51:33.360Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "Главные характеристики",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u041c\\u0430\\u043a\\u0441\\u0438\\u043c\\u0430\\u043b\\u044c\\u043d\\u0430\\u044f \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u044c\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 32,
+      "fields": {
+        "action_time": "2025-03-24T09:55:06.833Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "17",
+        "object_repr": "Легковые",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"attribute group\", \"object\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0441\\u0432\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\"}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 33,
+      "fields": {
+        "action_time": "2025-03-24T09:55:19.002Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "Главные свойства",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"attribute template\", \"object\": \"text: \\u041c\\u0430\\u043a\\u0441\\u0438\\u043c\\u0430\\u043b\\u044c\\u043d\\u0430\\u044f \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u044c\"}}]"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "0ns9upoc3bscrz0la4xg9vey9u8n8u4p",
+      "fields": {
+        "session_data": "eyJyZWNlbnRseV92aWV3ZWRfcHJvZHVjdHMiOlsxXSwic2x1ZyI6ImwxMDUyIn0:1twa8z:a5TMF0_ri2MSCsq4oRODKhA43-5DmgIC_qjKS8VYCjw",
+        "expire_date": "2025-03-31T05:14:37.342Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "0t3e0gfsnvhdpvcln77qxrkfu0bsuvwv",
+      "fields": {
+        "session_data": ".eJxVjstuwyAURP_lriMLjMFcL7vvF1QV4nEdu6VgGUhaVf33KmpSycs5czSab9jJU6rxy1xWulIw255D87XA9MJfT1BiO8MEkTPZwwk-slsjmVw3s9iywJRajAdMn9uDtkK7WcMjGtvqYv4hCDgwZ_07pVsR3mw6587nVPfVdTelu7ele86B4tPdPQz8HQI1omJcz7qfrR6t9kI6rdD1milUNozDqKXUng-zReGEQ8RhlgyF5BKZhJ9f1Y1cAw:1twbAL:JV8jJU-sWnIxcu-ycWG1Zvul3a_BJZ0PnBI52PYfygI",
+        "expire_date": "2025-03-31T06:20:05.595Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "atimeg6l2baofpk0vuci8alex8y6271y",
+      "fields": {
+        "session_data": "eyJyZWNlbnRseV92aWV3ZWRfcHJvZHVjdHMiOlsxMCwxXSwic2x1ZyI6InBhbmlnYWxlLXY0In0:1twfhb:R64S_Fv64pNctti1zHD_rBPSMjGwWIh-9yVKl2Bc89w",
+        "expire_date": "2025-03-31T11:10:43.571Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "nbubz2v9gywmxuvfp0p0ll8s60fgsdmh",
+      "fields": {
+        "session_data": ".eJxVjs0KwjAQhN8lZwlps01bj959hpDsbm01JqU_IIjvrsVWLMxlvhmGeYp78l1gm6betm5sxTHOIRz-MT_6jc4jD7ajzVo3T639QQFix7zDG8cloKuLlyQxxWnovFwqck1HeU7E4bR2dwPfQ6JBQJ2RKtFlyM6wUSVrVAy1RgZjIK-4dkS5LyHXvqCPmgIqlQFXqhavN3pwTks:1twc1f:lgt-Jrmaf54hsYRn4z5NmHU_vWVXkZgX6QaPPf_zd5M",
+        "expire_date": "2025-03-31T07:15:11.553Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "nuh93zlf9do7f1kfe778rf7sb4jxplsy",
+      "fields": {
+        "session_data": ".eJxVjs1uwjAQhN_F5zSyY5Mfjtx5gqqy1uslcWvsKLaBquLdCSpURZrLfjOa2R92jMZ50jHPeoI0sW0o3lf_MV3mJy2JFu3s89RQ8qT_IFPshRnALwp3w35CGGONMeTFmfoeqR9uqvfRkt89si8Fvw-xAyqUwvIOQSBBSy3vSCInNUgk1baq6WkAaxvTqUaajV112KieC0U9H9bShZBC9t_65OhMVs9LtAVzYtt3wStZiY-KJV_GdW2G4Ebw9HZS7HoDLcNhpw:1twh8z:MvEfMd2cem9S1R16V-QdIIep7a_cCSfX-Ywv3Hh1Y4E",
+        "expire_date": "2025-03-31T12:43:05.485Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "u6lukqmj3flij3nadarns9nzcmogzqfs",
+      "fields": {
+        "session_data": ".eJxVjs1uwyAcw9-FcxSRhATocfc9wTQhMP802ShEAfahae--Vmun9eifLdtf7JTcGsikspnF5oUdYg2h-Y_pY7vRmmk3q79JY2tZzB9kPbtjzuKV4sXwLzYeU4sUy7669hJpr25uH5On8HDN3hX8HmIAphl2VKIHxKAEDUJJybWWzlnfQ0oQOoydwixUN3EP7fhoNVzP5_FcuhMolvBp3lZ6J2-2PfmKktnhaWi654blUI_nKT1Jzr5_AHIXXhA:1tweej:Q-M0_WFaAFs5e6mkI6CnnXT2QE4uMmkX6apUWwl6yjo",
+        "expire_date": "2025-03-31T10:03:41.021Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "uxb3aim0ruhlt2d1kjp0k7tujmjyud3y",
+      "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGll2_FtT0ucM1q4_OIAcKU4qxN1JpBTQzsx7bxZwW2vYel7ClNiVSXb5ZYTxmdsh0gPbfeZxbusyET8SftrOxznl1-1s_w4q9rqvs_HOSGtFSUCDIC1IeZAowFkTYWdaKCqmoFNktSKIQ_ZWRx-z9BrY5wvBIjcj:1twcMD:Kw9_CXypJSPPFgNomgbb_gQcCvm7k7TCnlgKwvwkR7I",
+        "expire_date": "2025-03-31T07:36:25.704Z"
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 1,
+      "fields": {
+        "name": "Коммерческий транспорт",
+        "slug": "kommercheskii-transport",
+        "parent": null,
+        "image": "subgroup_images/i_5.webp",
+        "svg_icon": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M21.4668 2.80078H7.46676C6.43543 2.80078 5.6001 3.63611 5.6001 4.66745V23.3341C5.6001 24.3654 6.43543 25.2008 7.46676 25.2008H21.4668C22.4981 25.2008 23.3334 24.3654 23.3334 23.3341V4.66745C23.3334 3.63611 22.4981 2.80078 21.4668 2.80078ZM9.8001 14.9341C10.5729 14.9341 11.2001 15.5613 11.2001 16.3341C11.2001 17.1069 10.5729 17.7341 9.8001 17.7341C9.0273 17.7341 8.4001 17.1069 8.4001 16.3341C8.4001 15.5613 9.0273 14.9341 9.8001 14.9341ZM8.4001 11.6674C8.4001 10.8946 9.0273 10.2674 9.8001 10.2674C10.5729 10.2674 11.2001 10.8946 11.2001 11.6674C11.2001 12.4402 10.5729 13.0674 9.8001 13.0674C9.0273 13.0674 8.4001 12.4402 8.4001 11.6674ZM14.4668 22.4008H9.8001C9.0273 22.4008 8.4001 21.7736 8.4001 21.0008C8.4001 20.228 9.0273 19.6008 9.8001 19.6008H14.4668C15.2396 19.6008 15.8668 20.228 15.8668 21.0008C15.8668 21.7736 15.2396 22.4008 14.4668 22.4008ZM14.4668 17.7341C13.694 17.7341 13.0668 17.1069 13.0668 16.3341C13.0668 15.5613 13.694 14.9341 14.4668 14.9341C15.2396 14.9341 15.8668 15.5613 15.8668 16.3341C15.8668 17.1069 15.2396 17.7341 14.4668 17.7341ZM14.4668 13.0674C13.694 13.0674 13.0668 12.4402 13.0668 11.6674C13.0668 10.8946 13.694 10.2674 14.4668 10.2674C15.2396 10.2674 15.8668 10.8946 15.8668 11.6674C15.8668 12.4402 15.2396 13.0674 14.4668 13.0674ZM19.1334 22.4008C18.3606 22.4008 17.7334 21.7736 17.7334 21.0008C17.7334 20.228 18.3606 19.6008 19.1334 19.6008C19.9062 19.6008 20.5334 20.228 20.5334 21.0008C20.5334 21.7736 19.9062 22.4008 19.1334 22.4008ZM19.1334 17.7341C18.3606 17.7341 17.7334 17.1069 17.7334 16.3341C17.7334 15.5613 18.3606 14.9341 19.1334 14.9341C19.9062 14.9341 20.5334 15.5613 20.5334 16.3341C20.5334 17.1069 19.9062 17.7341 19.1334 17.7341ZM19.1334 13.0674C18.3606 13.0674 17.7334 12.4402 17.7334 11.6674C17.7334 10.8946 18.3606 10.2674 19.1334 10.2674C19.9062 10.2674 20.5334 10.8946 20.5334 11.6674C20.5334 12.4402 19.9062 13.0674 19.1334 13.0674ZM20.5334 8.40078H8.4001V5.60078H20.5334V8.40078Z\" fill-opacity=\"0.6\" fill=\"black\"></path></svg>",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 2,
+      "fields": {
+        "name": "Строительная техника",
+        "slug": "stroitelnaia-tekhnika",
+        "parent": null,
+        "image": "",
+        "svg_icon": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20.5334 1.86728C20.3586 1.8675 20.1875 1.91677 20.0394 2.00947L13.2016 6.28238L11.8599 4.94072C11.6849 4.76568 11.4476 4.66733 11.2 4.66728H4.6667C4.41917 4.66731 4.18179 4.76565 4.00676 4.94067C3.83173 5.1157 3.73339 5.35309 3.73337 5.60061V14.0006C3.73339 14.2481 3.83173 14.4855 4.00676 14.6606C4.18179 14.8356 4.41917 14.9339 4.6667 14.9339H15.8667C16.1142 14.9339 16.3516 14.8356 16.5266 14.6606C16.7017 14.4855 16.8 14.2481 16.8 14.0006V10.2673C16.8 10.0198 16.7016 9.7824 16.5266 9.60738L14.556 7.63681L20.8013 3.73395H23.3334C23.457 3.7357 23.5798 3.71285 23.6946 3.66673C23.8094 3.62061 23.9138 3.55214 24.0019 3.4653C24.09 3.37846 24.1599 3.27497 24.2077 3.16087C24.2554 3.04676 24.28 2.9243 24.28 2.80061C24.28 2.67692 24.2554 2.55447 24.2077 2.44036C24.1599 2.32625 24.09 2.22277 24.0019 2.13593C23.9138 2.04909 23.8094 1.98062 23.6946 1.9345C23.5798 1.88838 23.457 1.86553 23.3334 1.86728H20.5334ZM23.3334 4.66728C23.0858 4.66728 22.8484 4.76561 22.6734 4.94065C22.4984 5.11568 22.4 5.35308 22.4 5.60061C22.4 5.84815 22.4984 6.08555 22.6734 6.26058C22.8484 6.43561 23.0858 6.53395 23.3334 6.53395C23.5809 6.53395 23.8183 6.43561 23.9933 6.26058C24.1684 6.08555 24.2667 5.84815 24.2667 5.60061C24.2667 5.35308 24.1684 5.11568 23.9933 4.94065C23.8183 4.76561 23.5809 4.66728 23.3334 4.66728ZM5.60003 6.53395H10.8136L12.2227 7.94306C12.3064 8.09183 12.4294 8.21478 12.5782 8.29853L14.5469 10.2673H5.60003V6.53395ZM23.3334 7.46728C23.0858 7.46728 22.8484 7.56561 22.6734 7.74065C22.4984 7.91568 22.4 8.15308 22.4 8.40061C22.4 8.64815 22.4984 8.88555 22.6734 9.06058C22.8484 9.23561 23.0858 9.33395 23.3334 9.33395C23.5809 9.33395 23.8183 9.23561 23.9933 9.06058C24.1684 8.88555 24.2667 8.64815 24.2667 8.40061C24.2667 8.15308 24.1684 7.91568 23.9933 7.74065C23.8183 7.56561 23.5809 7.46728 23.3334 7.46728ZM23.3188 10.2545C23.0716 10.2584 22.836 10.3602 22.6637 10.5375C22.4915 10.7149 22.3966 10.9534 22.4 11.2006V12.1813C22.4004 12.3964 22.4749 12.6047 22.6111 12.7711C22.7473 12.9375 22.9367 13.0518 23.1474 13.0946C23.7842 13.2241 24.2667 13.781 24.2667 14.4673C24.2667 15.252 23.6515 15.8673 22.8667 15.8673C22.0819 15.8673 21.4667 15.252 21.4667 14.4673C21.4684 14.3436 21.4456 14.2208 21.3995 14.106C21.3534 13.9913 21.2849 13.8868 21.198 13.7987C21.1112 13.7107 21.0077 13.6407 20.8936 13.593C20.7795 13.5452 20.6571 13.5207 20.5334 13.5207C20.4097 13.5207 20.2872 13.5452 20.1731 13.593C20.059 13.6407 19.9555 13.7107 19.8687 13.7987C19.7818 13.8868 19.7134 13.9913 19.6673 14.106C19.6211 14.2208 19.5983 14.3436 19.6 14.4673C19.6 16.2604 21.0736 17.7339 22.8667 17.7339C24.6598 17.7339 26.1334 16.2604 26.1334 14.4673C26.1334 13.2112 25.3177 12.2621 24.2667 11.7165V11.2006C24.2684 11.0757 24.245 10.9518 24.198 10.8361C24.1509 10.7204 24.0811 10.6154 23.9928 10.5272C23.9044 10.4389 23.7992 10.3694 23.6834 10.3225C23.5676 10.2757 23.4436 10.2526 23.3188 10.2545ZM5.60003 16.8006C3.54919 16.8006 1.8667 18.4831 1.8667 20.5339C1.86656 20.6585 1.89135 20.7819 1.93962 20.8967C1.94022 20.8979 1.94083 20.8991 1.94144 20.9004C2.13578 22.773 3.67882 24.2673 5.60003 24.2673H14.9334C16.8578 24.2673 18.4038 22.7684 18.5938 20.8912C18.6413 20.7781 18.6661 20.6567 18.6667 20.5339C18.6667 18.4831 16.9842 16.8006 14.9334 16.8006H5.60003ZM5.60003 18.6673H14.9334C15.9756 18.6673 16.8 19.4917 16.8 20.5339C16.8 21.5762 15.9756 22.4006 14.9334 22.4006H5.60003C4.55781 22.4006 3.73337 21.5762 3.73337 20.5339C3.73337 19.4917 4.55781 18.6673 5.60003 18.6673ZM6.53337 19.6006C6.28583 19.6006 6.04843 19.6989 5.8734 19.874C5.69837 20.049 5.60003 20.2864 5.60003 20.5339C5.60003 20.7815 5.69837 21.0189 5.8734 21.1939C6.04843 21.3689 6.28583 21.4673 6.53337 21.4673C6.7809 21.4673 7.0183 21.3689 7.19333 21.1939C7.36837 21.0189 7.4667 20.7815 7.4667 20.5339C7.4667 20.2864 7.36837 20.049 7.19333 19.874C7.0183 19.6989 6.7809 19.6006 6.53337 19.6006ZM10.2667 19.6006C10.0192 19.6006 9.78177 19.6989 9.60673 19.874C9.4317 20.049 9.33337 20.2864 9.33337 20.5339C9.33337 20.7815 9.4317 21.0189 9.60673 21.1939C9.78177 21.3689 10.0192 21.4673 10.2667 21.4673C10.5142 21.4673 10.7516 21.3689 10.9267 21.1939C11.1017 21.0189 11.2 20.7815 11.2 20.5339C11.2 20.2864 11.1017 20.049 10.9267 19.874C10.7516 19.6989 10.5142 19.6006 10.2667 19.6006ZM14 19.6006C13.7525 19.6006 13.5151 19.6989 13.3401 19.874C13.165 20.049 13.0667 20.2864 13.0667 20.5339C13.0667 20.7815 13.165 21.0189 13.3401 21.1939C13.5151 21.3689 13.7525 21.4673 14 21.4673C14.2476 21.4673 14.485 21.3689 14.66 21.1939C14.835 21.0189 14.9334 20.7815 14.9334 20.5339C14.9334 20.2864 14.835 20.049 14.66 19.874C14.485 19.6989 14.2476 19.6006 14 19.6006Z\" fill-opacity=\"0.6\" fill=\"black\"></path></svg>",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 3,
+      "fields": {
+        "name": "Коммунальная техника",
+        "slug": "kommunalnaia-tekhnika",
+        "parent": null,
+        "image": "",
+        "svg_icon": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.007 3.73242L11.7963 3.76706C11.7963 3.76706 12.4353 3.88817 12.8992 4.70951L15.5005 9.31784L13.7486 10.3095L19.7752 11.1918L22.0028 5.64648L20.3768 6.56341L19.201 4.48164C18.9686 4.07097 18.5791 3.75856 18.007 3.73242ZM9.48483 4.6694C8.67948 4.60908 7.75302 4.8764 7.05488 5.82513L6.9765 5.91263L6.22363 7.16315L11.0307 9.99961L12.4252 7.69362L11.1874 5.47695C10.9742 5.11669 10.2902 4.72972 9.48483 4.6694ZM8.46764 10.5574L2.55957 11.4579L4.1765 12.3913L2.98066 14.4621C2.74453 14.8709 2.67452 15.3672 2.94238 15.873L6.12884 21.2033C6.12884 21.2033 5.90907 20.5908 6.3804 19.7741L9.02546 15.1913L10.77 16.1975L8.46764 10.5574ZM23.833 11.0952L19.2083 13.773L20.94 16.7973H23.1986C24.0349 16.7795 25.8946 15.1778 24.9286 13.0293L24.8921 12.9181L23.833 11.0952ZM17.7335 16.6533L14.0002 21.4658L17.7335 26.1324V24.2658H20.1252C20.5975 24.2658 21.0614 24.0793 21.3648 23.5949L24.389 18.1699C24.389 18.1699 23.9691 18.6658 23.0255 18.6658H17.7335V16.6533ZM9.18952 18.6658L7.90983 20.8587C7.5057 21.5923 7.96701 24.0041 10.3106 24.2421L10.4236 24.2658L12.1335 24.2475V18.6658H9.18952Z\" fill=\"black\" fill-opacity=\"0.6\"></path></svg>",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 4,
+      "fields": {
+        "name": "Сельхозтехника",
+        "slug": "selkhoztekhnika",
+        "parent": null,
+        "image": "",
+        "svg_icon": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9.33314 1.06055C9.21367 1.06055 9.09419 1.10444 9.00319 1.19544L7.40085 2.79961H5.13314C4.87554 2.79961 4.66647 3.00868 4.66647 3.26628V5.53398L3.0623 7.13633C2.8803 7.31833 2.8803 7.61422 3.0623 7.79622L4.66647 9.39857V9.66471C5.09487 9.56578 5.5861 9.46295 6.1321 9.36029C5.8017 8.80402 5.5998 8.16068 5.5998 7.46628C5.5998 5.40454 7.2714 3.73294 9.33314 3.73294C11.3949 3.73294 13.0665 5.40454 13.0665 7.46628C13.0665 7.84708 12.9933 8.20647 12.8878 8.55273C13.5458 8.51167 14.2281 8.47585 14.9495 8.45065L15.604 7.79622C15.786 7.61422 15.786 7.31833 15.604 7.13633L13.9998 5.53398V3.26628C13.9998 3.00868 13.7907 2.79961 13.5331 2.79961H11.2654L9.66308 1.19544C9.57208 1.10444 9.4526 1.06055 9.33314 1.06055ZM16.2493 10.2827C9.10088 10.4124 4.95512 11.4522 3.45059 11.9142C3.05859 12.0346 2.7998 12.394 2.7998 12.8038V17.0876C2.7998 17.8511 3.6677 18.2941 4.28184 17.8423C7.30957 15.6145 11.5107 12.7719 16.2493 10.2827ZM23.2001 10.3829C16.9663 14.7761 13.2402 20.5312 11.4678 23.8324C11.1355 24.4522 11.5916 25.1996 12.2954 25.1996H17.9428C18.4094 25.1996 18.8007 24.8559 18.867 24.3939C19.2665 21.5808 20.3842 15.6889 23.2001 10.3829ZM19.8258 10.6017C12.7708 13.9421 6.49385 18.4625 3.15345 21.0525C2.92572 21.2289 2.7998 21.4969 2.7998 21.7853V24.2663C2.7998 24.7815 3.21794 25.1996 3.73314 25.1996H8.10814C8.47307 25.1996 8.8009 24.9904 8.95397 24.66C10.1281 22.1223 13.4689 15.8517 19.8258 10.6017ZM25.1998 10.6236C22.4661 15.4853 21.2733 21.1448 20.8029 24.1259C20.7133 24.6924 21.1531 25.1996 21.7271 25.1996H24.2665C24.7817 25.1996 25.1998 24.7815 25.1998 24.2663V10.6236Z\" fill=\"black\" fill-opacity=\"0.6\"></path></svg>",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 5,
+      "fields": {
+        "name": "Складская техника",
+        "slug": "skladskaia-tekhnika",
+        "parent": null,
+        "image": "",
+        "svg_icon": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M14.0001 1.86719C13.844 1.86751 13.6904 1.907 13.5535 1.98203L3.28685 7.58203C3.09523 7.67648 2.94181 7.83381 2.8522 8.02775C2.76259 8.22168 2.74221 8.44049 2.79448 8.64763C2.84675 8.85478 2.96849 9.03773 3.13938 9.16594C3.31027 9.29414 3.51997 9.35985 3.73347 9.35208V14.0005H13.0668V4.37187L14.0001 3.86328L14.9335 4.37187V14.0005H24.2668V9.35391C24.481 9.36262 24.6917 9.29735 24.8634 9.16906C25.0351 9.04076 25.1575 8.85726 25.2099 8.64939C25.2623 8.44152 25.2415 8.22196 25.1511 8.02758C25.0607 7.83321 24.9061 7.67588 24.7134 7.58203L14.4467 1.98203C14.3098 1.907 14.1563 1.86751 14.0001 1.86719ZM8.40013 7.46719C8.91533 7.46719 9.33347 7.88532 9.33347 8.40052C9.33347 8.91572 8.91533 9.33385 8.40013 9.33385C7.88493 9.33385 7.4668 8.91572 7.4668 8.40052C7.4668 7.88532 7.88493 7.46719 8.40013 7.46719ZM19.6001 7.46719C20.1153 7.46719 20.5335 7.88532 20.5335 8.40052C20.5335 8.91572 20.1153 9.33385 19.6001 9.33385C19.0849 9.33385 18.6668 8.91572 18.6668 8.40052C18.6668 7.88532 19.0849 7.46719 19.6001 7.46719ZM3.73347 15.8672V22.4005C3.73347 23.4319 4.5688 24.2672 5.60013 24.2672H13.0668V15.8672H3.73347ZM14.9335 15.8672V24.2672H22.4001C23.4315 24.2672 24.2668 23.4319 24.2668 22.4005V15.8672H14.9335ZM8.40013 17.7339C8.91533 17.7339 9.33347 18.152 9.33347 18.6672C9.33347 19.1824 8.91533 19.6005 8.40013 19.6005C7.88493 19.6005 7.4668 19.1824 7.4668 18.6672C7.4668 18.152 7.88493 17.7339 8.40013 17.7339ZM19.6001 17.7339C20.1153 17.7339 20.5335 18.152 20.5335 18.6672C20.5335 19.1824 20.1153 19.6005 19.6001 19.6005C19.0849 19.6005 18.6668 19.1824 18.6668 18.6672C18.6668 18.152 19.0849 17.7339 19.6001 17.7339Z\" fill=\"black\" fill-opacity=\"0.6\"></path></svg>",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 6,
+      "fields": {
+        "name": "Мотоциклы и мототехника",
+        "slug": "mototsikly-i-mototekhnika",
+        "parent": null,
+        "image": "",
+        "svg_icon": "",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 7,
+      "fields": {
+        "name": "Автомобили",
+        "slug": "avtomobili",
+        "parent": null,
+        "image": "",
+        "svg_icon": "",
+        "is_terminal": false
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 8,
+      "fields": {
+        "name": "Трактора",
+        "slug": "traktora",
+        "parent": 4,
+        "image": "subgroup_images/i_6.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 9,
+      "fields": {
+        "name": "Комбайны",
+        "slug": "kombainy",
+        "parent": 4,
+        "image": "subgroup_images/i_7_VIwZskd.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 10,
+      "fields": {
+        "name": "Экскаваторы",
+        "slug": "ekskavatory",
+        "parent": 2,
+        "image": "subgroup_images/i_2.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 11,
+      "fields": {
+        "name": "Бульдозеры",
+        "slug": "buldozery",
+        "parent": 2,
+        "image": "subgroup_images/i_20.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 12,
+      "fields": {
+        "name": "Автобусы",
+        "slug": "avtobusy",
+        "parent": 1,
+        "image": "subgroup_images/i_24.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 13,
+      "fields": {
+        "name": "Фургоны",
+        "slug": "furgony",
+        "parent": 1,
+        "image": "subgroup_images/i_27.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 14,
+      "fields": {
+        "name": "Уборочные машины",
+        "slug": "uborochnye-mashiny",
+        "parent": 3,
+        "image": "subgroup_images/i_31.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 15,
+      "fields": {
+        "name": "Погрузчики вилочные",
+        "slug": "pogruzchiki-vilochnye",
+        "parent": 5,
+        "image": "subgroup_images/i_34.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 16,
+      "fields": {
+        "name": "Мотоциклы гоночные",
+        "slug": "mototsikly-gonochnye",
+        "parent": 6,
+        "image": "subgroup_images/scale_1200.jpg",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.category",
+      "pk": 17,
+      "fields": {
+        "name": "Легковые",
+        "slug": "legkovye",
+        "parent": 7,
+        "image": "subgroup_images/i_3.webp",
+        "svg_icon": "",
+        "is_terminal": true
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 1,
+      "fields": {
+        "brand": "LOVOL",
+        "name": "1304",
+        "slug": "l1052",
+        "description": "Очень хороший трактор",
+        "author": 2,
+        "created": "2025-03-21T15:43:38.537Z",
+        "updated": "2025-03-24T07:59:59.969Z",
+        "category": 8,
+        "prod_year": 2024,
+        "condition": "new",
+        "delivery_time_days": 20,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 2,
+      "fields": {
+        "brand": "John Deere",
+        "name": "7830",
+        "slug": "7830",
+        "description": "Лучший трактор в мире",
+        "author": 2,
+        "created": "2025-03-24T08:31:02.637Z",
+        "updated": "2025-03-24T08:31:02.637Z",
+        "category": 8,
+        "prod_year": 2020,
+        "condition": "new",
+        "delivery_time_days": 20,
+        "in_stock": true,
+        "location": "Тула",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 3,
+      "fields": {
+        "brand": "John Deere",
+        "name": "9670",
+        "slug": "9670",
+        "description": "Классный комбайн",
+        "author": 2,
+        "created": "2025-03-24T09:14:40.484Z",
+        "updated": "2025-03-24T09:19:36.153Z",
+        "category": 9,
+        "prod_year": 2019,
+        "condition": "new",
+        "delivery_time_days": 10,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 4,
+      "fields": {
+        "brand": "Hitachi",
+        "name": "ZX200",
+        "slug": "zx200",
+        "description": "Лучший экскаватор в мире",
+        "author": 2,
+        "created": "2025-03-24T09:19:08.586Z",
+        "updated": "2025-03-24T09:19:08.586Z",
+        "category": 10,
+        "prod_year": 2010,
+        "condition": "new",
+        "delivery_time_days": 20,
+        "in_stock": true,
+        "location": "Санкт-Петербург",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 5,
+      "fields": {
+        "brand": "Lovol",
+        "name": "FS032",
+        "slug": "fs032",
+        "description": "Очень глубоко копает",
+        "author": 2,
+        "created": "2025-03-24T09:24:48.920Z",
+        "updated": "2025-03-24T09:24:48.920Z",
+        "category": 11,
+        "prod_year": 2023,
+        "condition": "new",
+        "delivery_time_days": 20,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 6,
+      "fields": {
+        "brand": "Volvo",
+        "name": "9700",
+        "slug": "9700",
+        "description": "Ездит далеко далеко",
+        "author": 2,
+        "created": "2025-03-24T09:30:52.695Z",
+        "updated": "2025-03-24T09:30:52.695Z",
+        "category": 12,
+        "prod_year": 2010,
+        "condition": "new",
+        "delivery_time_days": 5,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 7,
+      "fields": {
+        "brand": "Kia",
+        "name": "K2700",
+        "slug": "k2700",
+        "description": "Возит слонов",
+        "author": 2,
+        "created": "2025-03-24T09:36:09.687Z",
+        "updated": "2025-03-24T09:36:09.687Z",
+        "category": 13,
+        "prod_year": 2002,
+        "condition": "new",
+        "delivery_time_days": 21,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 8,
+      "fields": {
+        "brand": "Dulevo",
+        "name": "5000 Evolution",
+        "slug": "5000-evolution",
+        "description": "Чисто убирает улицу",
+        "author": 2,
+        "created": "2025-03-24T09:42:58.023Z",
+        "updated": "2025-03-24T09:42:58.023Z",
+        "category": 14,
+        "prod_year": 2001,
+        "condition": "new",
+        "delivery_time_days": 10,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 9,
+      "fields": {
+        "brand": "JAC",
+        "name": "CPCD50",
+        "slug": "cpcd50",
+        "description": "Высоко поднимает",
+        "author": 2,
+        "created": "2025-03-24T09:46:48.169Z",
+        "updated": "2025-03-24T09:47:53.209Z",
+        "category": 15,
+        "prod_year": 2025,
+        "condition": "new",
+        "delivery_time_days": 10,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 10,
+      "fields": {
+        "brand": "Ducati",
+        "name": "Panigale v4",
+        "slug": "panigale-v4",
+        "description": "Быстро ездит",
+        "author": 2,
+        "created": "2025-03-24T09:53:30.809Z",
+        "updated": "2025-03-24T09:53:30.809Z",
+        "category": 16,
+        "prod_year": 2022,
+        "condition": "new",
+        "delivery_time_days": 5,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.product",
+      "pk": 11,
+      "fields": {
+        "brand": "Toyota",
+        "name": "Mark 2",
+        "slug": "mark-2",
+        "description": "Культовый автомобиль",
+        "author": 2,
+        "created": "2025-03-24T09:57:34.999Z",
+        "updated": "2025-03-24T09:57:34.999Z",
+        "category": 17,
+        "prod_year": 2003,
+        "condition": "new",
+        "delivery_time_days": 10,
+        "in_stock": true,
+        "location": "Москва",
+        "min_down_payment_percentage": 25,
+        "mod_status": "active",
+        "video_link": ""
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 1,
+      "fields": {
+        "product": 1,
+        "price": "2000000",
+        "date": "2025-03-21T15:43:38.545Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 2,
+      "fields": {
+        "product": 2,
+        "price": "7000000",
+        "date": "2025-03-24T08:31:02.644Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 3,
+      "fields": {
+        "product": 3,
+        "price": "10000000",
+        "date": "2025-03-24T09:14:40.487Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 4,
+      "fields": {
+        "product": 4,
+        "price": "10000000",
+        "date": "2025-03-24T09:19:08.590Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 5,
+      "fields": {
+        "product": 5,
+        "price": "2000000",
+        "date": "2025-03-24T09:24:48.923Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 6,
+      "fields": {
+        "product": 6,
+        "price": "10000000",
+        "date": "2025-03-24T09:30:52.698Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 7,
+      "fields": {
+        "product": 7,
+        "price": "2000000",
+        "date": "2025-03-24T09:36:09.690Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 8,
+      "fields": {
+        "product": 8,
+        "price": "5000000",
+        "date": "2025-03-24T09:42:58.026Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 9,
+      "fields": {
+        "product": 9,
+        "price": "2000000",
+        "date": "2025-03-24T09:46:48.172Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 10,
+      "fields": {
+        "product": 10,
+        "price": "2000000",
+        "date": "2025-03-24T09:53:30.813Z"
+      }
+    },
+    {
+      "model": "website.price",
+      "pk": 11,
+      "fields": {
+        "product": 11,
+        "price": "200000",
+        "date": "2025-03-24T09:57:35.004Z"
+      }
+    },
+    {
+      "model": "website.unitofmeasurement",
+      "pk": 1,
+      "fields": {
+        "name": "Килограммы",
+        "abbr": "кг"
+      }
+    },
+    {
+      "model": "website.unitofmeasurement",
+      "pk": 2,
+      "fields": {
+        "name": "Километры в час",
+        "abbr": "км/ч"
+      }
+    },
+    {
+      "model": "website.unitofmeasurement",
+      "pk": 3,
+      "fields": {
+        "name": "Миллиметры",
+        "abbr": "мм"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 1,
+      "fields": {
+        "category": 8,
+        "name": "Главные характеристики"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 2,
+      "fields": {
+        "category": 10,
+        "name": "Главные свойства"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 3,
+      "fields": {
+        "category": 12,
+        "name": "Главные свойства"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 4,
+      "fields": {
+        "category": 13,
+        "name": "Главные свойства"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 5,
+      "fields": {
+        "category": 14,
+        "name": "Главные свойства"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 6,
+      "fields": {
+        "category": 15,
+        "name": "Главные характеристики"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 7,
+      "fields": {
+        "category": 16,
+        "name": "Главные характеристики"
+      }
+    },
+    {
+      "model": "website.attributegroup",
+      "pk": 8,
+      "fields": {
+        "category": 17,
+        "name": "Главные свойства"
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 1,
+      "fields": {
+        "group": 1,
+        "type": "text",
+        "name": "Масса",
+        "desc": "Масса трактора",
+        "meas_unit": 1,
+        "placeholder": "Введите массу",
+        "json_data": null,
+        "required": true
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 2,
+      "fields": {
+        "group": 1,
+        "type": "text",
+        "name": "Макс. скорость",
+        "desc": "Максимальная скорость",
+        "meas_unit": 2,
+        "placeholder": "",
+        "json_data": null,
+        "required": true
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 3,
+      "fields": {
+        "group": 1,
+        "type": "text",
+        "name": "Длина",
+        "desc": "Длина",
+        "meas_unit": 3,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 4,
+      "fields": {
+        "group": 1,
+        "type": "text",
+        "name": "Ширина",
+        "desc": "Ширина",
+        "meas_unit": 3,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 5,
+      "fields": {
+        "group": 1,
+        "type": "text",
+        "name": "Высота",
+        "desc": "Высота",
+        "meas_unit": 3,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 6,
+      "fields": {
+        "group": 2,
+        "type": "text",
+        "name": "Масса",
+        "desc": "Масса",
+        "meas_unit": 1,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 7,
+      "fields": {
+        "group": 3,
+        "type": "text",
+        "name": "Длина",
+        "desc": "Длина",
+        "meas_unit": 3,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 8,
+      "fields": {
+        "group": 4,
+        "type": "text",
+        "name": "Грузоподъемность",
+        "desc": "Грузоподъемность",
+        "meas_unit": 1,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 9,
+      "fields": {
+        "group": 5,
+        "type": "text",
+        "name": "Ширина уборки",
+        "desc": "Ширина уборки",
+        "meas_unit": 3,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 10,
+      "fields": {
+        "group": 6,
+        "type": "text",
+        "name": "Высота подъема",
+        "desc": "Высота подъема",
+        "meas_unit": 3,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 11,
+      "fields": {
+        "group": 7,
+        "type": "text",
+        "name": "Максимальная скорость",
+        "desc": "Максимальная скорость",
+        "meas_unit": 2,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attributetemplate",
+      "pk": 12,
+      "fields": {
+        "group": 8,
+        "type": "text",
+        "name": "Максимальная скорость",
+        "desc": "Максимальная скорость",
+        "meas_unit": 2,
+        "placeholder": "",
+        "json_data": null,
+        "required": false
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 1,
+      "fields": {
+        "template": 1,
+        "product": 1,
+        "key": null,
+        "value": "5000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 2,
+      "fields": {
+        "template": 2,
+        "product": 1,
+        "key": null,
+        "value": "50"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 3,
+      "fields": {
+        "template": 3,
+        "product": 1,
+        "key": null,
+        "value": "4000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 4,
+      "fields": {
+        "template": 4,
+        "product": 1,
+        "key": null,
+        "value": "2500"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 5,
+      "fields": {
+        "template": 5,
+        "product": 1,
+        "key": null,
+        "value": "3000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 6,
+      "fields": {
+        "template": 1,
+        "product": 2,
+        "key": null,
+        "value": "6000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 7,
+      "fields": {
+        "template": 2,
+        "product": 2,
+        "key": null,
+        "value": "60"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 8,
+      "fields": {
+        "template": 3,
+        "product": 2,
+        "key": null,
+        "value": "5000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 9,
+      "fields": {
+        "template": 4,
+        "product": 2,
+        "key": null,
+        "value": "2500"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 10,
+      "fields": {
+        "template": 5,
+        "product": 2,
+        "key": null,
+        "value": "3200"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 11,
+      "fields": {
+        "template": 6,
+        "product": 4,
+        "key": null,
+        "value": "20000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 12,
+      "fields": {
+        "template": 7,
+        "product": 6,
+        "key": null,
+        "value": "11000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 13,
+      "fields": {
+        "template": 8,
+        "product": 7,
+        "key": null,
+        "value": "2500"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 14,
+      "fields": {
+        "template": 9,
+        "product": 8,
+        "key": null,
+        "value": "2000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 15,
+      "fields": {
+        "template": 10,
+        "product": 9,
+        "key": null,
+        "value": "5000"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 16,
+      "fields": {
+        "template": 11,
+        "product": 10,
+        "key": null,
+        "value": "300"
+      }
+    },
+    {
+      "model": "website.attribute",
+      "pk": 17,
+      "fields": {
+        "template": 12,
+        "product": 11,
+        "key": null,
+        "value": "250"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 1,
+      "fields": {
+        "product": 1,
+        "image": "product_images/f9bd793445534652b03602a95c7b5b20.webp",
+        "image_hash": "7c88efc3449260168a3448b67a474db9",
+        "aspect": "uploadLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 2,
+      "fields": {
+        "product": 1,
+        "image": "product_images/e5b816d6d0c84626a1bacc0248540a13.webp",
+        "image_hash": "1d09c4b54035e3495e1e2f7d9b955c37",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 3,
+      "fields": {
+        "product": 1,
+        "image": "product_images/054c45a4ab724fcfa0596415efb3baba.webp",
+        "image_hash": "0f6dc32872b7569218f7bb3cd9516b8c",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 4,
+      "fields": {
+        "product": 2,
+        "image": "product_images/deb3ddb948bc47829397f8f344b1c5c1.webp",
+        "image_hash": "7053ecf0dba3d1994f1adb393b901344",
+        "aspect": "uploadLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 5,
+      "fields": {
+        "product": 2,
+        "image": "product_images/057221691cb54805a3af60aea8cdf9f8.webp",
+        "image_hash": "2b1d39baac3aec07f7097e1514258169",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 6,
+      "fields": {
+        "product": 2,
+        "image": "product_images/f1aeecb64a5940099b04c26b4e260396.webp",
+        "image_hash": "d955e0bd019156a8977765c82038a5d2",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 7,
+      "fields": {
+        "product": 3,
+        "image": "product_images/ad9bc6a149d6451e9ae2e7c13ca32b1f.webp",
+        "image_hash": "57413069e2445810d8c002c7dd20b272",
+        "aspect": "uploadLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 8,
+      "fields": {
+        "product": 3,
+        "image": "product_images/5edb6d22a3bf42b6acb130f2cb72cba1.webp",
+        "image_hash": "d43866aa81d8286390dada587fbb09a7",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 9,
+      "fields": {
+        "product": 3,
+        "image": "product_images/8c7215b408b04c94afb72d360b7bc853.webp",
+        "image_hash": "2547440aef0d169f57776a39d758b970",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 10,
+      "fields": {
+        "product": 4,
+        "image": "product_images/7425e2a7d9c44057a69e81c72d08fc09.webp",
+        "image_hash": "20a79166891645ac643b57101f9a5bff",
+        "aspect": "uploadLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 11,
+      "fields": {
+        "product": 4,
+        "image": "product_images/fb33566a057c406c86eec61288c99037.webp",
+        "image_hash": "23996efbce901d32557153e5923e1d5b",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 12,
+      "fields": {
+        "product": 5,
+        "image": "product_images/c5dc61df5d9e4cf28ba4632acac9b4f9.webp",
+        "image_hash": "87d475a1d29eb87c8883da6e99ec679e",
+        "aspect": "uploadLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 13,
+      "fields": {
+        "product": 5,
+        "image": "product_images/e5512333201a431b87fc01877da3b81c.webp",
+        "image_hash": "b5d018e5f43efe558441688c934d2b33",
+        "aspect": "uploadRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 14,
+      "fields": {
+        "product": 5,
+        "image": "product_images/5c9cec9961bd45ffb0792e44448b8d5e.webp",
+        "image_hash": "88c53d8b6be94adbfc94d2ed2d92ce98",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 15,
+      "fields": {
+        "product": 6,
+        "image": "product_images/e69d03b7561f49878cb42e40b84458be.webp",
+        "image_hash": "7e97cea461807bc1901f989b909d10d5",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 16,
+      "fields": {
+        "product": 6,
+        "image": "product_images/91cf788cfc474d609b19eeeabeca8ad7.webp",
+        "image_hash": "50caae2613335b05803fd09d23db14f7",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 17,
+      "fields": {
+        "product": 6,
+        "image": "product_images/d7f3d99428e0434ab025ba1824e2b5af.webp",
+        "image_hash": "ae44c8844507b5a8c0048b01067045c8",
+        "aspect": "uploadBackLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 18,
+      "fields": {
+        "product": 7,
+        "image": "product_images/6c8c3876ffa54d7189c5f73b1bb4808b.webp",
+        "image_hash": "e2a56dfd2f04d76178e08c34b5b5a5fc",
+        "aspect": "uploadFront"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 19,
+      "fields": {
+        "product": 7,
+        "image": "product_images/54a27566f7d246bebd23a2d51a76195a.webp",
+        "image_hash": "5a6c9043a6176bd451bcb31cb25e02cf",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 20,
+      "fields": {
+        "product": 7,
+        "image": "product_images/efd9ca6220bf4379bbe865e0dc231aea.webp",
+        "image_hash": "5b663aa63b553ae6f75d51b1e518d188",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 21,
+      "fields": {
+        "product": 8,
+        "image": "product_images/861f7bebf3e347f9ac8a1ab448918619.webp",
+        "image_hash": "b6fbc158d89f65bdb41c527e2038c31d",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 22,
+      "fields": {
+        "product": 8,
+        "image": "product_images/3c01a71b062549428e17246a6b14baa3.webp",
+        "image_hash": "d9398945d46d45528f881d6128426d24",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 23,
+      "fields": {
+        "product": 9,
+        "image": "product_images/0d22065a363048df829db4f329570303.webp",
+        "image_hash": "a96b16526c50c7f063e3ecd7d6132846",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 24,
+      "fields": {
+        "product": 9,
+        "image": "product_images/9542eb8b29674741bce944039e028bb8.webp",
+        "image_hash": "a726aa10789b0a0f8d71aba70904afa4",
+        "aspect": "uploadBackRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 25,
+      "fields": {
+        "product": 10,
+        "image": "product_images/2441a90ff0b348fd915e185c6bf9749c.webp",
+        "image_hash": "6e0d521c6ab7e4ba4d808d7a20629d24",
+        "aspect": "uploadRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 26,
+      "fields": {
+        "product": 10,
+        "image": "product_images/268ad9f02e06451baefa1ed4144294ed.webp",
+        "image_hash": "50c8bc4be4eced84f1cd327a190d4228",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 27,
+      "fields": {
+        "product": 11,
+        "image": "product_images/aefa216485094981861080e18e11cd1c.webp",
+        "image_hash": "85842c57dcc523c55ad01549d39e2388",
+        "aspect": "uploadFrontLeft"
+      }
+    },
+    {
+      "model": "website.productimage",
+      "pk": 28,
+      "fields": {
+        "product": 11,
+        "image": "product_images/a42b9ef188c442dfb0e73a711513cd36.webp",
+        "image_hash": "8cb96eac9e865c1bab446292834f8d7a",
+        "aspect": "uploadFrontRight"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 1,
+      "fields": {
+        "name": "Кондиционер"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 2,
+      "fields": {
+        "name": "Круиз-контроль"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 3,
+      "fields": {
+        "name": "Мультимедиа"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 4,
+      "fields": {
+        "name": "Ковш 10м^3"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 5,
+      "fields": {
+        "name": "Климатконтроль"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 6,
+      "fields": {
+        "name": "Музыка"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 7,
+      "fields": {
+        "name": "Запасные щетки"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 8,
+      "fields": {
+        "name": "Запасное колесо"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 9,
+      "fields": {
+        "name": "Шлем"
+      }
+    },
+    {
+      "model": "website.additionaloptionname",
+      "pk": 10,
+      "fields": {
+        "name": "Кожаный салон"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 11,
+      "fields": {
+        "product": 1,
+        "name": 1,
+        "price": "10000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 12,
+      "fields": {
+        "product": 1,
+        "name": 2,
+        "price": "25000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 13,
+      "fields": {
+        "product": 2,
+        "name": 1,
+        "price": "25000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 14,
+      "fields": {
+        "product": 2,
+        "name": 3,
+        "price": "16000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 16,
+      "fields": {
+        "product": 4,
+        "name": 4,
+        "price": "50000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 17,
+      "fields": {
+        "product": 3,
+        "name": 2,
+        "price": "100000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 18,
+      "fields": {
+        "product": 5,
+        "name": 3,
+        "price": "10000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 19,
+      "fields": {
+        "product": 6,
+        "name": 5,
+        "price": "1000000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 20,
+      "fields": {
+        "product": 7,
+        "name": 6,
+        "price": "1000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 21,
+      "fields": {
+        "product": 8,
+        "name": 7,
+        "price": "50000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 23,
+      "fields": {
+        "product": 9,
+        "name": 8,
+        "price": "5000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 24,
+      "fields": {
+        "product": 10,
+        "name": 9,
+        "price": "10000"
+      }
+    },
+    {
+      "model": "website.additionaloption",
+      "pk": 25,
+      "fields": {
+        "product": 11,
+        "name": 10,
+        "price": "20000"
+      }
+    },
+    {
+      "model": "website.question",
+      "pk": 1,
+      "fields": {
+        "username": 4,
+        "text": "EWRWEWR3E",
+        "date": "2025-03-24T07:25:37.553Z",
+        "product": 1
+      }
+    },
+    {
+      "model": "account.customuser",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$870000$sMAON9G0uGjFADEkrSRucK$DlWC9T1Adf1lnF42Ut0KC/eBJsfYHWe49GCQzhXaT70=",
+        "last_login": "2025-03-24T07:36:25.697Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-21T15:15:59.448Z",
+        "is_mobile_verified": false,
+        "role": "buyer",
+        "image_base64": null,
+        "balance": null,
+        "user_permissions": [],
+        "companys": [],
+        "groups": []
+      }
+    },
+    {
+      "model": "account.customuser",
+      "pk": 2,
+      "fields": {
+        "password": "!RV4CroBa8Dl0n0q6vSrQi8D3VBlzjPMqJhOOhiKr",
+        "last_login": "2025-03-21T15:40:03.424Z",
+        "is_superuser": false,
+        "username": "+71112223333",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-03-21T15:39:53.612Z",
+        "is_mobile_verified": true,
+        "role": "seller",
+        "image_base64": null,
+        "balance": null,
+        "user_permissions": [],
+        "companys": [],
+        "groups": []
+      }
+    },
+    {
+      "model": "account.customuser",
+      "pk": 3,
+      "fields": {
+        "password": "!rT8jkwUY7etQP2C43NAwPh94HwpkQXHDkCDlFwLz",
+        "last_login": "2025-03-24T06:18:27.790Z",
+        "is_superuser": false,
+        "username": "+79523527755",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-03-24T06:18:18.314Z",
+        "is_mobile_verified": true,
+        "role": "buyer",
+        "image_base64": null,
+        "balance": null,
+        "user_permissions": [],
+        "companys": [],
+        "groups": []
+      }
+    },
+    {
+      "model": "account.customuser",
+      "pk": 4,
+      "fields": {
+        "password": "!1lOVEVsZq1osbwZI5ikk2ZzBfeu2aGqCYPDWpCqJ",
+        "last_login": "2025-03-24T07:15:40.850Z",
+        "is_superuser": false,
+        "username": "+79213331322",
+        "first_name": "Илья",
+        "last_name": "Ершов",
+        "email": "info@clik-clik.one",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-03-24T07:14:52.319Z",
+        "is_mobile_verified": true,
+        "role": "buyer",
+        "image_base64": null,
+        "balance": null,
+        "user_permissions": [],
+        "companys": [],
+        "groups": []
+      }
+    },
+    {
+      "model": "account.company",
+      "pk": 1,
+      "fields": {
+        "user": 2,
+        "inn": "1234567890",
+        "name": "ЗАО СММ",
+        "legal_address": null,
+        "kpp": null,
+        "ogrn": null,
+        "edo": null,
+        "is_hidden": true
+      }
+    },
+    {
+      "model": "balance.balance",
+      "pk": 1,
+      "fields": {
+        "user": 1,
+        "cash_account": "0.00",
+        "date_update": "2025-03-21T15:16:01.314Z"
+      }
+    },
+    {
+      "model": "balance.balance",
+      "pk": 2,
+      "fields": {
+        "user": 2,
+        "cash_account": "0.00",
+        "date_update": "2025-03-21T15:39:53.619Z"
+      }
+    },
+    {
+      "model": "balance.balance",
+      "pk": 3,
+      "fields": {
+        "user": 3,
+        "cash_account": "0.00",
+        "date_update": "2025-03-24T06:18:18.343Z"
+      }
+    },
+    {
+      "model": "balance.balance",
+      "pk": 4,
+      "fields": {
+        "user": 4,
+        "cash_account": "0.00",
+        "date_update": "2025-03-24T07:14:52.332Z"
+      }
+    }
+    ]
+    

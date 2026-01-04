@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation with {{ other_user.username }}</title>
+</head>
+<body>
+    <h1>Conversation with {{ other_user.username }}</h1>
+    <div id="messages">
+        {% for message in messages %}
+            <p><strong>{{ message.sender.username }}:</strong> {{ message.content }} <em>{{ message.timestamp }}</em></p>
+        {% endfor %}
+    </div>
+    <form id="message-form">
+        {% csrf_token %}
+        <textarea id="message-content" name="content" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        document.getElementById('message-form').onsubmit = function(e) {
+            e.preventDefault();
+            fetch("{% url 'send_message' conversation.id %}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(document.getElementById('message-form'))),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const messagesDiv = document.getElementById('messages');
+                    const newMessage = document.createElement('p');
+                    newMessage.innerHTML = `<strong>${data.message.sender}:</strong> ${data.message.content} <em>${data.message.timestamp}</em>`;
+                    messagesDiv.appendChild(newMessage);
+                    document.getElementById('message-content').value = '';
+                }
+            });
+        };
+    </script>
+</body>
+</html>

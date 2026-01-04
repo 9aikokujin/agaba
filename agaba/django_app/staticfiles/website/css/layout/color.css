@@ -1,0 +1,155 @@
+:root {
+  --color000: #000;
+  --colorfff: #fff;
+  --color006: rgba(0, 0, 0, 0.6);
+  --color0006: rgba(0, 0, 0, 0.06);
+  --color0075: rgba(0, 0, 0, 0.75);
+  --color009: rgba(0, 0, 0, 0.9);
+  --color003: rgba(0, 0, 0, 0.3);
+  --color0003: rgba(0, 0, 0, 0.03);
+  --color004: rgba(0, 0, 0, 0.4);
+  --color0004: rgba(0, 0, 0, 0.04);
+  --color005: rgba(0, 0, 0, 0.5);
+  --color001: rgba(0, 0, 0, 0.1);
+  --color0002: rgba(0, 0, 0, 0.2);
+  --color0005: rgba(0, 0, 0, 0.05);
+  --color00005: rgba(0, 0, 0, 0.05);
+  --color0015: rgba(0, 0, 0, 0.15);
+  --color0025: rgba(0, 0, 0, 0.25);
+  --coloredeeef:  #edeeef;
+  --color1c1c1c: #1c1c1c;
+  --color3d5023: #3d5023;
+  --color222075: rgba(222, 255, 89, 0.75);
+  --color22205: rgba(222, 255, 89, 0.5);
+  --colorf3fdcc: #f3fdcc;
+  --colordeff59: #deff59;
+  --colorc3eb0e: #c3eb0e;
+  --color1b9f4c: #1b9f4c;
+  --colorfff459: #fff459;
+  --color3d5023: #3d5023;
+  --color4a1971: #4a1971;
+  --color9b89ed: #9b89ed;
+  --colorf35b1a: #f35b1a;
+  --colorff4c00: #ff4c00;
+  --color24102: rgba(241, 67, 28, 0.2);
+  --colorffdaa1: #ffdaa1;
+  --color444f60: #444f60;
+  --colordadcde: #dadcde;
+  --colorf8f8f8: #f8f8f8;
+  --color00001e: #00001e;
+  --colorTransparent: transparent;
+}
+
+._color_0025 { color: var(--color0025); }
+._bg_0025 { background-color: var(--color0025); }
+
+._color_000 { color: var(--color000); }
+._bg_000 { background-color: var(--color000); }
+
+._color_fff { color: var(--colorfff); }
+._bg_fff { background-color: var(--colorfff); }
+
+._color_006 { color: var(--color006); }
+._bg_006 { background-color: var(--color006); }
+
+._color_0006 { color: var(--color0006); }
+._bg_0006 { background-color: var(--color0006); }
+
+._color_0075 { color: var(--color0075); }
+._bg_0075 { background-color: var(--color0075); }
+
+._color_009 { color: var(--color009); }
+._bg_009 { background-color: var(--color009); }
+
+._color_003 { color: var(--color003); }
+._bg_003 { background-color: var(--color003); }
+
+._color_0003 { color: var(--color0003); }
+._bg_0003 { background-color: var(--color0003); }
+
+._color_004 { color: var(--color004); }
+._bg_004 { background-color: var(--color004); }
+
+._color_0004 { color: var(--color0004); }
+._bg_0004 { background-color: var(--color0004); }
+
+._color_005 { color: var(--color005); }
+._bg_005 { background-color: var(--color005); }
+
+._color_001 { color: var(--color001); }
+._bg_001 { background-color: var(--color001); }
+
+._color_0002 { color: var(--color0002); }
+._bg_0002 { background-color: var(--color0002); }
+
+._color_0005 { color: var(--color0005); }
+._bg_0005 { background-color: var(--color0005); }
+
+._color_00005 { color: var(--color00005); }
+._bg_00005 { background-color: var(--color00005); }
+
+._color_0015 { color: var(--color0015); }
+._bg_0015 { background-color: var(--color0015); }
+
+._color_edeeef { color: var(--coloredeeef); }
+._bg_edeeef { background-color: var(--coloredeeef); }
+
+._color_1c1c1c { color: var(--color1c1c1c); }
+._bg_1c1c1c { background-color: var(--color1c1c1c); }
+
+._color_3d5023 { color: var(--color3d5023); }
+._bg_3d5023 { background-color: var(--color3d5023); }
+
+._color_222075 { color: var(--color222075); }
+._bg_222075 { background-color: var(--color222075); }
+
+._color_22205 { color: var(--color22205); }
+._bg_22205 { background-color: var(--color22205); }
+
+._color_f3fdcc { color: var(--colorf3fdcc); }
+._bg_f3fdcc { background-color: var(--colorf3fdcc); }
+
+._color_deff59 { color: var(--colordeff59); }
+._bg_deff59 { background-color: var(--colordeff59); }
+
+._color_c3eb0e { color: var(--colorc3eb0e); }
+._bg_c3eb0e { background-color: var(--colorc3eb0e); }
+
+._color_1b9f4c { color: var(--color1b9f4c); }
+._bg_1b9f4c { background-color: var(--color1b9f4c); }
+
+._color_fff459 { color: var(--colorfff459); }
+._bg_fff459 { background-color: var(--colorfff459); }
+
+._color_4a1971 { color: var(--color4a1971); }
+._bg_4a1971 { background-color: var(--color4a1971); }
+
+._color_9b89ed { color: var(--color9b89ed); }
+._bg_9b89ed { background-color: var(--color9b89ed); }
+
+._color_f35b1a { color: var(--colorf35b1a); }
+._bg_f35b1a { background-color: var(--colorf35b1a); }
+
+._color_ff4c00 { color: var(--colorff4c00); }
+._bg_ff4c00 { background-color: var(--colorff4c00); }
+
+._color_24102 { color: var(--color24102); }
+._bg_24102 { background-color: var(--color24102); }
+
+._color_ffdaa1 { color: var(--colorffdaa1); }
+._bg_ffdaa1 { background-color: var(--colorffdaa1); }
+
+._color_444f60 { color: var(--color444f60); }
+._bg_444f60 { background-color: var(--color444f60); }
+
+._color_dadcde { color: var(--colordadcde); }
+._bg_dadcde { background-color: var(--colordadcde); }
+
+._color_f8f8f8 { color: var(--colorf8f8f8); }
+._bg_f8f8f8 { background-color: var(--colorf8f8f8); }
+
+._color_00001e { color: var(--color00001e); }
+._bg_00001e { background-color: var(--color00001e); }
+
+._color_transparent { color: var(--colorTransparent); }
+._bg_transparent { background-color: var(--colorTransparent); }

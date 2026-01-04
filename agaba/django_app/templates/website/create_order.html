@@ -1,0 +1,661 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow"/>
+        <title>{{ browser_tab_name }}</title>
+        <!-- desc -->
+        <!-- open graphs -->
+        <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    
+    </head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <nav class="header__nav top">
+            <div class="lang_select hidden">
+                <div class="lang_cntr">
+                    <a class="lang_item">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.655 8.25C10.5617 8.25 11.25 8.175 11.25 7.5C11.25 6.81429 10.6011 6.75 9.68314 6.75H8.72046L8.69232 8.25H9.655Z" fill="black" fill-opacity="0.6"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5ZM8.72046 13.5H7.15329L7.12515 12H5.97217V10.5H7.12515V9.75H5.97217V8.25H7.12515L7.15329 5.25H9.68314C12 5.25 12.7503 6.05357 12.7503 7.5C12.7503 8.91429 12 9.75 9.655 9.75H8.69232V10.5H10.808V12H8.69232L8.72046 13.5Z" fill="black" fill-opacity="0.6"/>
+                        </svg>
+                        <strong>Рубли</strong>
+                    </a>
+                </div>
+                <div class="lang_hidden-cntr">
+                    <a class="lang_item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0.375C4.68528 0.375 0.375 4.68528 0.375 10C0.375 15.3147 4.68528 19.625 10 19.625C15.3147 19.625 19.625 15.3147 19.625 10C19.625 4.68528 15.3147 0.375 10 0.375ZM10.6236 14.5488V15.4402H9.36819V14.5739C8.57722 14.4945 7.73606 14.2099 7.12522 13.7537L7.74878 12.1969C8.35962 12.6572 9.109 12.992 9.8955 12.992C10.791 12.992 11.2052 12.5568 11.2052 11.8831C11.2052 11.2846 10.6528 11.0086 9.84497 10.5483C8.83228 9.97491 7.23797 9.48953 7.23797 7.74019C7.23797 6.46384 8.19222 5.677 9.36819 5.46353V4.55947H10.6236V5.42159C11.3392 5.48862 11.9752 5.68525 12.5025 6.08262L12.0381 7.72713C11.4523 7.24175 10.8913 7.04066 10.0419 7.04066C9.318 7.04066 8.81991 7.29159 8.81991 7.68106C8.81991 8.21662 9.38056 8.48887 10.3307 9.00347C11.8415 9.81128 12.8751 10.5727 12.8751 11.9704C12.8748 13.5111 12.0254 14.3354 10.6236 14.5488Z" fill="black"/>
+                        </svg>
+                        <strong>Доллары</strong>
+                    </a>
+                    <a class="lang_item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0.375C4.68528 0.375 0.375 4.68528 0.375 10C0.375 15.3147 4.68528 19.625 10 19.625C15.3147 19.625 19.625 15.3147 19.625 10C19.625 4.68528 15.3147 0.375 10 0.375ZM13.0938 10V11.375H11.0312V12.4062H13.0938V13.7812H11.0312V14.8125H9.3125V13.7812H7.25V12.4062H9.3125V11.375H7.25V10H9.27434L6.73781 5.53125H8.70544L10.1722 8.625L11.7741 5.53125H13.7166L11.155 10H13.0938Z" fill="black"/>
+                        </svg>
+                        <strong>Йены</strong>
+                    </a>
+                    <a class="lang_item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0.375C4.68528 0.375 0.375 4.68528 0.375 10C0.375 15.3147 4.68528 19.625 10 19.625C15.3147 19.625 19.625 15.3147 19.625 10C19.625 4.68528 15.3147 0.375 10 0.375ZM13.0938 10V11.375H11.0312V12.4062H13.0938V13.7812H11.0312V14.8125H9.3125V13.7812H7.25V12.4062H9.3125V11.375H7.25V10H9.27434L6.73781 5.53125H8.70544L10.1722 8.625L11.7741 5.53125H13.7166L11.155 10H13.0938Z" fill="black"/>
+                        </svg>
+                        <strong>Тенге</strong>
+                    </a>
+                </div>
+            </div>
+            <ul class="header__list">
+                <li>
+                    <a href="" class="header__link">Способы оплаты</a>
+                </li>
+                <li>
+                    <a href="" class="header__link">Варианты доставки</a>
+                </li>
+                <li>
+                    <a href="" class="header__link">Стать продавцом</a>
+                </li>
+                <li>
+                    <a href="" class="header__link">Работа</a>
+                </li>
+                <li>
+                    <a href="" class="header__link">Помощь</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="header__nav mid">
+            <a href="{% url 'index' %}"  class="header__logo logo">
+                <img src="{% static 'website/img/details/logoBlackSvg.svg' %}" alt="logoBlackSvg" />
+                <span>авто<strong>маркет</strong></span>
+            </a>
+            <div class="header__catalog-search">
+                <div class="catalog_cntr">
+                    <a href="#" class="catalog_btn">
+                        <img src="{% static 'website/img/marks/catalogSvg.svg' %}" alt="catalogSvg" />
+                        <strong>Каталог</strong>
+                    </a>
+
+                    <aside class="catalog__hidden-container">
+                        <div class="catalog__hidden-wrap">
+                            {% for group in catalog_groups %}
+                            <ul class="catalog__hidden-list">
+                                <li class="catalog__hidden-item _header">
+                                    <a href="{% url 'catalog' group_link=group.link subgroup_link="all" %}"  class="catalog__hidden-link">
+                                        <h5>{{ group.name }}</h5>
+                                    </a>
+                                </li>
+
+                                {% for subgroup in group.subgroups.all %}
+                                <li class="catalog__hidden-item">
+                                    <a href="{% url 'catalog' group_link=group.link subgroup_link=subgroup.link %}"  class="catalog__hidden-link">
+                                        {{ subgroup.name }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+
+                                {% if group.subgroups.exists %}
+                                <li class="catalog__hidden-item">
+                                    <button class="catalog__hidden-show_more" type="button">
+                                        <a href="{% url 'catalog' group_link=group.link subgroup_link="all" %}"  class="catalog__hidden-link">
+                                            <strong>Все</strong>
+                                        </a>
+                                    </button>
+                                </li>
+                                {% endif %}
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="search_cntr">
+                    <div class="search__input-wrap">
+                        <label class="search_label" for="serachSm">
+                            <img src="{% static 'website/img/marks/searchSvh.svg' %}" alt="searchSvh" />
+                        </label>
+                        <input class="header_search" type="text" name="serachCatalog" id="searchSm" placeholder="Искать на AGABA"/>
+                    </div>
+                    <aside id="searchModal" class="search__result-container">
+                        <div class="search__result-wrap">
+                            <ul class="search__result-list">
+                                <li class="search__result-item">
+                                    <a href="" class="search__result-link">
+                                        <div class="search__result-img">
+                                            <img src="{% static 'website/img/catalog/itemCatalog1.png' %}" alt="itemCatalog1">
+                                        </div>
+                                        <div class="search__result-title">
+                                            <h5>Мини-трактор Lovol TE354, 2024</h5>
+                                            <strong class="search__result-price">2 590 000 ₽</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="search__result-item">
+                                    <a href="" class="search__result-link">
+                                        <div class="search__result-img">
+                                            <img src="{% static 'website/img/catalog/itemCatalog2.png' %}" alt="itemCatalog2">
+                                        </div>
+                                        <div class="search__result-title">
+                                            <h5>Мини-трактор Lovol TE354, 2024</h5>
+                                            <strong class="search__result-price">2 590 000 ₽</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="search__result-item">
+                                    <a href="" class="search__result-link">
+                                        <div class="search__result-img">
+                                            <img src="{% static 'website/img/catalog/itemCatalog1.png' %}" alt="itemCatalog1">
+                                        </div>
+                                        <div class="search__result-title">
+                                            <h5>Мини-трактор Lovol TE354, 2024</h5>
+                                            <strong class="search__result-price">2 590 000 ₽</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="" class="search__result-show_more">
+                                <strong><i>270</i> результатов</strong>
+                            </a>
+                            <ul class="search__result-similiar_list">
+                                <li class="search__result-similiar_item">
+                                    <a href="" class="search__result-similiar_link">
+                                        <strong>коммерческий транспорт</strong>
+                                        <i>24</i>
+                                    </a>
+                                </li>
+                                <li class="search__result-similiar_item">
+                                    <a href="" class="search__result-similiar_link">
+                                        <strong>строительная техника</strong>
+                                        <i>24</i>
+                                    </a>
+                                </li>
+                                <li class="search__result-similiar_item">
+                                    <a href="" class="search__result-similiar_link">
+                                        <strong>автомобили</strong>
+                                        <i>24</i>
+                                    </a>
+                                </li>
+                                <li class="search__result-similiar_item">
+                                    <a href="" class="search__result-similiar_link">
+                                        <strong>коммунальная техника</strong>
+                                        <i>24</i>
+                                    </a>
+                                </li>
+                                <li class="search__result-similiar_item">
+                                    <a href="" class="search__result-similiar_link">
+                                        <strong>коммуналь</strong>
+                                        <i>24</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="header__nav-links">
+                <a href="/account/compare/" class="nav-link">
+                    <img src="{% static 'website/img/marks/compareSvg.svg' %}" alt="compareSvg" />
+                    <strong>Сравнить</strong>
+                </a>
+                <a href="/account/favorites/" class="nav-link">
+                    <img src="{% static 'website/img/marks/followSvg.svg' %}" alt="followSvg" />
+                    <strong>Нравится</strong>
+                </a>
+                <a {% if user.is_authenticated %} href="{% url 'home' %}" onclick="fetchMain(event)"
+                {% else %} href="{% url 'auth_user' %}" {% endif %} class="nav-link">
+                    <img src="{% static 'website/img/marks/accSvg.svg' %}" alt="accSvg" />
+
+                    {% if user.is_authenticated %}
+                        <strong>{{ user.username }}</strong>
+                    {% else %}
+                        <strong>Кабинет</strong>
+                    {% endif %}
+
+                </a>
+            </div>
+        </nav>
+        <ul class="header__nav _pop-list bot">
+
+            {% for group in catalog_groups %}
+
+                <li class="header__nav_pop-item">
+                    <div class="slider_pop-wrp">
+                    {% if group.subgroups.exists %}
+                        <a href="{% url 'catalog' group_link=group.link subgroup_link="all" %}"  class="car_nav-link select" data-index="{{ forloop.counter0 }}">{{ group.name }}</a>
+                        <aside class="select__container">
+                            <ul class="select__list">
+                                <li class="select__item" data-index="{{ forloop.counter0 }}">
+
+                                    {% for subgroup in group.subgroups.all %}
+                                        <a href="{% url 'catalog' group_link=group.link subgroup_link=subgroup.link %}"  class="select_type-link">
+                                            <strong>{{ subgroup.name }}</strong>
+                                            <i>{{ subgroup.products.count }}</i>
+                                        </a>
+                                    {% endfor %}
+
+                                </li>
+                            </ul>
+                        </aside>
+                    {% else %}
+                        <a href="{% url 'catalog' group_link=group.link subgroup_link="all" %}"  class="car_nav-link" data-index="{{ forloop.counter0 }}">{{ group.name }}</a>
+                    {% endif %}
+                    </div>
+                </li>
+
+            {% endfor %}
+
+        </ul>
+        <nav class="mobile__menu">
+            <ul class="mobile__nav-list">
+                    <li class="mobile__nav-item">
+                    <button class="mobile__menu-btn mobile__nav-link" type="button">
+                        <img src="{% static 'website/img/marks/burgerMenuSvg.svg' %}" alt="burgerMenuSvg" />
+                        <strong>Меню</strong>
+                    </button>
+                        <div class="mobile__menu-hidden-cntr">
+                            <div class="mob_overlay"></div>
+                            <div class="mobile__menu-hidden-content">
+                                <ul class="mobile__menu-hidden_list">
+                                    <li class="mobile__menu-hidden_item">
+                                        <a href="{% url 'auth_user' %}" class="mobile__menu-hidden_link">Account</a>
+                                    </li>
+                                    <li class="mobile__menu-hidden_item">
+                                        <a href="" class="mobile__menu-hidden_link">Catalog</a>
+                                    </li>
+                                    <li class="mobile__menu-hidden_item">
+                                        <a href="" class="mobile__menu-hidden_link">CompareItems</a>
+                                    </li>
+                                    <li class="mobile__menu-hidden_item">
+                                        <a href="" class="mobile__menu-hidden_link">FollowItems</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mobile_sub-bg"></div>
+                        </div>
+                    </li>
+                    <li class="mobile__nav-item">
+                    <a href="" class="mobile__nav-link">
+                        <img src="{% static 'website/img/marks/followSvg.svg' %}" alt="followSvg" />
+                        <strong>Нравится</strong>
+                    </a>
+                </li>
+                <li class="mobile__nav-item">
+                    <a href="" class="mobile__nav-link _catalog">
+                        <img src="{% static 'website/img/marks/catalogDarkSvg.svg' %}" alt="catalogDarkSvg" />
+                        <strong>Каталог</strong>
+                    </a>
+                </li>
+                <li class="mobile__nav-item">
+                    <a href="" class="mobile__nav-link">
+                        <img src="{% static 'website/img/marks/compareSvg.svg' %}" alt="compareSvg" />
+                        <strong>Сравнить</strong>
+                    </a>
+                </li>
+                <li class="mobile__nav-item">
+                    <a href="{% url 'auth_user' %}" class="mobile__nav-link">
+                        <img src="{% static 'website/img/marks/accSvg.svg' %}" alt="accSvg" />
+                        <strong>Кабинет</strong>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="header_mob-btns_cntr">
+            <button class="back_page-btn _grey _header_mob-btns" type="button" onclick="window.history.back();">
+                <img src="{% static 'website/img/marks/backArrowSvg.svg' %}" alt="backArrowSvg">
+            </button>
+            <button class="npotification_btn _orange _header_mob-btns" type="button">
+                <img src="{% static 'website/img/marks/notifSvg.svg' %}" alt="notifSvg">
+                <i class="__notif_count">2</i>
+            </button>
+        </aside>
+    </header>
+
+    <main class="main" id="main_fetch">
+        <section class="order_sect _pt_sect-60 _pb-sect-90">
+            <div class="order_tab-cntr">
+                <h1>Оформление заказа</h1>
+    
+                <!-- Кнопки переключения форм -->
+                <nav class="chars_tab-btns _ord">
+                    <button class="leasing-btn tab_toggle _tab_btn orange-text-btn undeline-btn" type="button" data-tab="is_leasing">
+                        <strong>Лизинг</strong>
+                    </button>
+                    <button class="non-cash_btn tab_toggle _tab_btn orange-text-btn undeline-btn" type="button" data-tab="is_cash">
+                        <strong>Безналичный расчет</strong>
+                    </button>
+                </nav>
+    
+                <!-- Список форм -->
+                <ul class="order_tab-list">
+                    <!-- Форма для лизинга -->
+                    <li class="order_tab-item leasing" data-tab="is_leasing">
+                        <h2> Лизинг тут будет потом </h2>
+                    </li>
+                    <!-- Форма для безналичного расчета -->
+                    <li class="order_tab-item non-cash" data-tab="is_cash">
+                        <form class="order_form_updated" action="{% url 'create_order' product.slug %}" method="POST">
+                            {% csrf_token %}
+                            <!-- Скрытые поля -->
+                            <input type="hidden" name="payment_type" value="is_cash">
+                            <input type="hidden" name="product" value="{{ product.id }}"> <!-- Скрытое поле для product -->
+                            <input type="hidden" name="user" value="{{ user.id }}"> <!-- Скрытое поле для user -->
+                            <input type="hidden" name="amount" value="{{ total_amount }}"> <!-- Скрытое поле для общей суммы -->
+                            <input type="hidden" name="selected_options" value="{{ selected_options_ids|join:',' }}"> <!-- Скрытое поле для выбранных опций -->
+                        
+                            <ul class="order_form-list">
+                                <!-- Блок 1: Заполните данные -->
+                                <li class="order_form-item _form_chars">
+                                    <div class="order_form _form-flex-start">
+                                        <h4 class="form_title">1. Заполните данные</h4>
+                                        <div class="form_input-cntr _mark _half">
+                                            <input
+                                                id="user_name"
+                                                class="name order_input _form_input-orange big_input"
+                                                type="text"
+                                                placeholder="Имя*"
+                                                required
+                                                value="{{ user.first_name }} {{ user.last_name }}"
+                                                
+                                            >
+                                        </div>
+                                        <div class="form_input-cntr _mark _half _ml">
+                                            <input
+                                                id="inn_org_number"
+                                                class="INN order_input _form_input-orange big_input"
+                                                type="text"
+                                                placeholder="ИНН организации"
+                                                value="{{ form.company.value|default:'' }}"
+                                            >
+                                            {{ form.company }}
+                                        </div>
+                                        <div class="form_input-cntr _mark">
+                                            <input
+                                                id="mobile_phone"
+                                                class="tel order_input _form_input-orange big_input"
+                                                type="tel"
+                                                placeholder="Номер телефона*"
+                                                required
+                                                minlength="11"
+                                                maxlength="15"
+                                                value="{{ user.username }}"
+                                                
+                                            >
+                                            <div class="form_input-cntr _mark">
+                                                <input
+                                                    id="address"
+                                                    class="text order_input _form_input-orange big_input"
+                                                    type="text"
+                                                    placeholder="Адрес доставки*"
+                                                    required
+                                                    name="address"
+                                                    value="{{ order.address }}"
+                                                    
+                                                >
+                                        </div>
+                                        <div class="form_input-cntr _mark">
+                                            <input
+                                                id="email"
+                                                class="email order_input _form_input-orange big_input"
+                                                type="email"
+                                                placeholder="Электронная почта*"
+                                                value="{{ user.email }}"
+                                                name="email"
+                                                required
+                                            >
+                                        </div>
+                                    </div>
+                                </li>
+                        
+                                <!-- Блок 2: Список сохраненных компаний -->
+                                <div class="balance__saved_requisite">
+                                    <ul class="balance__saved_list">
+                                        {% for company in companies %}
+                                        <li class="balance__saved_item">
+                                            <div class="balance__saved_cntr">
+                                                <div class="balance__saved_img">
+                                                    
+                                                    <img src="{% static 'website/img/balane/reqImg.png' %}" alt="req image">
+                                                </div>
+                                                <div class="balance__saved_datas">
+                                                    <h4 class="balance__saved_name">{{ company.name }}</h4>
+                                                    <p class="balance__saved_inn">{{ company.inn }}</p>
+                                                    <p class="balance__saved_ogrn">{{ company.ogrn }}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                        
+                                <!-- Блок 3: Первый взнос -->
+                                <li class="order_form-item _form_chars _form-flex-start">
+                                    <h4 class="form_title">2. Определите первый взнос</h4>
+                                    <div class="order_down-payment">
+                                        <div class="order_img-cntr">
+                                            <img src="{{ product.product_images.first.image.url }}" alt="itemCatalog1">
+                                        </div>
+                                        <div class="order_slider-cntr">
+                                            <div class="order_slider-title">
+                                                <strong>{{ product.location }}</strong>
+                                                <p id="min_down_payment_percentage">Товар в наличии, минимальный первый взнос {{ product.min_down_payment_percentage }}%</p>
+                                            </div>
+                                            <div class="order_item-name">
+                                                <h5>{{ product.brand}} {{ product.name }} {{ product.prod_year }}</h5>
+                                            </div>
+                                            <div class="order_slider">
+                                                {{ form.down_payment_percent }}
+                                                <label class="slider_label-procent" for="sliderInputProcent">30%</label>
+                                                <div class="slider-min_max-cntr">
+                                                    <p class="slider_min _order-slider_price">0</p>
+                                                    <p class="slider_max _order-slider_price">{{ total_amount }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                        
+                                <!-- Блок 4: Кнопка "Сформировать заказ" -->
+                                <li class="_form-flex-start">
+                                    <button class="place_order-btn _ord big_btn black_btn" type="submit">Сформировать заказ</button>
+                                </li>
+                        
+                                <!-- Блок 5: Согласие на обработку данных -->
+                                <li class="_form-flex-start">
+                                    <div class="order_mark-cntr _personal-cntr">
+                                        <input
+                                            class="order_checkbox filter_select-checkbox"
+                                            id="personalDataInp"
+                                            type="checkbox"
+                                            name="agree_to_terms"
+                                            required
+                                        >
+                                        <label class="order_label" for="personalDataInp">
+                                            Согласен на обработку
+                                            <a href="" class="order_personal-link undeline-btn grey-underline">персональных данных</a>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slider = document.getElementById('sliderInputProcent');
+                const label = document.querySelector('.slider_label-procent');
+            
+                slider.addEventListener('input', function () {
+                    label.textContent = this.value + '%';
+                });
+            });
+        </script>
+        <!-- JavaScript для переключения форм -->
+        <script>
+            document.querySelectorAll('.tab_toggle').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Скрываем все формы
+                    document.querySelectorAll('.order_tab-item form').forEach(form => {
+                        form.style.display = 'none';
+                    });
+    
+                    // Получаем выбранный тип оплаты
+                    const selectedTab = button.getAttribute('data-tab');
+    
+                    // Отображаем соответствующую форму
+                    const formToShow = document.querySelector(`.order_tab-item[data-tab="${selectedTab}"] form`);
+                    if (formToShow) {
+                        formToShow.style.display = 'block';
+                    }
+                });
+            });
+    
+            // Инициализация первой формы при загрузке страницы
+            document.addEventListener('DOMContentLoaded', () => {
+                const defaultTab = document.querySelector('.tab_toggle');
+                if (defaultTab) {
+                    defaultTab.click();
+                }
+            });
+        </script>
+    </main>
+
+    <footer class="footer">
+        <nav class="footer__nav list">
+            <ul class="footer__list logo_inf">
+                <li>
+                    <a href="" class="footer__logo logo">
+                        <img src="{% static 'website/img/details/logoBotSvg.svg' %}" alt="logoBotSvg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pers_data-btn p_t">Политика обработки персональных данных</a>
+                </li>
+                <li>
+                    <a href="" class="trade_platform-btn p_t">Правила пользования торговой площадкой</a>
+                </li>
+                <li>
+                    <p>«Agaba», все права защищены © 2024</p>
+                </li>
+            </ul>
+            <ul class="footer__list">
+                <li>
+                    <h4>Покупателям</h4>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Как сделать заказ</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Доставка</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Доставка</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Возврат товара</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Правила продажи</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Помощь</a>
+                </li>
+            </ul>
+            <ul class="footer__list">
+                <li>
+                    <h4>Партнерам</h4>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Стать продавцом</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Работа</a>
+                </li>
+            </ul>
+            <ul class="footer__list">
+                <li>
+                    <h4>Компания</h4>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">О нас</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Реквизиты</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">ВКонтакте</a>
+                </li>
+            </ul>
+            <ul class="footer__list services">
+                <li>
+                    <h4>Мы в соцсетях</h4>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">ВКонтакте</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Одноклассники</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">YouTube</a>
+                </li>
+                <li>
+                    <a href="" class="footer__nav-link">Телеграм</a>
+                </li>
+            </ul>
+
+            <div class="qr_code-cntr">
+                <div class="qr_code">
+                    <img src="{% static 'website/img/details/QRFooterSvg.svg' %}" alt="QRFooterSvg" />
+                </div>
+                <h4>Приложение</h4>
+                <p>Наведите камеру</p>
+            </div>
+        </nav>
+
+        <nav class="footer__nav bot">
+            <ul class="footer__service-list">
+                <li>
+                    <a href="" class="footer_service-link">
+                        <img src="{% static 'website/img/services/vkBotSvg.svg' %}" alt="vkBotSvg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer_service-link">
+                        <img src="{% static 'website/img/services/okBotSvg.svg' %}" alt="okBotSvg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer_service-link">
+                        <img src="{% static 'website/img/services/tgBotSvg.svg' %}" alt="tgBotSvg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="footer_service-link">
+                        <img src="{% static 'website/img/services/youtubeBotSvg.svg' %}" alt="youtubeBotSvg" />
+                    </a>
+                </li>
+            </ul>
+            <a href="" class="footer__services">
+                <img src="{% static 'website/img/png/servicesPng.png' %}" alt="servicesPng" />
+            </a>
+        </nav>
+
+        <nav class="footer__mobile">
+            <a href="" class="pers_data-btn p_t">Политика обработки персональных данных</a>
+            <a href="" class="trade_platform-btn p_t">Правила пользования торговой площадкой</a>
+            <p>«Agaba», все права защищены © 2024</p>
+        </nav>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="./js/slider.js"></script>
+<script type="module" src="./js/main.js"></script>
+</div>
+</body>
+</html>

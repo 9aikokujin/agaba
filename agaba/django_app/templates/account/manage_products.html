@@ -1,0 +1,384 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% load account_filters %}
+
+{% block main %}
+    <main class="main">
+
+    {% if category %}
+
+        <section class="seller__product_sect _pt_sect-60 _flex_column">
+            <div class="seller__product_header _flex_column ">
+                {% if product %}
+                    <h2>Редактирование товара</h2>
+                {% else %}
+                    <h2>Новый товар</h2>
+                {% endif %}
+                {% if category %}
+                    {% with category.get_ancestors as ancestors %}
+                        <p class="_color_006 _fs_px_20">{{ ancestors.0.name }} {% for ancestor in ancestors|slice:"1:" %} <i>{{ ancestor.name }}</i>{% endfor %} <i>{{ category.name }}</i></p>
+                    {% endwith %}
+                {% endif %}
+            </div>
+    
+            <div class="seller__product_chars_cntr _flex_column">
+    
+                {% comment %} Блок фундаментальных свойств продукта (они есть у каждого вне зависимости от категорий) {% endcomment %}
+                <div class="seller__product_chars_block _pos_rel" data-product-block="0">
+                    <ul class="seller__product_list _flex_column">
+                        <li class="seller__product_item _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Марка</p>
+                            </div>
+                            <div class="seller__product_char_field _flex_start _pos_rel">
+                                <input data-id="brand" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.brand }}" placeholder="Указать">
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Модель</p>
+                            </div>
+                            <div class="seller__product_char_field _flex_start _pos_rel">
+                                <input data-id="name" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.name }}" placeholder="Указать">
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Год выпуска</p>
+                            </div>
+                            <div class="seller__product_char_field _flex_start">
+                                <input data-id="prod_year" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.prod_year }}" placeholder="Указать">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+    
+                {% for attr_group in category.attribute_groups.all %}
+                    <div class="seller__product_chars_block _pos_rel" data-product-block="{{ attr_group.id }}">
+                        {% if attr_group.name|slice:":1" != "_" %}
+                            <h3 class="_fs_px_20">{{ attr_group.name }}</h3>
+                        {% endif %}
+    
+                        <ul class="seller__product_list _flex_column">
+                            {% for at in attr_group.templates.all %}
+    
+                                {% if at.type == 'text' %}
+                                    <li class="seller__product_item _flex_start">
+                                        <div class="seller__product_char_name">
+                                            {% if at.name|slice:":1" != "_" %}
+                                                <p>{{ at.name }} {% if at.desc %}<i class="_d_block">{{ at.desc }}</i>{% endif %}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="seller__product_char_field _flex_start {% if at.meas_unit%}_pos_rel{% endif %}">
+                                            <input data-id="{{ at.id }}" class="seller__product_input _grey_input_select" type="text" value="{{ attr_values|get:at.id }}" placeholder="{{ at.placeholder }}">
+                                            {% if at.meas_unit %}
+                                                <i class="_select_abbreviation">{{ at.meas_unit.abbr }}</i>
+                                            {% endif %}
+                                        </div>
+                                    </li>
+    
+                                {% elif at.type == 'radio' %}
+                                    <li class="seller__product_item _flex_start">
+                                        <div class="seller__product_char_name">
+                                            {% if at.name|slice:":1" != "_" %}
+                                                <p>{{ at.name }} {% if at.desc %}<i class="_d_block">{{ at.desc }}</i>{% endif %}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="seller__product_char_field _flex_start" data-product-button="{{ at.id }}">
+                                            {% for opt in at.json_data %}
+                                                <button data-opt-id="{{ opt.0 }}" class="toggle__char_btn b_g_toggle_btn btn {% if attr_keys|get:at.id == opt.0 or not product and forloop.counter == 1 %} _active {% endif %}" type="button">{{ opt.1 }}</button>
+                                            {% endfor %}
+                                        </div>
+                                    </li>
+    
+                                {% elif at.type == 'dropdown' %}
+                                    <li class="seller__product_item _flex_start">
+                                        <div class="seller__product_char_name">
+                                            {% if at.name|slice:":1" != "_" %}
+                                                <p>{{ at.name }} {% if at.desc %}<i class="_d_block">{{ at.desc }}</i>{% endif %}</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="seller__product_char_field _flex_start _pos_rel">
+                                            <select data-id="{{ at.id }}" class="seller__product_input _grey_input_select">
+                                                {% comment %} <option value disabled selected></option> {% endcomment %}
+                                                <!-- Add your options here -->
+                                                {% for opt in at.json_data %}
+                                                    <option value="{{ opt.0 }}" {% if attr_keys|get:at.id == opt.0 %} selected {% endif %}>{{ opt.1 }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </li>
+                                {% endif %}
+    
+                            {% endfor %}
+    
+                        </ul>
+                        
+                    </div>
+                {% endfor %}
+    
+                <div class="seller__product_chars_block _pos_rel" data-optional-block="1">
+                    <h3 class="_fs_px_20">Дополнительные опции</h3>
+                    <ul class="seller__product_list _flex_column">
+                        <li class="seller__product_item _pad_start _flex_start">
+                            <div class="seller__product_char_field _flex_start _option__field" data-product-additional-option="1">
+                                <ul class="added__chars_list _flex_start _wrap">
+                                    <li class="added__chars_item _list _pos_rel">
+                                        <button class="add__options_btn b_g_toggle_btn btn _flex_center" type="button">
+                                            <img src="{% static 'website/img/accPublication/addSvg.svg' %}" alt="">
+                                            <strong>Добавить опцию</strong>
+                                        </button>
+                                        <div class="acc__all_orders_select">
+                                            <ul class="filter_select-list">
+                                                <li class="filter_select-item">
+                                                    <h4>Добавьте платные опции</h4>
+                                                </li>
+                                                <li class="filter_select-item">
+                                                    <p class="add__options_descr">Название опции (не более 40 символов)</p>
+                                                    <div class="search__filter_cntr">
+                                                        <input class="add__options_input _grey_input_select _select" type="text" value="" placeholder="Укажите">
+                                                    </div>
+                                                </li>
+                                                <li class="filter_select-item">
+                                                    <p class="add__options_descr">Название опции (не более 40 символов)</p>
+                                                    <div class="search__filter_cntr _pos_rel _flex_start">
+                                                        <input class="add__price_input _grey_input_select _select" type="text" value="" placeholder="Стоимость">
+                                                        {% comment %} <i class="_select_abbreviation">л.с.</i> {% endcomment %}
+                                                    </div>
+                                                </li>
+                                                <li class="filter_select-item">
+                                                    <button class="add__options_create_btn orange-btn" type="button">Добавить</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+    
+                                    {% if product %}
+                                        {% for opt in product.additional_options.all %}
+                                            <li class="added__chars_item">
+                                                <div data-id="additional_option" class="add__char_btn _cntr  b_g_toggle_btn btn _flex_center">
+                                                    <button class="add__char_close">
+                                                        <img src="{% static 'website/img/accPublication/closeSvg.svg' %}" alt="">
+                                                    </button>
+                                                    <strong class="_option__name">{{ opt.name }}</strong>
+                                                    <i class="_option__price">{{ opt.price }} ₽</i>
+                                                </div>                                        
+                                            </li>
+                                        {% endfor %}                                       
+                                    {% endif %}
+    
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="seller__product_chars_block _pos_rel">
+                    <h3 class="_fs_px_20">Медиа</h3>
+                    <ul class="seller__product_list _add_content _flex_column">
+                        <li class="seller__product_item _flex_start_start">
+                            <div class="seller__product_char_name">
+                                <p>Фотографии<i class="_d_block">Важно соблюдать ракурсы и желательно, чтобы фотографии были оригинальными</i></p>
+                            </div>
+                            <div class="seller__product_char_field _pos_rel" data-pictures-container>
+                                <ul class="upload__image_list _flex_start _wrap">
+                                    {% for ip in image_placeholders %}
+                                        <li class="upload__image_item _flex_column_center _pos_rel">
+                                            <button class="upload__delete_file_btn" type="button" {% if ip.id in product_images %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+                                                <img src="{% static 'website/img/accPublication/closeSvg.svg' %}" alt="">
+                                            </button>
+                                            <div class="upload__img_cntr {% if ip.id in product_images %}_uploaded{% endif %}">
+                                                {% if ip.id in product_images %}
+                                                    {% with product_image=product_images|get:ip.id %}
+                                                        <img class="upload__file_picture" src="data:image/{{ product_image|get:'format' }};base64,{{ product_image|get:'base64' }}"  alt="{{ ip.alt }}" data-original-src="{% static 'website/img/accPublication/'|add:ip.src %}">
+                                                    {% endwith %}
+                                                {% else %}
+                                                    <img class="upload__file_picture" src="{% static 'website/img/accPublication/'|add:ip.src %}" alt="{{ ip.alt }}">
+                                                {% endif %}
+                                            </div>
+                                            <label class="upload__file_label" for="{{ ip.id }}" {% if ip.id in product_images %}style="display: none;"{% else %}style="display: block;"{% endif %}>
+                                                <input class="upload__file_input" type="file" accept="image/*" name="uploadPictures" id="{{ ip.id }}">
+                                            </label>
+                                            <p class="_color_006" {% if ip.id in product_images %}style="display: none;"{% else %}style="display: block;"{% endif %}>{{ ip.label }} </p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start_start">
+                            <div class="seller__product_char_name">
+                                <p>Фото схемы установки</p>
+                            </div>
+                            <div class="seller__product_char_field" data-pictures-container>
+                                <div class="upload__image_item _164 _flex_column_center _pos_rel">
+                                    <button class="upload__delete_file_btn" type="button">
+                                        <img src="{% static 'website/img/accPublication/closeSvg.svg' %}" alt="">
+                                    </button>
+                                    <div class="upload__img_cntr">
+                                        <img class="upload__file_picture" src="{% static 'website/img/accPublication/addPictures.png' %}" alt="add picture place">
+                                    </div>
+                                    <label class="upload__file_label" for="uploadFront">                          
+                                        <input class="upload__file_input" type="file" accept="image/*" name="uploadPictures" id="uploadFront">
+                                    </label>
+                                    <p class="_color_006">Добавить</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start_start">
+                            <div class="seller__product_char_name">
+                                <p>Доп. фотографии<i class="_d_block">Не более 20 штук</i></p>
+                            </div>
+                            <ul class="seller__product_char_field _flex_start_start _wrap" data-pictures-list>
+                                <li class="upload__image_item _164 _flex_column_center _pos_rel _default">
+                                    <button class="upload__delete_file_btn" type="button">
+                                        <img src="{% static 'website/img/accPublication/closeSvg.svg' %}" alt="">
+                                    </button>
+                                    <div class="upload__img_cntr" draggable="true">
+                                        <img class="upload__file_picture" src="{% static 'website/img/accPublication/addPictures.png' %}" alt="add picture place">
+                                    </div>
+                                    <label class="upload__file_label" for="uploadFront">                          
+                                        <input class="upload__file_input" type="file" accept="image/*" name="uploadPictures" id="uploadFront" multiple>
+                                    </label>
+                                    <p class="_color_006">Добавить</p>
+                                </li>
+                            </ul>
+                        </li>                        
+                        <li class="seller__product_item _flex_start_start" data-link-handler>
+                            <div class="seller__product_char_name">
+                                <p>Ссылка на видео<i class="_d_block">Ссылка на RuTube, VK Видео, Дзен Видео</i></p>
+                                <button class="seller__product_delete_link _flex_center">
+                                    <strong>Удалить видео</strong>
+                                </button>
+                            </div>
+                            <div class="seller__product_char_field _pos_rel">
+                                <div class="seller__product_char_field _flex_start _pos_rel">
+                                    <input data-id="video_link" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.video_link }}" placeholder="Указать">
+                                    <button class="seller__product_select_btn _link _pos_abs"></button>
+                                </div>
+                                <div class="uploaded__link_cntr _pos_rel">
+                                    <img class="_uploaded_default" src="{% static 'website/img/accPublication/preview_Default.png' %}" alt="preview picture video">
+                                    <a class="uploaded__preview_link" href="">
+                                        <img src="{% static 'website/img/accPublication/play.svg' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>                        
+                        <li class="seller__product_item _flex_start_start">
+                            <div class="seller__product_char_name">
+                                <p>Документы<i class="_d_block">Рекомендуем загрузить сертификаты и техническую документацию. PDF и DOC, до 5 Мб</i></p>
+                            </div>
+                            <div class="seller__product_char_field" data-pictures-container>
+                                <div class="upload__image_item _164 _flex_column_center _pos_rel">
+                                    <button class="upload__delete_file_btn" type="button">
+                                        <img src="{% static 'website/img/accPublication/closeSvg.svg' %}" alt="">
+                                    </button>
+                                    <div class="upload__img_cntr">
+                                        <img class="upload__file_picture" src="{% static 'website/img/accPublication/addPictures.png' %}" alt="add picture place">
+                                    </div>
+                                    <label class="upload__file_label" for="uploadFront">                          
+                                        <input class="upload__file_input" type="file" accept="image/*" name="uploadPictures" id="uploadFront">
+                                    </label>
+                                    <p class="_color_006">Добавить</p>
+                                </div>                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="seller__product_chars_block _pos_rel">
+                    <h3 class="_fs_px_20">Подробности</h3>
+                    <ul class="seller__product_list _flex_column">
+                        <li class="seller__product_item _pad_start _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Описание</p>
+                            </div>
+                            <div class="seller__product_char_field _textarea_field _flex_start">
+                                <textarea data-id="description" class="seller__product_input _textarea _grey_input_select _select" type="text" placeholder="Расскажите подробнее о технике">{{ product.description }}</textarea>
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Время ожидания заказа</p>
+                            </div>
+                            <div class="seller__product_char_field _flex_start _pos_rel">
+                                <input data-id="delivery_time_days" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.delivery_time_days }}" placeholder="Указать">
+                                <i class="_select_abbreviation">дней</i>
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Город отгрузки<i class="_d_block">указывайте верный город, для показа в других городах используйте рекламу</i></p>
+                            </div>
+                            <div class="seller__product_char_field _flex_start _pos_rel">
+                                <input data-id="location" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.location }}" placeholder="Указать">
+                            </div>
+                        </li>
+                        <li class="seller__product_item _flex_start">
+                            <div class="seller__product_char_name">
+                                <p>Стоимость<i class="_d_block">при оплате безналичным переводом удержется 1%</i></p>
+                            </div>
+                            <div class="seller__product_char_field _flex_start _pos_rel">
+                                <input data-id="price" class="seller__product_input _grey_input_select _select" type="text" value="{{ product.cur_price }}" placeholder="Указать">
+                                <i class="_select_abbreviation">₽</i>
+                            </div>
+                        </li>
+                    </ul>
+    
+                    {% csrf_token %}
+    
+                    <div class="seller__product_publication _flex_column_start">
+                        <button class="seller__product_publication_btn orange-btn" type="submit">{% if product %}Сохранить изменения товара{% else %}Опубликовать товар бесплатно{% endif %}</button>
+                        <div class="publication__text">
+                            <p>Вы публикуете товар и данные в нём для открытого доступа в интернете.</p>
+                            <p>Вы также соглашаетесь с правилами и политикой использованием фотографий на AGABA.ru.</p>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            
+        </section>
+    
+    {% else %}
+    
+        <section class="seller__product_sect _pt_sect-60 _flex_column">
+            <div class="seller__product_header _flex_column ">
+                <h2>Новый товар</h2>
+                <p class="_color_006 _fs_px_20">Выберите категорию и подкатегорию вашей техники</p>
+            </div>
+    
+            <div class="seller__product_tabs _flex_start_stretch">
+                <nav class="seller__products_btns _flex_column _pos_rel" tab-list="tabs-buttons">
+                    {% for category in root_categories %}
+                        <button class="sellecr__product_tab_btn _tab_btn_s" type="button" data-tab-index="{{ forloop.counter }}">
+                            {{ category.svg_icon|safe }}
+                            <strong class="_fs_px_20 _color_006">{{ category.name }}</strong>
+                        </button>
+                    {% endfor %}
+                </nav>
+                <div class="seller__product_tab_cntr" tab-list="tabs-container">
+                    {% for category in root_categories %}
+                        <ul class="seller__product_tab_list _flex_column" data-tab-index="{{ forloop.counter }}">
+                            {% for child in category.children.all %}
+                                <li class="seller__product_tab_item">
+                                    <a href="{% url 'add_new_product_step2' category_slug=child.slug %}"  class="product__subcategory_link _fs_px_20">{{ child.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>               
+            </div>
+    
+            
+        </section>
+        
+    {% endif %}
+
+    </main>
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+._seller_profile .acc_main-item._balance {
+  justify-content: flex-start;
+  flex-direction: unset;
+  gap: 40px;
+}
+
+.acc_main-item._balance > ._flex_column .acc_balance-score {
+  padding-top: 10px;
+}
+
+.acc_balance-score._color_f35b1a {
+    color: var(--colorf35b1a);
+}
+
+.acc_balance-score._bonus{
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  ._seller_profile .acc_main-item._balance {
+    gap: 20px;
+  }
+
+  .acc_main-item._balance > ._flex_column .acc_balance-score {
+    margin-top: 0;
+  }
+}

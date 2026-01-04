@@ -1,0 +1,33 @@
+{% load static %}
+
+{% if is_root_category %}
+    <ul id="filter_placeholder" class="catalog_list">
+        {% for product in products|slice:":10" %}
+            {% include "website/_catalog_item.html" with product=product %}
+        {% endfor %}
+    </ul>
+
+    <ul class="catalog_list advert">
+        {% for adv_img in adverts_small %}
+            <li class="catalog_item">
+                <div class="catalog_img advert _sm">
+                    <img src="{% static 'website/img/reklama/' %}{{ adv_img }}" alt="advertPng" />
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <ul class="catalog_list" id="catalog_list">
+        {% for product in products|slice:"10:" %}
+            {% include "website/_catalog_item.html" with product=product %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <ul id="filter_placeholder" class="catalog_list">
+        {% for product in products %}
+            {% include "website/_catalog_item.html" with product=product %}
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% include "website/__catalog_pagination.html" %}

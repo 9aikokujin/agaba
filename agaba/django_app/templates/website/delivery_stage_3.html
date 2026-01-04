@@ -1,0 +1,300 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block title %}Оформление заказа{% endblock %}
+
+{% block main %}
+    <main class="main" id="main_fetch">
+
+        <section class="account_sect _mob-style  _pt_sect-60 _delivery-sect">
+            <aside class="account_nav _acc-BG">
+                <ul class="account_nav-list">
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 17.5009V10.8342C12.5 10.6132 12.4122 10.4012 12.2559 10.2449C12.0996 10.0887 11.8877 10.0009 11.6667 10.0009H8.33333C8.11232 10.0009 7.90036 10.0887 7.74408 10.2449C7.5878 10.4012 7.5 10.6132 7.5 10.8342V17.5009M2.5 8.3342C2.49994 8.09176 2.55278 7.85222 2.65482 7.6323C2.75687 7.41238 2.90566 7.21737 3.09083 7.06087L8.92417 2.0617C9.22499 1.80746 9.60613 1.66797 10 1.66797C10.3939 1.66797 10.775 1.80746 11.0758 2.0617L16.9092 7.06087C17.0943 7.21737 17.2431 7.41238 17.3452 7.6323C17.4472 7.85222 17.5001 8.09176 17.5 8.3342V15.8342C17.5 16.2762 17.3244 16.7002 17.0118 17.0127C16.6993 17.3253 16.2754 17.5009 15.8333 17.5009H4.16667C3.72464 17.5009 3.30072 17.3253 2.98816 17.0127C2.67559 16.7002 2.5 16.2762 2.5 15.8342V8.3342Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Главная</strong>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link _active">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5 5.83464H15C14.558 5.83464 14.134 5.65904 13.8215 5.34648C13.5089 5.03392 13.3333 4.61 13.3333 4.16797V1.66797M5.83333 6.66797V14.0013C5.83333 14.2513 6 14.5013 6.16667 14.668C6.33333 14.8346 6.58333 15.0013 6.83333 15.0013H12.5M2.5 10.0013V17.3346C2.5 17.5846 2.66667 17.8346 2.83333 18.0013C3 18.168 3.25 18.3346 3.5 18.3346H9.16667M17.5 5.0013V10.418C17.5 11.0846 16.9167 11.668 16.25 11.668H10.4167C9.75 11.668 9.16667 11.0846 9.16667 10.418V2.91797C9.16667 2.2513 9.75 1.66797 10.4167 1.66797H14.1667L17.5 5.0013Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Заказы</strong>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5 6.25L10 1.875L2.5 6.25M17.5 6.25L10 10.625M17.5 6.25V13.75L10 18.125M2.5 6.25L10 10.625M2.5 6.25V13.75L10 18.125M10 10.625V18.125" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Товары</strong>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.61667 13.2C8.04333 13.15 7.46167 13.125 6.875 13.125H6.25C5.25544 13.125 4.30161 12.7299 3.59835 12.0266C2.89509 11.3234 2.5 10.3696 2.5 9.375C2.5 8.38044 2.89509 7.42661 3.59835 6.72335C4.30161 6.02009 5.25544 5.625 6.25 5.625H6.875C7.46167 5.625 8.04333 5.6 8.61667 5.55M8.61667 13.2C8.8275 14.0017 9.10333 14.7767 9.4375 15.5192C9.64333 15.9775 9.4875 16.5275 9.05167 16.7783L8.50417 17.095C8.045 17.36 7.45417 17.1925 7.23167 16.7108C6.70358 15.5684 6.30121 14.3719 6.03167 13.1425M8.61667 13.2C8.28915 11.9514 8.1239 10.6658 8.125 9.375C8.125 8.05333 8.29583 6.77167 8.61667 5.55M8.61667 13.2C11.1846 13.4201 13.6852 14.1376 15.9792 15.3125M8.61667 5.55C11.1846 5.32993 13.6852 4.61244 15.9792 3.4375M15.9792 15.3125C15.8808 15.6292 15.775 15.9408 15.6625 16.25M15.9792 15.3125C16.4325 13.8513 16.716 12.3427 16.8242 10.8167M15.9792 3.4375C15.8814 3.12241 15.7759 2.80981 15.6625 2.5M15.9792 3.4375C16.4325 4.8987 16.716 6.40725 16.8242 7.93333M16.8242 7.93333C17.2367 8.2775 17.5 8.79583 17.5 9.375C17.5 9.95417 17.2367 10.4725 16.8242 10.8167M16.8242 7.93333C16.8925 8.89323 16.8925 9.85677 16.8242 10.8167" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Реклама</strong>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="account_nav-list">
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.8327 17.5V15.8333C15.8327 14.9493 15.4815 14.1014 14.8564 13.4763C14.2313 12.8512 13.3834 12.5 12.4993 12.5H7.49935C6.61529 12.5 5.76745 12.8512 5.14233 13.4763C4.5172 14.1014 4.16602 14.9493 4.16602 15.8333V17.5M13.3327 5.83333C13.3327 7.67428 11.8403 9.16667 9.99935 9.16667C8.1584 9.16667 6.66602 7.67428 6.66602 5.83333C6.66602 3.99238 8.1584 2.5 9.99935 2.5C11.8403 2.5 13.3327 3.99238 13.3327 5.83333Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Профиль</strong>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2495_33727)">
+                                    <path d="M8.58268 17.5013C8.72217 17.755 8.92722 17.9666 9.17642 18.114C9.42563 18.2613 9.70983 18.3391 9.99935 18.3391C10.2889 18.3391 10.5731 18.2613 10.8223 18.114C11.0715 17.9666 11.2765 17.755 11.416 17.5013M3.33268 1.66797C2.33268 3.08464 1.66602 4.7513 1.66602 6.66797M18.3327 6.66797C18.3327 4.7513 17.666 3.08464 16.666 1.66797M4.99935 6.66797C4.99935 5.34189 5.52613 4.07012 6.46382 3.13243C7.4015 2.19475 8.67327 1.66797 9.99935 1.66797C11.3254 1.66797 12.5972 2.19475 13.5349 3.13243C14.4726 4.07012 14.9993 5.34189 14.9993 6.66797C14.9993 12.5013 17.4993 14.168 17.4993 14.168H2.49935C2.49935 14.168 4.99935 12.5013 4.99935 6.66797Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2495_33727">
+                                    <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>                                
+                            <strong>Уведомления</strong>
+                            <i class="__alert_count">19</i>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.1667 11.6667H14.175M5.83333 5.83333H15.8333C16.2754 5.83333 16.6993 6.00893 17.0118 6.32149C17.3244 6.63405 17.5 7.05797 17.5 7.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H15.8333" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Баланс</strong>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="account_nav-list">
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.1667 11.6667H14.175M5.83333 5.83333H15.8333C16.2754 5.83333 16.6993 6.00893 17.0118 6.32149C17.3244 6.63405 17.5 7.05797 17.5 7.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H15.8333" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Отзывы и вопросы</strong>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.57435 7.49874C7.77027 6.94179 8.15698 6.47216 8.66598 6.17301C9.17498 5.87387 9.77343 5.76452 10.3553 5.86433C10.9372 5.96414 11.465 6.26667 11.8452 6.71834C12.2255 7.17001 12.4336 7.74167 12.4327 8.33207C12.4327 9.99874 9.93268 10.8321 9.93268 10.8321M9.99935 14.1654H10.0077M6.58268 16.6654C8.17316 17.4813 10.0028 17.7023 11.7418 17.2886C13.4808 16.8748 15.0148 15.8536 16.0675 14.4089C17.1201 12.9642 17.6222 11.191 17.4832 9.40887C17.3441 7.62675 16.5732 5.95288 15.3092 4.6889C14.0452 3.42492 12.3713 2.65395 10.5892 2.51492C8.80709 2.37589 7.03391 2.87794 5.5892 3.93061C4.14449 4.98328 3.12326 6.51733 2.70953 8.25633C2.29581 9.99533 2.5168 11.8249 3.33268 13.4154L1.66602 18.3321L6.58268 16.6654Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Обращения</strong>
+                        </a>
+                    </li>
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2495_33747)">
+                                    <path d="M4.10768 4.10964L7.64102 7.64297M12.3577 7.64297L15.891 4.10964M12.3577 12.3596L15.891 15.893M7.64102 12.3596L4.10768 15.893M18.3327 10.0013C18.3327 14.6037 14.6017 18.3346 9.99935 18.3346C5.39698 18.3346 1.66602 14.6037 1.66602 10.0013C1.66602 5.39893 5.39698 1.66797 9.99935 1.66797C14.6017 1.66797 18.3327 5.39893 18.3327 10.0013ZM13.3327 10.0013C13.3327 11.8423 11.8403 13.3346 9.99935 13.3346C8.1584 13.3346 6.66602 11.8423 6.66602 10.0013C6.66602 8.16035 8.1584 6.66797 9.99935 6.66797C11.8403 6.66797 13.3327 8.16035 13.3327 10.0013Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2495_33747">
+                                        <rect width="20" height="20" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>                                
+                            <strong>Помощь</strong>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="account_nav-list">
+                    <li class="account_nav-item">
+                        <a href="" class="account_nav-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                            <strong>Выйти</strong>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="acc_main-cntr _delivery_page_w">
+                <ul class="delivery_page _acc-list">
+                    <li class="acc_main-item _order-back_date">
+                        <div class="order_btn-cntr">
+                            <a href="" class="back_btn _small_btn arrow-btn">Мои заказы</a>
+                        </div>
+                        
+                    </li>
+                    <li class="acc_main-item _order_header">
+                        <h1>Заказ <i>№000000001</i></h1>
+                    </li>
+                    <li class="acc_main-item _delivery-progress">
+                        <div class="delivery__progress-cntr">
+                            <progress
+                                class="delivery__progress _green_progress"
+                                value="24" 
+                                min="0" 
+                                max="100"
+                            >
+                            </progress>
+                        </div>
+                        <ul class="delivery__progress-inf_list">
+                            <li class="delivery__progress-inf_item _start">
+                                <p>г. Благовещенск</p>
+                            </li>
+
+                            <li class="delivery__progress-inf_item _dev-date">
+                                <p>тралл</p>
+                                <time datetime="--11-27">до 28 июля</time>
+                            </li>
+                            <li class="delivery__progress-inf_item _end">
+                                <p>г. Пермь</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="acc_main-item _order_docs_btn-cntr">
+                        <ul class="order_docs-list">
+                            <li class="order_docs-item _completed_item">
+                                <div class="order_addDoc-img _step_completed">
+                                    <img src="/img/accSide/addDocCvg.svg" alt="addDocCvg">
+                                </div>
+                                <div class="order_doc-description">
+                                    <h5 class="order_addDoc-name">
+                                        Заказ создан
+                                    </h5>
+                                    <p class="order_addDoc-size">Мини-трактор Lovol TE354, 2024</p>
+                                </div>
+                                <div class="delivery_step-date">
+                                    <time datetime="">19 июня 19:35</time>
+                                </div>
+                            </li>
+                            <li class="order_docs-item _completed_item">
+                                <div class="order_addDoc-img _delivery_img _step_completed">
+                                    <img src="/img/accSide/mediumTrallDevSvg.svg" alt="mediumTrallDevSvg">
+                                </div>
+                                <div class="order_doc-description">
+                                    <h5 class="order_addDoc-name">
+                                        В пути
+                                    </h5>
+                                    <p class="order_addDoc-size">до 28.10.2024 г.</p>
+                                </div>
+                                <div class="delivery_step-date">
+                                    <time datetime="">19 июня 19:35</time>
+                                </div>
+                            </li>
+                            <li class="order_docs-item">
+                                <div class="order_addDoc-img _shipment_step">
+                                    <img src="/img/accSide/shipmentSvg.svg" alt="shipmentSvg">
+                                </div>
+                                <div class="order_doc-description">
+                                    <h5 class="order_addDoc-name">
+                                        Отгрузка
+                                    </h5>
+                                </div>
+                                <div class="delivery_step-date">
+                                    <time datetime="">Ожидается 25 июля</time>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="acc_main-item _order_docs_btn-cntr">
+                        <h4>Документы</h4>
+                        <ul class="order_docs-list">
+                            <li class="order_docs-item">
+                                <div class="order_doc-img"> 
+                                    <img src="/img/accSide/docImgScg.svg" alt="docImgScg">
+                                </div>
+                                <div class="order_doc-description">
+                                    <h5 class="order_doc-name">
+                                        Памятка: как происходит сдача груза
+                                    </h5>
+                                    <p class="order_doc-size">34,5 кБ</p>
+                                </div>
+                                <div class="order_doc-btn_actions">
+                                    <a class="order_doc-view_doc-btn _order-docs_btns" target="_blank">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.06251 12.3474C1.97916 12.1229 1.97916 11.8759 2.06251 11.6514C2.87421 9.68324 4.25202 8.00042 6.02128 6.81628C7.79053 5.63214 9.87155 5 12.0005 5C14.1295 5 16.2105 5.63214 17.9797 6.81628C19.749 8.00042 21.1268 9.68324 21.9385 11.6514C22.0218 11.8759 22.0218 12.1229 21.9385 12.3474C21.1268 14.3155 19.749 15.9983 17.9797 17.1825C16.2105 18.3666 14.1295 18.9988 12.0005 18.9988C9.87155 18.9988 7.79053 18.3666 6.02128 17.1825C4.25202 15.9983 2.87421 14.3155 2.06251 12.3474Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.0005 14.9994C13.6574 14.9994 15.0005 13.6562 15.0005 11.9994C15.0005 10.3425 13.6574 8.99938 12.0005 8.99938C10.3437 8.99938 9.00051 10.3425 9.00051 11.9994C9.00051 13.6562 10.3437 14.9994 12.0005 14.9994Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>                                            
+                                    </a>
+                                    <a class="order_doc_download_btn _order-docs_btns" href="/path/to/your/file.pdf" download="">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16V4M12 16L6 10M12 16L18 10M19 20H5" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>                                            
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="order_docs-item">
+                                <div class="order_doc-img">
+                                    <img src="/img/accSide/docImgScg.svg" alt="docImgScg">
+                                </div>
+                                <div class="order_doc-description">
+                                    <h5 class="order_doc-name">
+                                        Памятка: как происходит сдача груза происходит сдача груза
+                                    </h5>
+                                    <p class="order_doc-size">34,5 кБ</p>
+                                </div>
+                                <div class="order_doc-btn_actions">
+                                    <a class="order_doc-view_doc-btn _order-docs_btns" target="_blank">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.06251 12.3474C1.97916 12.1229 1.97916 11.8759 2.06251 11.6514C2.87421 9.68324 4.25202 8.00042 6.02128 6.81628C7.79053 5.63214 9.87155 5 12.0005 5C14.1295 5 16.2105 5.63214 17.9797 6.81628C19.749 8.00042 21.1268 9.68324 21.9385 11.6514C22.0218 11.8759 22.0218 12.1229 21.9385 12.3474C21.1268 14.3155 19.749 15.9983 17.9797 17.1825C16.2105 18.3666 14.1295 18.9988 12.0005 18.9988C9.87155 18.9988 7.79053 18.3666 6.02128 17.1825C4.25202 15.9983 2.87421 14.3155 2.06251 12.3474Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.0005 14.9994C13.6574 14.9994 15.0005 13.6562 15.0005 11.9994C15.0005 10.3425 13.6574 8.99938 12.0005 8.99938C10.3437 8.99938 9.00051 10.3425 9.00051 11.9994C9.00051 13.6562 10.3437 14.9994 12.0005 14.9994Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>                                            
+                                    </a>
+                                    <a class="order_doc_download_btn _order-docs_btns" href="/path/to/your/file.pdf" download="">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16V4M12 16L6 10M12 16L18 10M19 20H5" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>                                            
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="order_cashless-aside _acc-list">
+                    <li class="order_cashless-aside_item">
+                        <ul class="delivery_aside_inf-list">
+                            <li class="delivery_aside_inf-item _dev_price">
+                                <p>Стоимость</p>
+                                <p>250 000 ₽ </p>
+                            </li>
+                            <li class="delivery_aside_inf-item _dev_date">
+                                <p>Срок доставки</p>
+                                <p>до 25.08.2024 г.</p>
+                            </li>
+                            <li class="delivery_aside_inf-item _dev_chars">
+                                <p>Получатель</p>
+                                <p>ООО ТК “Грузовой котик”</p>
+                                <p>Гладков Алексей Яковлевич</p>
+                            </li>
+                            <li class="delivery_aside_inf-item _dev_chars">
+                                <p>Груз</p>
+                                <p>Мини-трактор Lovol TE354, 2024</p>
+                                <a href="" class="delivery_aside-order_link">Заказ №0008386734</a>
+                            </li>
+                            <li class="delivery_aside_inf-item _dev_chars">
+                                <p>Габариты</p>
+                                <p>4521 мм х 2130 мм х 3130 мм</p>
+                                <p>4,580кг</p>
+                            </li>
+                        </ul>                        
+                    </li>
+                    <li class="order_cashless-aside_item __chat-bg _acc-BG">
+                        <a href="{% url 'account' 'messages' %}"  class="order_aside-btn _chat-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00333 18.0367C4.33225 18.0958 4.6658 18.1254 5 18.125C6.05622 18.1264 7.09132 17.8292 7.98583 17.2675C8.63083 17.4192 9.30583 17.5 10 17.5C14.435 17.5 18.125 14.1917 18.125 10C18.125 5.80833 14.435 2.5 10 2.5C5.565 2.5 1.875 5.80833 1.875 10C1.875 12.0075 2.72917 13.8225 4.10333 15.16C4.29667 15.3483 4.33417 15.5167 4.315 15.6125C4.21201 16.1309 3.97855 16.6145 3.63667 17.0175C3.56569 17.1013 3.51805 17.2023 3.49852 17.3104C3.479 17.4184 3.4883 17.5297 3.52547 17.633C3.56265 17.7364 3.62639 17.8281 3.71028 17.8989C3.79417 17.9698 3.89524 18.0173 4.00333 18.0367ZM6.875 9.0625C6.62636 9.0625 6.3879 9.16127 6.21209 9.33709C6.03627 9.5129 5.9375 9.75136 5.9375 10C5.9375 10.2486 6.03627 10.4871 6.21209 10.6629C6.3879 10.8387 6.62636 10.9375 6.875 10.9375C7.12364 10.9375 7.3621 10.8387 7.53791 10.6629C7.71373 10.4871 7.8125 10.2486 7.8125 10C7.8125 9.75136 7.71373 9.5129 7.53791 9.33709C7.3621 9.16127 7.12364 9.0625 6.875 9.0625ZM9.0625 10C9.0625 9.75136 9.16127 9.5129 9.33709 9.33709C9.5129 9.16127 9.75136 9.0625 10 9.0625C10.2486 9.0625 10.4871 9.16127 10.6629 9.33709C10.8387 9.5129 10.9375 9.75136 10.9375 10C10.9375 10.2486 10.8387 10.4871 10.6629 10.6629C10.4871 10.8387 10.2486 10.9375 10 10.9375C9.75136 10.9375 9.5129 10.8387 9.33709 10.6629C9.16127 10.4871 9.0625 10.2486 9.0625 10ZM13.125 9.0625C12.8764 9.0625 12.6379 9.16127 12.4621 9.33709C12.2863 9.5129 12.1875 9.75136 12.1875 10C12.1875 10.2486 12.2863 10.4871 12.4621 10.6629C12.6379 10.8387 12.8764 10.9375 13.125 10.9375C13.3736 10.9375 13.6121 10.8387 13.7879 10.6629C13.9637 10.4871 14.0625 10.2486 14.0625 10C14.0625 9.75136 13.9637 9.5129 13.7879 9.33709C13.6121 9.16127 13.3736 9.0625 13.125 9.0625Z" fill="white"/>
+                            </svg>                                
+                            <strong>Перейти в общий чат</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

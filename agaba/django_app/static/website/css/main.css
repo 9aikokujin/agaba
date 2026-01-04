@@ -1,0 +1,21 @@
+/* layout */
+@import url(./layout/normalize.css);
+@import url(./layout/base.css);
+@import url(./layout/font.css);
+@import url(./layout/_helpers.css);
+@import url(./layout/color.css);
+@import url(./layout/variables.css);
+
+/* components */
+@import url(./block.css);
+@import url(./components/_header.css);
+@import url(./components/_footer.css);
+@import url(./components/_acc_nofitication.css);
+@import url(./components/account-main-seller.css);
+@import url(./components/account-order-delivery-seller.css);
+@import url(./components/account-active-moderate-cancel-down-seller.css);
+@import url(./components/account-product-publication-seller-step-one.css);
+@import url(./components/account-product-publication-seller-step-two.css);
+@import url(./components/account-compare-follows.css);
+@import url(./components/account-review-model-product.css);
+@import url(./components/pagination.css);

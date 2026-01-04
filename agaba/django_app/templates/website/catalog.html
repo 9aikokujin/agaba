@@ -1,0 +1,303 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<main class="main" id="main_fetch">
+
+    <nav class="breadcrumb-cntr none" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            {% if category %}
+                {% with category.get_ancestors as ancestors %}
+                    {% for ancestor in ancestors %}
+                        <li class="breadcrumb-item"><a href="{% url 'catalog' slug=ancestor.slug %}" >{{ ancestor.name }}</a></li>
+                    {% endfor %}
+                {% endwith %}
+                <li class="breadcrumb-item active"><a href="{% url 'catalog' slug=category.slug %}" >{{ category.name }}</a></li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <section class="catalog_section catalog_page">
+        <div class="catalog_filters-cntr">
+            <h1>{{ category.name }}</h1>
+            {% if category.children.exists %}
+                <ul class="catalog_list-choose_items">
+                    {% for child in category.children.all %}
+                        <li class="catalog_item-choose">
+                            <a href="{% url 'catalog' slug=child.slug %}"  class="catalog_choose-link">
+                                {% if child.image %}
+                                    <img src="{{ child.image.url }}" alt="itemFilter">
+                                {% else %}
+                                    <img src="{% static 'website/img/no_image.png' %}" alt="{% static 'website/img/no_image.png' %}"/>
+                                {% endif %}
+                                <strong>{{ child.name }}</strong>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+
+            <ul class="filter__feature-items">
+                <li class="filter__item">
+                    <button class="filter_feature-btn btn dark-btn var" type="button">
+                        <img src="{% static 'website/img/marks/burgerWhite.svg' %}" alt="burgerWhite">
+                        <strong>{{ category.name }}</strong>
+                    </button>
+                </li>
+                <li class="filter__item select mod year">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="1" type="button">
+                        <strong>Год</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="1">
+                        <ul class="filter_select-list">
+                            {% for item in filters.prod_year %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="prod_year" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item select mod state">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="2" type="button">
+                        <strong>Состояние</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="2">
+                        <ul class="filter_select-list">
+                            {% for item in filters.condition %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="condition" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item select mod delivery">
+                    <button class="filter_feature-btn btn white-btn fltr" data-index="3" type="button">
+                        <strong>Срок доставки</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="filter_select-cntr" data-index="3">
+                        <ul class="filter_select-list">
+
+                            {% for item in filters.delivery_time_days %}
+                                <li class="filter_select-item">
+                                    <input class="filter_select-checkbox" type="checkbox" data-filter="delivery_time_days" value="{{ item.0 }}" onclick="processFilter(event,)">
+                                    <label class="filter_select-label">{{ item.1 }}</label>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="filter__item mod">
+                    <div class="filter_inp-cntr btn white-btn">
+                        <input class="filter_feature-check" id="filterCheck" type="checkbox" checked data-filter="in_stock" value="True" onclick="processFilter(event,)">
+                        <label class="filter_label" for="filterCheck">В наличии</label>
+                    </div>
+                </li>
+                <li class="filter__item jus-b filsters_aside">
+                    <button class="filter_feature-btn btn white-btn filters" type="button">
+                        <img src="{% static 'website/img/marks/filtersSvg.svg' %}" alt="filtersSvg">
+                        <strong>Фильтры</strong>
+                    </button>
+                </li>
+                <li class="filter__item">
+                    <button class="filter_feature-btn btn white-btn pref" type="button">
+                        <img src="{% static 'website/img/marks/filterListViewSvg.svg' %}"
+                            alt="filterListViewSvg">
+                        <strong>Сначала новые</strong>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        {% include "website/_catalog_list_fetch.html" %}
+
+        <div class="viewed_cntr">
+            <h2>Вы недавно смотрели</h2>
+            <ul class="catalog_list viewed">
+                <li class="catalog_item">
+                    <div class="catalog_img">
+                        <img src="{% static 'website/img/catalog/itemCatalog1.png' %}" alt="itemCatalog1" />
+                    </div>
+                    <ul class="catalog_description-list">
+                        <li>
+                            <h5>Lovol</h5>
+                            <div class="catalog_rating">
+                                <input class="catalog_star" type="radio" id="catalogStar_" />
+                                <label class="catalog_label" for="catalogStar_">4,7</label>
+                            </div>
+                            <p class="catalog_avaible">В наличии</p>
+                        </li>
+                        <li>
+                            <p class="cur_price">7 920 000 ₽</p>
+                            <p class="old_price">9 020 000 ₽</p>
+                        </li>
+                        <li>
+                            <p class="catalog_description">Экскаватор-погрузчик Weichai Heavy
+                                WL468Экскаватор-погрузчик Weichai Heavy WL468 </p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block modals %}
+
+<aside class="filters_sidebar">
+    <div class="filters_overlay-bg"></div>
+    <div class="filters_cntr">
+        <div class="filters_head">
+            <h3>Фильтры</h3>
+        </div>
+        <div class="filters_body">
+            <ul class="filters_off-list">
+                <!-- Тип техники -->
+                <li class="filter_off-item type">
+                    <h4>Тип техники</h4>
+                    <div class="off_cntr">
+                        <button class="off-btn category btn" type="button"><strong>Категория</strong></button>
+                        <div class="category_select category">
+                            <ul class="category_list">
+                            {% for group in groups %}
+                                <li class="group_item" data-link="{{ group.link }}">
+                                    <input class="off_checkbox circle category-checkbox" type="checkbox" data-type="category" value="{{ group.id }}">
+                                    <label class="off_label" for="group_{{ group.id }}">{{ group.name }}</label>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="off_cntr">
+                        <button class="off-btn subcategory btn" type="button"><strong>Подкатегория</strong></button>
+                        <div class="category_select subcategory">
+                            <ul class="category_list">
+                                {% for subgroup in subgroups %}
+                                <li class="subgroup_item">
+                                    <input class="off_checkbox circle subcategory-checkbox" type="checkbox" data-type="subcategory" value="{{ subgroup.id }}">
+                                    <label class="off_label" for="subgroup_{{ subgroup.id }}">{{ subgroup.name }}</label>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Цена -->
+                <li class="filter_off-item price">
+                    <h4>Цена</h4>
+                    <div class="off_cntr">
+                        <input class="off-input from btn cur_price-from" type="text" placeholder="от">
+                        <input class="off-input to btn cur_price-to" type="text" placeholder="до">
+                    </div>
+                </li>
+
+                <!-- Год выпуска -->
+                <li class="filter_off-item year">
+                    <h4>Год выпуска</h4>
+                    <div class="off_cntr">
+                        <input class="off-input from btn year-from" type="text" placeholder="от">
+                        <input class="off-input to btn year-to" type="text" placeholder="до">
+                    </div>
+                </li>
+                <!-- Переделать вывод состояния техники -->
+                <!-- Состояние -->
+                <li class="filter_off-item state">
+                    <h4>Состояние</h4>
+                    <div class="off_cntr">
+                        <ul class="off_check-list">
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle condition-checkbox" type="checkbox" value="new">
+                                <label class="off_label" for="">Новый</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle condition-checkbox" type="checkbox" value="used">
+                                <label class="off_label" for="">Б/у</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle condition-checkbox" type="checkbox" value="spare_parts">
+                                <label class="off_label" for="">На з/ч</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Срок доставки -->
+                <li class="filter_off-item delivery">
+                    <h4>Срок доставки</h4>
+                    <div class="off_cntr">
+                        <ul class="off_check-list">
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="any">
+                                <label class="off_label" for="">неважно</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="in_stock">
+                                <label class="off_label" for="">в наличии</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="up_to_15">
+                                <label class="off_label" for="">до 15 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="up_to_30">
+                                <label class="off_label" for="">до 30 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="up_to_45">
+                                <label class="off_label" for="">до 45 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="up_to_60">
+                                <label class="off_label" for="">до 60 дней</label>
+                            </li>
+                            <li class="off_check-item">
+                                <input class="off_checkbox circle delivery-checkbox" type="checkbox" value="up_to_90">
+                                <label class="off_label" for="">до 90 дней</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Марка -->
+                <li class="filter_off-item brand">
+                    <h4>Марка</h4>
+                    <div class="off_cntr">
+                        <ul class="off_check-list">
+                            <li class="off_check-item">
+                                <input class="off-input brand-search btn" type="text" placeholder="Название">
+                            </li>
+                            {% for brand in brands %}
+                            <li class="off_check-item">
+                                <input class="off_checkbox square brand-checkbox" type="checkbox" value="{{ brand.brand }}">
+                                <label class="off_label" for="">{{ brand.brand }}</label>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filters_footer">
+            <!-- Добавляем id="showAllBtn" для кнопки -->
+            <button class="show_all-btn" type="button" onclick="processFilter(event,refresh=true)">
+                <strong>Показать <span> Количество товаров: {{ products.count }}</span></strong>
+            </button>
+        </div>
+</aside>
+
+{% endblock %}

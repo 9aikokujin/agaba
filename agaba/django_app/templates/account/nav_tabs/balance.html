@@ -1,0 +1,769 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _acc-balance">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _acc_profile_cntr">
+    <ul class="acc_main-info_list _acc-list _acc_balance_list">
+        <li class="acc_main-item _acc_balance_replenishment">
+            <div class="acc__balance_title">
+                <h2>Баланс</h2>
+            </div>
+            {% comment %} Поменять кнопки местами(вызывается вывод при нажатии на пополнение) {% endcomment %}
+            <div class="acc_balance_cntr _acc-BG">
+                <div class="acc_replenishment_cntr">
+                    <p class="acc__balance">{{ user_balance.cash_account|floatformat:2 }} ₽</p>
+                    <button class="acc_balance_btn _acc-link_orange" type="button">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.900391 3.59922C0.900391 3.36052 0.995212 3.13161 1.16399 2.96282C1.33278 2.79404 1.5617 2.69922 1.80039 2.69922H16.2004C16.4391 2.69922 16.668 2.79404 16.8368 2.96282C17.0056 3.13161 17.1004 3.36052 17.1004 3.59922V10.7992C17.1004 11.0379 17.0056 11.2668 16.8368 11.4356C16.668 11.6044 16.4391 11.6992 16.2004 11.6992H1.80039C1.5617 11.6992 1.33278 11.6044 1.16399 11.4356C0.995212 11.2668 0.900391 11.0379 0.900391 10.7992V3.59922ZM11.7004 7.19922C11.7004 7.9153 11.4159 8.60206 10.9096 9.10841C10.4032 9.61476 9.71648 9.89922 9.00039 9.89922C8.28431 9.89922 7.59755 9.61476 7.0912 9.10841C6.58485 8.60206 6.30039 7.9153 6.30039 7.19922C6.30039 6.48313 6.58485 5.79638 7.0912 5.29003C7.59755 4.78368 8.28431 4.49922 9.00039 4.49922C9.71648 4.49922 10.4032 4.78368 10.9096 5.29003C11.4159 5.79638 11.7004 6.48313 11.7004 7.19922ZM3.60039 8.09922C3.83909 8.09922 4.068 8.0044 4.23679 7.83561C4.40557 7.66683 4.50039 7.43791 4.50039 7.19922C4.50039 6.96052 4.40557 6.73161 4.23679 6.56282C4.068 6.39404 3.83909 6.29922 3.60039 6.29922C3.3617 6.29922 3.13278 6.39404 2.96399 6.56282C2.79521 6.73161 2.70039 6.96052 2.70039 7.19922C2.70039 7.43791 2.79521 7.66683 2.96399 7.83561C3.13278 8.0044 3.3617 8.09922 3.60039 8.09922ZM15.3004 7.19922C15.3004 7.43791 15.2056 7.66683 15.0368 7.83561C14.868 8.0044 14.6391 8.09922 14.4004 8.09922C14.1617 8.09922 13.9328 8.0044 13.764 7.83561C13.5952 7.66683 13.5004 7.43791 13.5004 7.19922C13.5004 6.96052 13.5952 6.73161 13.764 6.56282C13.9328 6.39404 14.1617 6.29922 14.4004 6.29922C14.6391 6.29922 14.868 6.39404 15.0368 6.56282C15.2056 6.73161 15.3004 6.96052 15.3004 7.19922ZM1.57539 13.0492C1.39637 13.0492 1.22468 13.1203 1.09809 13.2469C0.971507 13.3735 0.900391 13.5452 0.900391 13.7242C0.900391 13.9032 0.971507 14.0749 1.09809 14.2015C1.22468 14.3281 1.39637 14.3992 1.57539 14.3992C5.55069 14.3992 9.39909 14.9419 13.0495 15.9562C14.0494 16.2343 15.0754 15.4954 15.0754 14.4298V13.7242C15.0754 13.5452 15.0043 13.3735 14.8777 13.2469C14.7511 13.1203 14.5794 13.0492 14.4004 13.0492C14.2214 13.0492 14.0497 13.1203 13.9231 13.2469C13.7965 13.3735 13.7254 13.5452 13.7254 13.7242V14.4298C13.7239 14.4672 13.714 14.5037 13.6962 14.5366C13.6785 14.5694 13.6535 14.5978 13.6231 14.6196C13.5927 14.6413 13.5577 14.6557 13.5208 14.6619C13.484 14.668 13.4462 14.6656 13.4104 14.6548C9.55635 13.5859 5.57491 13.0457 1.57539 13.0492Z" fill="#F35B1A"></path>
+                        </svg>
+                        <strong>Вывести средства</strong>
+                    </button>
+                </div>
+                <div class="acc_withdrawal_cntr">
+                    <button class="withdrawal_btn big_btn black_btn" type="button">
+                        <strong>Пополнить баланс</strong>
+                    </button>
+                </div>
+            </div>
+        </li>
+        <li class="acc_main-item _acc_balance_tabs">
+            <ul class="acc__balance_tab_list _list_underline">
+                <li class="acc__balance_tab_item">
+                    <button class="balance_tab_btn orange-text-btn _tab_btn undeline-btn" type="button"
+                        data-tab="all_operations">
+                        <strong>Все операции</strong>
+                    </button>
+                </li>
+                <li class="acc__balance_tab_item">
+                    <button class="balance_tab_btn orange-text-btn _tab_btn undeline-btn" type="button"
+                        data-tab="replenishments">
+                        <strong>Пополнения</strong>
+                    </button>
+                </li>
+                <li class="acc__balance_tab_item">
+                    <button class="balance_tab_btn orange-text-btn _tab_btn undeline-btn" type="button"
+                        data-tab="withdrawals">
+                        <strong>Вывод</strong>
+                    </button>
+                </li>
+                <li class="acc__balance_tab_item">
+                    <button class="balance_tab_btn orange-text-btn _tab_btn undeline-btn" type="button"
+                        data-tab="orders">
+                        <strong>Заказы</strong>
+                    </button>
+                </li>
+                <li class="acc__balance_tab_item">
+                    <button class="balance_tab_btn orange-text-btn _tab_btn undeline-btn" type="button"
+                        data-tab="deliveries">
+                        <strong>Доставки</strong>
+                    </button>
+                </li>
+            </ul>
+        </li>
+        <li class="acc_main-item _acc_balance_filters">
+            <button class="balance_filter _filter_btn white-btn btn" type="button">
+                <img src="{% static 'website/img/marks/filterListViewSvg.svg' %}" alt="filterListViewSvg">
+                <strong>По дате добавления</strong>
+            </button>
+        </li>
+        <li class="acc_main-item _acc_balance_operation">
+            <div class="balance__operation_cntr">
+                <div class="balance__operation_header">
+                    <ul class="operation__header_list _ul_underline">
+                        <li class="operation__header_item _date_op">
+                            <div class="operation__header_item_cntr">
+                                <button class="operation__header_item_btn _date" type="button">
+                                    <strong>Дата</strong>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3032_565)">
+                                            <path
+                                                d="M8.99956 9.87656L12.7121 6.16406L13.7726 7.22456L8.99956 11.9976L4.22656 7.22456L5.28706 6.16406L8.99956 9.87656Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3032_565">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="operation__header_hidden_cntr">
+
+                            </div>
+                        </li>
+                        <li class="operation__header_item _operation_op">
+                            <div class="operation__header_item_cntr">
+                                <button class="operation__header_item_btn _operation" type="button">
+                                    <strong>Операция</strong>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3032_565)">
+                                            <path
+                                                d="M8.99956 9.87656L12.7121 6.16406L13.7726 7.22456L8.99956 11.9976L4.22656 7.22456L5.28706 6.16406L8.99956 9.87656Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3032_565">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="operation__header_hidden_cntr">
+
+                            </div>
+                        </li>
+                        <li class="operation__header_item _method_op">
+                            <div class="operation__header_item_cntr">
+                                <button class="operation__header_item_btn _method_pay" type="button">
+                                    <strong>Способ оплаты</strong>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3032_565)">
+                                            <path
+                                                d="M8.99956 9.87656L12.7121 6.16406L13.7726 7.22456L8.99956 11.9976L4.22656 7.22456L5.28706 6.16406L8.99956 9.87656Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3032_565">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="operation__header_hidden_cntr">
+
+                            </div>
+                        </li>
+                        <li class="operation__header_item _summ_op">
+                            <div class="operation__header_item_cntr">
+                                <button class="operation__header_item_btn _summ" type="button">
+                                    <strong>Сумма</strong>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3032_565)">
+                                            <path
+                                                d="M8.99956 9.87656L12.7121 6.16406L13.7726 7.22456L8.99956 11.9976L4.22656 7.22456L5.28706 6.16406L8.99956 9.87656Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3032_565">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="operation__header_hidden_cntr">
+
+                            </div>
+                        </li>
+                        <li class="operation__header_item _status_op">
+                            <div class="operation__header_item_cntr">
+                                <button class="operation__header_item_btn _status" type="button">
+                                    <strong>Статус операции</strong>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3032_565)">
+                                            <path d="M8.99956 9.87656L12.7121 6.16406L13.7726 7.22456L8.99956 11.9976L4.22656 7.22456L5.28706 6.16406L8.99956 9.87656Z" fill="black" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3032_565">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="operation__header_hidden_cntr"></div>
+                        </li>
+                        <li class="operation__header_item _docs_op">
+                            <div class="operation__header_item_cntr">
+                                <button class="operation__header_item_btn _docs" type="button">
+                                    <strong>Документы</strong>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3032_565)">
+                                            <path
+                                                d="M8.99956 9.87656L12.7121 6.16406L13.7726 7.22456L8.99956 11.9976L4.22656 7.22456L5.28706 6.16406L8.99956 9.87656Z"
+                                                fill="black" fill-opacity="0.2" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3032_565">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="operation__header_hidden_cntr">
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                {% comment %} 
+                кнопка data-tab="all_operations" все операции
+                для фильтрации 
+                кнопка data-tab="replenishments" класс _acc_repl data-tab="replenishments"
+                кнопка data-tab="withdrawals" класс _acc_withdrawal data-tab="withdrawals"
+                кнопка data-tab="orders" класс _orders data-tab="orders"
+                кнопка data-tab="deliveries" > класс _delivery data-tab="deliveries"
+
+                {% endcomment %}
+                <div class="balance__operation_body">
+                    <ul class="operation__body_list" id="operation-list">
+                        {% for operation in operations %}
+                        {% if operation.type_operation == 'replenishment' %}
+                        <li class="operation_body_item _ul_underline _acc_repl" data-tab="replenishments">
+                            <div class="operation_body_cntr _date_cntr">
+                                <time class="_operation_time" datetime="">{{ operation.formatted_date }}</time>
+                            </div>
+                            <div class="operation_body_cntr _operatin_cntr">
+                                <p class="_operation_action">{{ operation.get_type_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _method_cntr">
+                                <p class="_operation_method">{{ operation.get_payment_type_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _summ_cntr">
+                                <p class="_operation_sum">+{{ operation.amount }} ₽</p>
+                            </div>
+                            <div class="operation_body_cntr _stat_opr_cntr">
+                                <p class="_operation_stat">{{ operation.get_status_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _docs_cntr">
+                                <a class="operation_body_docFile undeline-btn" href="/path/to/file.pdf"
+                                    target="_blank">Скачать PDF</a>
+                            </div>
+                        </li>
+                    
+                        {% elif operation.type_operation == 'withdrawal' %}
+                        
+                        <li class="operation_body_item _ul_underline _acc_withdrawal" data-tab="withdrawals">
+                            <div class="operation_body_cntr _date_cntr">
+                                <time class="_operation_time" datetime="">{{ operation.formatted_date }}</time>
+                            </div>
+                            <div class="operation_body_cntr _operatin_cntr">
+                                <p class="_operation_action">{{ operation.get_type_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _method_cntr">
+                                <p class="_operation_method">{{ operation.get_payment_type_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _summ_cntr">
+                                <p class="_operation_sum">-{{ operation.amount }} ₽</p>
+                            </div>
+                            <div class="operation_body_cntr _stat_opr_cntr">
+                                <p class="_operation_stat">{{ operation.get_status_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _docs_cntr">
+                                <a class="operation_body_docFile undeline-btn" href="/path/to/file.pdf"
+                                    target="_blank">Скачать PDF</a>
+                            </div>
+                        </li>
+                    
+                        {% elif operation.type_operation == 'order' %}
+
+                        <li class="operation_body_item _ul_underline _orders" data-tab="orders">
+                            <div class="operation_body_cntr _date_cntr">
+                                <time class="_operation_time" datetime="">{{ operation.formatted_date }}</time>
+                            </div>
+                            <div class="operation_body_cntr _operatin_cntr">
+                                <p class="_operation_action">{{ operation.get_type_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _method_cntr">
+                                <p class="_operation_method">{{ operation.get_payment_type_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _summ_cntr">
+                                <p class="_operation_sum">-{{ operation.amount }} ₽</p>
+                            </div>
+                            <div class="operation_body_cntr _stat_opr_cntr">
+                                <p class="_operation_stat">{{ operation.get_status_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _docs_cntr">
+                                <a class="operation_body_docFile undeline-btn" href="/path/to/file.pdf"
+                                    target="_blank">Скачать PDF</a>
+                            </div>
+                        </li>
+                    
+                        {% else%}
+                        <li class="operation_body_item _ul_underline" data-tab="">
+                            <div class="operation_body_cntr _date_cntr">
+                                <time class="_operation_time" datetime="">{{ operation.formatted_date }}</time>
+                            </div>
+                            <div class="operation_body_cntr _operatin_cntr">
+                                <p class="_operation_action">{{ operation.get_type_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _method_cntr">
+                                <p class="_operation_method">{{ operation.get_payment_type_display }}</p>
+                            </div>
+                            {% if operation.type_operation == 'replenishment' %}
+                            <div class="operation_body_cntr _summ_cntr">
+                                <p class="_operation_sum">+{{ operation.amount }} ₽</p>
+                            </div>
+                            {% endif %}
+                            <div class="operation_body_cntr _stat_opr_cntr">
+                                <p class="_operation_stat">{{ operation.get_status_operation_display }}</p>
+                            </div>
+                            <div class="operation_body_cntr _docs_cntr">
+                                <a class="operation_body_docFile undeline-btn" href="/path/to/file.pdf"
+                                    target="_blank">Скачать PDF</a>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="balance__operation_footer">
+                    {% if operations.has_next %}
+                    <button class="balance__operation_show_more big_btn" type="button" data-next-page="{{ operations.next_page_number }}">
+                        Показать еще
+                    </button>
+                    {% endif %}
+                </div>
+                {% comment %} Перенесите костыль отсюда в JS красиво {% endcomment %}
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const showMoreButton = document.querySelector('.balance__operation_show_more');
+                    
+                    if (showMoreButton) {
+                        showMoreButton.addEventListener('click', function() {
+                            const nextPage = this.getAttribute('data-next-page');
+                            fetch(`/operations/?page=${nextPage}`)
+                                .then(response => response.text())
+                                .then(data => {
+                                    const parser = new DOMParser();
+                                    const doc = parser.parseFromString(data, 'text/html');
+                                    const newItems = doc.querySelectorAll('#operation-list .operation_body_item');
+                                    
+                                    const operationList = document.getElementById('operation-list');
+                                    newItems.forEach(item => operationList.appendChild(item));
+                                    
+                                    // Обновляем атрибут кнопки для следующей страницы
+                                    const nextButton = doc.querySelector('.balance__operation_show_more');
+                                    if (nextButton) {
+                                        this.setAttribute('data-next-page', nextButton.getAttribute('data-next-page'));
+                                    } else {
+                                        this.style.display = 'none'; // Скрываем кнопку, если больше нет страниц
+                                    }
+                                });
+                        });
+                    }
+                });
+                </script>
+            </div>
+        </li>
+    </ul>
+
+</div>
+{% endblock %}
+
+{% block modals %}
+<aside class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content _balance">
+        <form class="modal__balance_form _withdrawal_fund_form" method="post" name="popolneie" id="" enctype="multipart/form-data">
+        {% csrf_token %}
+            <ul class="modal__content_list _withdrawal_fund  _modal_balance_list">
+                <li class="modal__content_item">
+                    <button class="modal__close_btn" type="button">
+                        <img src="{% static 'website/img/modal/close.svg' %}" alt="close modal">
+                    </button>
+                    <h3 class="modal__content_title">Пополнение счета</h3>
+                    <p class="modal__content_text">Чтобы привязать другой номер к кабинету, введите его ниже и подтвердите</p>
+                </li>
+                <li class="modal__content_item">                           
+                    <div class="modal__input_cntr">
+                        <label class="modal__label">Сумма для пополнения</label>
+                        
+                        <input type="number" name="amount_replenishment" value="{{ form_rep.amount_replenishment.value|default:'' }}" class="modal__input big_input _grey_input _amount"
+                            placeholder="0" step="0.01">
+                    </div>
+                </li>
+                <li class="modal__content_item">
+                        <ul class="modal__form_list">
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <input type="hidden" id="id_ogrn" name="ogrn" value="{{ form_comp.ogrn.value|default:'' }}">
+                                    <label for="id_company_name_or_inn" class="modal__form_label">Название или ИНН организации</label>
+                                    <input
+                                        class="modal__form_value_input _main_input big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.company_name }}"
+                                        id="id_company_name_or_inn"
+                                        name="name"
+                                    >
+                                </div>
+                                <div class="balance_hidden_cntr org_hidden-cntr open">
+                                    <p class="org_title">Глобальный поиск</p>
+                                    <ul class="org_hidden-list" id ="company-list">
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label
+                                        for="id_number_inn" class="modal__form_label">ИНН</label>
+                                    
+                                    <input
+                                        class="modal__form_value_input _inn big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.number_inn }}"
+                                        id="id_number_inn"
+                                        name="inn"
+                                    >
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label for="id_number_kpp" class="modal__form_label">КПП</label>
+                                    <input
+                                        class="modal__form_value_input _kpp big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.number_kpp }}"
+                                        
+                                        id="id_number_kpp"
+                                        name="kpp"
+                                    >
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label
+                                    
+                                         for="id_legal_address" class="modal__form_label">Юридический адрес</label>
+                                    
+                                    <input
+                                        class="modal__form_value_input big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.legal_address }}"
+                                        
+                                        id="id_legal_address"
+                                        name="legal_address"
+                                    >
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label for="id_edo" class="modal__form_label">Идентификатор ЭДО</label>
+                                    <input
+                                        class="modal__form_value_input big_input _grey_input"
+                                        type="text"
+                                        value="{{ form_comp.edo.value|default:'' }}"  
+                                        id="id_edo"
+                                        name="edo"  
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                    <div class="balance__saved_requisite">
+                        <ul class="balance__saved_list">
+                            {% for company in companies %}
+                            <li class="balance__saved_item">
+                                <div class="balance__saved_cntr">
+                                    <div class="balance__saved_img">
+                                        <img src="{% static 'website/img/balane/reqImg.png' %}" alt="req image">
+                                    </div>
+                                    <div class="balance__saved_datas">
+                                        <h4 class="balance__saved_name">{{ company.name }}</h4>
+                                        <p class="balance__saved_inn">{{ company.inn }}</p>
+                                        <p class="balance__saved_ogrn">{{ company.ogrn }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="modal__content_item">
+                    <div class="modal__btn_cntr">
+                        <button class="modal__btn _code _orange_btn" name="submit_replenishment" type="submit">
+                            <strong>Скачать счет</strong>
+                        </button>
+                    </div>
+                </li>
+                <li class="modal__content_item">
+                    <div class="modal__btn_cntr _checkbox">
+                        <input type="checkbox" id="showCompanyDetails" name="is_hidden">
+                        <label for="showCompanyDetails">Сохранить реквизиты компании</label>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        {% if form_rep.errors %}
+        <div class="alert alert-danger">
+            {{ form_rep.errors }}
+        </div>
+        {% endif %}
+
+        {% if form_comp.errors %}
+        <div class="alert alert-danger">
+            {{ form_comp.errors }}
+        </div>
+        {% endif %}
+        <form 
+            class="modal__balance_form _account_replenishment_form"
+            method="post"
+            name="snyatie"
+            id=""
+            novalidate
+        >
+            <ul class="modal__content_list _account_replenishment _modal_balance_list">
+                <li class="modal__content_item">
+                    <button class="modal__close_btn" type="button">
+                        <img src="{% static 'website/img/modal/close.svg' %}" alt="close modal">
+                    </button>
+                    <h3 class="modal__content_title">Вывод средств</h3>
+                    <p class="modal__content_text">Чтобы привязать другой номер к кабинету, введите его ниже и подтвердите</p>
+                </li>
+                <li class="modal__content_item">                           
+                    <div class="modal__input_cntr">
+                        <label class="modal__label">Сумма для вывода</label>
+                        <input type="number" name="amount_withdrawal" value="{{ form_wit.amount_withdrawal.value|default:'' }}" class="modal__input big_input _grey_input _amount"
+                            placeholder="0" step="0.01">
+                    </div>
+                </li>
+                <li class="modal__content_item">
+                    <div class="modal__form _changed_modal_form">
+                        <ul class="modal__form_list">
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <input type="hidden" id="id_ogrn" name="ogrn" value="{{ form_comp.ogrn.value|default:'' }}">
+                                    <label for="id_company_name_and_inn" class="modal__form_label">Название или ИНН организации</label>
+                                    <input
+                                        class="modal__form_value_input _main_input big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.company_name }}"
+                                        id="id_company_name_and_inn"
+                                        name="name"
+                                        required
+                                    >
+                                </div>
+                                {% comment %} ДАДАТА {% endcomment %}
+                                <div class="balance_hidden_cntr org_hidden-cntr open">
+                                    <p class="org_title">Глобальный поиск</p>
+                                    <ul class="org_hidden-list" id ="company-list">
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label
+                                        for="id_number_inn" class="modal__form_label">ИНН</label>
+                                    <input
+                                        class="modal__form_value_input _inn big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.number_inn }}"
+                                        id="id_number_inn"
+                                        name="inn"
+                                        required
+                                    >
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label for="id_number_kpp" class="modal__form_label">КПП</label>
+                                    <input
+                                        class="modal__form_value_input _kpp big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.number_kpp }}"
+                                        id="id_number_kpp"
+                                        name="kpp"
+                                    >
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label
+                                    
+                                         for="id_legal_address" class="modal__form_label">Юридический адрес</label>
+                                    
+                                    <input
+                                        class="modal__form_value_input big_input _grey_input"
+                                        type="text"
+                                        value="{{ form.legal_address }}"
+                                        id="id_legal_address"
+                                        name="legal_address"
+                                        required
+                                    >
+                                </div>
+                            </li>
+                            <li class="modal__form_item">
+                                <div class="modal__form_input_cntr">
+                                    <label for="id_edo" class="modal__form_label">Идентификатор ЭДО</label>
+                                    <input
+                                        class="modal__form_value_input big_input _grey_input"
+                                        type="text"
+                                        value="{{ form_comp.edo.value|default:'' }}"  
+                                        id="id_edo"
+                                        name="edo"  
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="balance__saved_requisite">
+                            <ul class="balance__saved_list">
+                                {% for company in companies %}
+                                <li class="balance__saved_item">
+                                    <div class="balance__saved_cntr">
+                                        <div class="balance__saved_img">
+                                            <img src="{% static 'website/img/balane/reqImg.png' %}" alt="req image">
+                                        </div>
+                                        <div class="balance__saved_datas">
+                                            <h4 class="balance__saved_name">{{ company.name }}</h4>
+                                            <p class="balance__saved_inn">{{ company.inn }}</p>
+                                            <p class="balance__saved_ogrn">{{ company.ogrn }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="modal__content_item">
+                    <div class="modal__btn_cntr">
+                        <button class="modal__btn _code _orange_btn" name="submit_withdrawal" type="submit">
+                            <strong>Скачать счет</strong>
+                        </button>
+                    </div>
+                </li>
+                <li class="modal__content_item">
+                    <div class="modal__btn_cntr _checkbox">
+                        <input type="hidden" name="comp-is_hidden" value="1"> <!-- Значение по умолчанию: скрыть -->
+                        <input class="modal__checkbox _orange__checkbox __black_check" type="checkbox" id="showCompanyDetails" name="is_hidden" value="0">
+                        <label for="showCompanyDetails">Сохранить реквизиты компании</label>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</aside>
+{% comment %} ДАДАТА {% endcomment %}
+<script>
+    document.getElementById('id_company_name_or_inn').addEventListener('input', function () {
+        var query = this.value;
+
+        // Если поле пустое, скрываем модальное окно
+        if (query.trim() === '') return;
+
+
+        // Отправка запроса на сервер для поиска компаний
+        fetch(`/account/balance/get_company_info/?query=${query}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка сети');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    alert(data.error); // Показываем ошибку, если она есть
+                    //hideModal();
+                } else if (data.companies && data.companies.length > 0) {
+                    // Если найдены компании, показываем их в модальном окне
+                    showModal(data.companies);
+                } else {
+                    //hideModal();
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при получении данных:', error);
+                //hideModal();
+            });
+    });
+
+    function showModal(companies) {
+        console.log(companies)
+        const modal = document.getElementById('company-modal');
+        const companyList = document.getElementById('company-list');
+
+        // Очищаем предыдущий список компаний
+        companyList.innerHTML = '';
+
+        // Добавляем компании в модальное окно
+        companies.forEach(company => {
+            const li = document.createElement('li');
+            li.classList.add('org_hidden-item');
+        
+            const companyDataContainer = document.createElement('div');
+            companyDataContainer.classList.add('balance_company_data');
+        
+            const nameElement = document.createElement('h5');
+            nameElement.textContent = company.name;
+            nameElement.classList.add('company_name');
+            li.appendChild(nameElement);
+        
+            const innElement = document.createElement('p');
+            innElement.textContent = `ИНН: ${company.inn}`;
+            innElement.classList.add('_inn_value');
+            companyDataContainer.appendChild(innElement);
+        
+            const kppElement = document.createElement('p');
+            kppElement.textContent = `КПП: ${company.kpp}`;
+            kppElement.classList.add('_kpp_value');
+            companyDataContainer.appendChild(kppElement);
+        
+            li.appendChild(companyDataContainer);
+        
+            li.addEventListener('click', () => {
+                // Заполняем поля данными выбранной компании
+                document.getElementById('id_number_inn').value = company.inn;
+                document.getElementById('id_company_name_or_inn').value = company.name;
+                document.getElementById('id_legal_address').value = company.address || '';
+                document.getElementById('id_number_kpp').value = company.kpp || '';
+                document.getElementById('id_ogrn').value = company.ogrn || '';
+        
+                // Добавляем класс _up_label к соответствующим label
+                updateLabelState('id_number_inn');
+                updateLabelState('id_company_name_or_inn');
+                updateLabelState('id_legal_address');
+                updateLabelState('id_number_kpp');
+                updateLabelState('id_ogrn');
+            });
+            companyList.appendChild(li);
+        });
+    }
+
+    // Функция для добавления/удаления класса _up_label к label
+    function updateLabelState(inputId) {
+        const input = document.getElementById(inputId);
+        if (!input) return; // Если input не найден, выходим
+
+        const label = document.querySelector(`label[for="${inputId}"]`); // Находим label по атрибуту for
+        if (!label) return; // Если label не найден, выходим
+
+        if (input.value.length > 0 && !label.classList.contains('_up_label')) {
+            label.classList.add('_up_label');
+        } else if (input.value.length === 0 && label.classList.contains('_up_label')) {
+            label.classList.remove('_up_label');
+        }
+    }
+
+    // Добавляем обработчики события input для отслеживания изменений
+    const inputIds = [
+        'id_number_inn',
+        'id_company_name_or_inn',
+        'id_legal_address',
+        'id_number_kpp',
+        'id_ogrn'
+    ];
+    inputIds.forEach(inputId => {
+        const input = document.getElementById(inputId);
+        if (input) {
+            input.addEventListener('input', () => {
+                updateLabelState(inputId);
+            });
+             // Добавлено для начальной инициализации.  Если поля уже заполнены, то лейблы должны появиться сразу.
+            updateLabelState(inputId);
+        }
+    });
+</script>
+{% endblock %}

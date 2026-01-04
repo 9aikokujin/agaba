@@ -1,0 +1,315 @@
+.acc__compare_cntr {
+  gap: var(--spacing-px-37);
+}
+
+.compare__characters {
+  max-width: 299px;
+  min-width: 299px;
+  width: 100%;
+  gap: var(--spacing-px-20);
+  /* transform: translateY(-20px); */
+}
+
+.compare__slider_btns {
+  gap: 10px;
+}
+
+.compare__next_slider {
+
+}
+
+.compare__next_slider svg {
+  margin-left: var(--spacing-px-15);
+}
+
+.compare__prev_slider {
+
+}
+
+.compare__prev_slider svg {
+  margin-right: var(--spacing-px-15);
+}
+
+._slider_btn {
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+
+._slider_btn._active,
+._slider_btn:hover {
+  opacity: 1;
+}
+
+._slider_btn strong {
+  font-weight: 500;
+  line-height: 140%;
+}
+
+._slider_btn svg {
+  width: var(--spacing-px-7);
+  height: var(--spacing-px-12);
+  transition: all 0.3s;
+}
+
+._slider_btn:hover svg {
+
+}
+
+._slider_btn svg path {
+  transition: all 0.3s;
+}
+
+._slider_btn:hover svg path {
+  fill: var(--colorf35b1a);
+}
+
+.characters__list {
+  margin-top: auto;
+  gap: var(--spacing-px-32);
+  overflow: hidden;
+}
+
+.characters__item {
+  position: relative;
+}
+
+.characters__item h4 {
+  opacity: 0.5;
+}
+
+.characters__item:not(:last-child)::before,
+.compare__characters_wrp p::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: var(--spacing-px-1);
+  left: var(--spacing-px-0);
+  background-color: var(--color001);
+}
+
+.characters__item:not(:last-child)::before {
+  bottom: var(--spacing-px-neg-16);
+}
+
+.compare__characters_wrp p::before {
+  top: var(--spacing-px-neg-16);
+}
+
+.characters__item:last-child {
+  border-bottom: none;
+}
+
+.characters__item p {
+  font-weight: 500;
+  line-height: 140%;
+  word-break: keep-all;
+  white-space: nowrap;
+
+  font-size: var(--spacing-px-18);
+}
+
+.catalog_list._compare__list {
+  gap: var(--spacing-px-15);
+  overflow: hidden;
+  position: relative;
+  max-width: 738px;
+}
+
+.catalog_item._compare__item {
+  max-width: 236px;
+  min-width: 236px;
+  width: 100%;
+}
+
+._compare__item_wrap {
+  gap: var(--spacing-px-6);
+}
+
+.catalog_item._compare__item .catalog_img::after {
+  position: absolute;
+  content: "В наличии";
+  left: var(--spacing-px-52);
+  bottom: var(--spacing-px-0);
+  background-color: var(--colordeff59);
+  color: var(--color000);
+  border-radius: var(--spacing-px-8);
+  padding: var(--spacing-px-2) var(--spacing-px-8);
+  font-family: var(--third-family);
+  font-weight: 700;
+  font-size: var(--spacing-px-12);
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.catalog_item._compare__item .catalog_img {
+  max-height: var(--spacing-px-190);
+  min-height: var(--spacing-px-190);
+  max-width: 236px;
+}
+
+.catalog_item._compare__item .catalog_img::before {
+  bottom: var(--spacing-px-0);
+  left: var(--spacing-px-5);
+}
+
+.compare__characters_wrp {
+  gap: var(--spacing-px-32);
+  padding-top: var(--spacing-px-32);
+}
+
+.compare__characters_wrp p {
+  color: var(--color0075);
+  font-size: var(--spacing-px-18);
+  font-weight: 400;
+  line-height: 140%;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.compare__characters_wrp p:hover {
+  color: var(--colorf35b1a);
+}
+
+._empty_btn {
+  border: var(--spacing-px-1) solid var(--colordadcde);
+  border-radius: var(--spacing-px-10);
+  padding: var(--spacing-px-12) var(--spacing-px-26);
+  background-color: transparent;
+  font-weight: 500;
+  font-size: var(--spacing-px-16);
+  line-height: 140%;
+  color: var(--color006);
+  transition: all 0.3s ease;
+}
+
+._empty_btn:hover {
+  border: var(--spacing-px-1) solid var(--colorf35b1a);
+  color: var(--colorf35b1a);
+}
+
+._compare__item .catalog_description-list li,
+.compare__characters_wrp {
+  width: 100%;
+}
+
+@media screen and (max-width: 1410px) {
+  .catalog_item._compare__item {
+    max-width: 205px;
+    min-width: 205px;
+  }
+  .compare__characters {
+    max-width: 270px;
+    min-width: 270px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .compare__slider_btns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .compare__characters {
+    max-width: 225px;
+    min-width: 225px;
+  }
+  
+  .characters__item p,
+  .compare__characters_wrp p {
+    font-size: var(--spacing-px-16);
+  }
+
+  .catalog_item._compare__item .catalog_img {
+    max-height: var(--spacing-px-160);
+    min-height: var(--spacing-px-160);
+    max-width: 205px;
+  }
+} 
+
+@media screen and (max-width: 950px) {
+  ._acc_compare .account_nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .characters__list {
+    display: none;
+  }
+
+  .acc__compare_cntr  {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .compare__slider_btns {
+    flex-direction: unset;
+    justify-content: space-between;
+  }
+
+  .compare__characters {
+    max-width: unset;
+    min-width: unset;
+  }
+
+  h2 ._heading_descr,
+  ._slider_btn strong,
+  ._empty_btn {
+    font-size: var(--spacing-px-14);
+  }
+
+  ._empty_btn {
+    padding: var(--spacing-px-8) var(--spacing-px-16);
+  }
+
+  .compare__next_slider svg {
+    margin-left: var(--spacing-px-8);
+  }
+
+  .compare__prev_slider svg {
+    margin-right: var(--spacing-px-8);
+  }
+
+  .characters__item p,
+  .compare__characters_wrp p {
+    font-size: var(--spacing-px-14);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .catalog_item._compare__item .catalog_img,
+  .catalog_item._compare__item {
+    max-width: var(--spacing-px-140);
+    min-width: var(--spacing-px-140);
+  }
+
+  .catalog_item._compare__item .catalog_img {
+    max-height: var(--spacing-px-110);
+    min-height: var(--spacing-px-110);
+  }
+
+  .catalog_item._compare__item .catalog_img::before,
+  .catalog_item._compare__item .catalog_img::after {
+    font-size: var(--spacing-px-10);
+  }
+
+
+}
+
+@media screen and (max-width: 400px) {
+  .catalog_item._compare__item .catalog_img {
+    max-height: var(--spacing-px-80);
+    min-height: var(--spacing-px-80);
+  }
+
+  .catalog_item._compare__item .catalog_img,
+  .catalog_item._compare__item {
+    max-width: var(--spacing-px-129);
+    min-width: var(--spacing-px-129);
+  }
+
+  .catalog_item._compare__item .catalog_img::after {
+    right: var(--spacing-px-5);
+    left: unset;
+  }
+}

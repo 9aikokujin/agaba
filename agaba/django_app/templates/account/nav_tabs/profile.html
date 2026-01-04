@@ -1,0 +1,218 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _acc-profile">
+{% endblock %}
+
+{% block content %}
+<form class="acc_main-cntr _acc_profile_cntr" id="" action="{% url 'profile' %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <ul class="acc_main-info_list _acc-list">
+        <li class="acc_main-item">
+            <h2>Профиль</h2>
+        </li>
+        <li class="acc_main-item _acc_profile_conf_inf _acc-BG">
+            
+            <div class="acc_photo-name">
+
+                <div class="acc_photo-cntr">
+                    {% if user.image_base64 %}
+                        <img src="{{ user.image_base64 }}" alt="Profile Picture" style="width:150px; height:auto;">
+                        <label for="uploadAccountPicture" class="acc__profile_change_img_btn" type="button">
+                            <input id="uploadAccountPicture" class="uploadAccountPictureStyle" type="file" name="image" accept="image/*">
+                            <img src="/static/website//img/marks/addPhotoSvg.svg" alt="addPhotoSvg" value=""/>
+                        </label>
+                    {% else %}
+                        <h3>И</h3>
+                        <label for="uploadAccountPicture" class="acc__profile_change_img_btn" type="button">
+                        <input id="uploadAccountPicture" class="uploadAccountPictureStyle" type="file" name="image" accept="image/*">
+                        <img src="/static/website//img/marks/addPhotoSvg.svg" alt="addPhotoSvg" value=""/>
+                    </label>
+                    {% endif %}
+                </div>
+                {% comment %} <div class="acc_name-cntr">
+                    <h3>
+                        <strong>{{ user.get_full_name }}
+                        </strong>
+                        <a href="javascript:void(0);" id="edit-name" class="_acc-link_orange">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.3898 3.82637C12.761 3.46767 13.2583 3.26913 13.7745 3.27351C14.2907 3.27789 14.7845 3.48484 15.1496 3.84979C15.5147 4.21474 15.7219 4.70848 15.7265 5.22468C15.7311 5.74088 15.5327 6.23823 15.1742 6.60962L7.00441 14.7805C6.71715 15.0677 6.37617 15.2955 6.00091 15.451L3.69804 16.405C3.54385 16.4689 3.37417 16.4856 3.21047 16.4531C3.04677 16.4205 2.8964 16.3402 2.77838 16.2222C2.66036 16.1041 2.57999 15.9538 2.54745 15.7901C2.5149 15.6264 2.53164 15.4567 2.59554 15.3025L3.54954 12.9996C3.70499 12.6243 3.93283 12.2834 4.22004 11.9961L12.3898 3.82637Z"
+                                    fill="#F35B1A" />
+                            </svg>
+                        </a>
+                    </h3>
+                    <p>
+                        На AGABA c
+                        <time datetime="">{{ user.date_joined }}</time>
+                    </p>
+                </div> {% endcomment %}
+                <div class="acc_name-cntr _changed__" >
+                    <input class="acc__changed_inputProfile _form_input-orange"
+                        type="text" name="first_name"
+                        value="{{ form.first_name.value|default:user.first_name }}"
+                        placeholder="Имя" />
+             
+                    <input class="acc__changed_inputProfile _form_input-orange"
+                        type="text" name="last_name"
+                        value="{{ form.last_name.value|default:user.last_name }}"
+                        placeholder="Фамилия" />
+                        {% comment %} <button type="submit" class="change_conf_inf_btn" style="background-color: transparent; padding: 0; align-self: flex-end;">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3898 3.82637C12.761 3.46767 13.2583 3.26913 13.7745 3.27351C14.2907 3.27789 14.7845 3.48484 15.1496 3.84979C15.5147 4.21474 15.7219 4.70848 15.7265 5.22468C15.7311 5.74088 15.5327 6.23823 15.1742 6.60962L7.00441 14.7805C6.71715 15.0677 6.37617 15.2955 6.00091 15.451L3.69804 16.405C3.54385 16.4689 3.37417 16.4856 3.21047 16.4531C3.04677 16.4205 2.8964 16.3402 2.77838 16.2222C2.66036 16.1041 2.57999 15.9538 2.54745 15.7901C2.5149 15.6264 2.53164 15.4567 2.59554 15.3025L3.54954 12.9996C3.70499 12.6243 3.93283 12.2834 4.22004 11.9961L12.3898 3.82637Z" fill="#F35B1A"></path>
+                            </svg>
+                        </button> {% endcomment %}
+                </div>
+                {% comment %} <button type="button" class="change_conf_inf_btn _mob _acc-link_orange">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.3898 3.82637C12.761 3.46767 13.2583 3.26913 13.7745 3.27351C14.2907 3.27789 14.7845 3.48484 15.1496 3.84979C15.5147 4.21474 15.7219 4.70848 15.7265 5.22468C15.7311 5.74088 15.5327 6.23823 15.1742 6.60962L7.00441 14.7805C6.71715 15.0677 6.37617 15.2955 6.00091 15.451L3.69804 16.405C3.54385 16.4689 3.37417 16.4856 3.21047 16.4531C3.04677 16.4205 2.8964 16.3402 2.77838 16.2222C2.66036 16.1041 2.57999 15.9538 2.54745 15.7901C2.5149 15.6264 2.53164 15.4567 2.59554 15.3025L3.54954 12.9996C3.70499 12.6243 3.93283 12.2834 4.22004 11.9961L12.3898 3.82637Z"
+                            fill="#F35B1A"></path>
+                    </svg>
+                    <strong>Изменить</strong>
+                </button> {% endcomment %}
+            </div>
+            {% comment %} CHANGED ================== {% endcomment %}
+            <div class="acc__profile_form">
+                <div class="acc__profile_field _input">
+                    <label class="acc__profile_label" for="" >Номер телефона *</label>
+                    <input type="text" class="acc__profile-input _form_input-orange"
+                        value="{{ form.username.value|default:user.username }}" />
+                    {% comment %} <button class="change_conf_inf_btn _acc-link_orange">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.3898 3.82637C12.761 3.46767 13.2583 3.26913 13.7745 3.27351C14.2907 3.27789 14.7845 3.48484 15.1496 3.84979C15.5147 4.21474 15.7219 4.70848 15.7265 5.22468C15.7311 5.74088 15.5327 6.23823 15.1742 6.60962L7.00441 14.7805C6.71715 15.0677 6.37617 15.2955 6.00091 15.451L3.69804 16.405C3.54385 16.4689 3.37417 16.4856 3.21047 16.4531C3.04677 16.4205 2.8964 16.3402 2.77838 16.2222C2.66036 16.1041 2.57999 15.9538 2.54745 15.7901C2.5149 15.6264 2.53164 15.4567 2.59554 15.3025L3.54954 12.9996C3.70499 12.6243 3.93283 12.2834 4.22004 11.9961L12.3898 3.82637Z"
+                                fill="#F35B1A" />
+                        </svg>
+                    </button> {% endcomment %}
+                </div>
+                {% comment %} не работает {% endcomment %}
+                <div class="acc__profile_field _checkbox">
+                    <input type="checkbox" class="acc__profile-checkbox _orange__checkbox" />
+                    <label for="" class="acc__profile_label">Получать СМС рассылки</label>
+                </div>
+                <div class="acc__profile_field _input">
+                    <label for="" class="acc__profile_label">Электронная почта *</label>
+                    <input type="email" class="acc__profile-input _form_input-orange"
+                        name="email" value="{{ form.email.value|default:user.email }}" />
+                </div>
+                {% comment %} не работает {% endcomment %}
+                <div class="acc__profile_field _checkbox">
+                    <input type="checkbox" class="acc__profile-checkbox _orange__checkbox __grey_check" />
+                    <label for="" class="acc__profile_label">Получать e-mail рассылки</label>
+                </div>
+                {% comment %} не работает {% endcomment %}
+                <div class="acc__profile_field _input">
+                    <label for="" class="acc__profile_label">Введите идентификатор ЭДО</label>
+                    <input type="text" class="acc__profile-input _form_input-orange"
+                    {% comment %} value="{{ form.edo_id.value|default:user.edo_id }}" /> {% endcomment %}
+                </div>
+            </div>
+        </li>
+        <li class="acc_main-item _profile_services _acc-BG">
+            <div class="acc__profile_services">
+                <h4>Telegram Bot</h4>
+                <p>Привязано к @noort</p>
+            </div>
+            {% comment %} <button type="button" class="change_conf_inf_btn _acc-link_orange">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.3898 3.82637C12.761 3.46767 13.2583 3.26913 13.7745 3.27351C14.2907 3.27789 14.7845 3.48484 15.1496 3.84979C15.5147 4.21474 15.7219 4.70848 15.7265 5.22468C15.7311 5.74088 15.5327 6.23823 15.1742 6.60962L7.00441 14.7805C6.71715 15.0677 6.37617 15.2955 6.00091 15.451L3.69804 16.405C3.54385 16.4689 3.37417 16.4856 3.21047 16.4531C3.04677 16.4205 2.8964 16.3402 2.77838 16.2222C2.66036 16.1041 2.57999 15.9538 2.54745 15.7901C2.5149 15.6264 2.53164 15.4567 2.59554 15.3025L3.54954 12.9996C3.70499 12.6243 3.93283 12.2834 4.22004 11.9961L12.3898 3.82637Z"
+                        fill="#F35B1A" />
+                </svg>
+                <strong>Изменить</strong>
+            </button> {% endcomment %}
+        </li>
+        <li class="acc_main-item _pay-meth _acc-BG">
+            <div class="acc-header">
+                <h4 class="acc-title">Реквизиты</h4>
+                <a href="{% url 'manage_companies' %}" class="acc-add-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 6V18M6 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="payment_method-btn">
+                {% comment %} ДАДАТА {% endcomment %}
+                {% for company in companies %}
+                {% if company %}
+                <div class="payment_img">
+                    <img src="/static/website/img/accSide/worldSvg.svg" alt="worldSvg" />
+                </div>
+                <div class="payment_cntnt">
+                    <h5>{{ company.name }}</h5>
+                    <p>
+                        {{ company.inn }}, {{ company.ogrn }}
+                    </p>
+                </div>
+                <button type="button" class="acc__profile_chng_details_btn _right" id="company-btn-{{ company.id }}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 6H21M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6M10 11V17M14 11V17"
+                            stroke="black" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                {% else %}
+                {% comment %} Сделайте красивую кнопку добавить компанию если компаний нет  {% endcomment %}
+                <button type="button" class="acc__profile_chng_details_btn _right" id="company-btn-{{ company.id }}" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </button>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </li>
+        <li class="acc_main-item _confirm_changes">
+            <button class="profile__confirm_btn big_btn black_btn" type="submit">
+                <strong>Сохранить изменения</strong>
+            </button>
+        </li>
+    </ul>
+</form>
+{% comment %} Перенесите костыль отсюда в JS красиво {% endcomment %}
+<script>
+    function fetchMain(event, tab_title = "Agaba") {
+        // Prevent the default action (e.g., navigating to the href)
+        event.preventDefault();
+
+        // Get the href attribute of the clicked element
+        let href = event.target.getAttribute("Профиль");
+        if (!href) {
+            href = event.target.parentElement.getAttribute("href");
+        }
+        // console.log(href)
+
+        if (href.startsWith("?page=")) {
+            href = new URL(href, window.location.href);
+        } else {
+            href = new URL(href, window.location.origin);
+        }
+
+        // window.location.href = 'www.yandex.com'
+        document.title = tab_title;
+        history.pushState({}, "", href);
+        href.searchParams.append("fetch", "true");
+
+        fetch(href)
+            .then((response) => response.json())
+            .then((data) => {
+                // Обновляем весь контент страницы, например, заменяя весь <body>
+                document.body.innerHTML = data.main_content;
+            })
+            .catch((error) => console.error("Error:", error));
+    }
+</script>
+<script>
+    window.addEventListener("popstate", function () {
+        console.log("GO BACK");
+        window.location.reload();
+    });
+</script>
+<script>
+    document.getElementById("edit-name").onclick = () =>
+        (document.getElementById("edit-form").style.display = "block");
+</script>
+{% endblock %}

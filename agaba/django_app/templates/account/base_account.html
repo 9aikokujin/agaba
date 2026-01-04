@@ -1,0 +1,235 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block main %}
+    
+    <main class="main">
+
+        {% block section %}
+        {% comment %} Тут секция {% endcomment %}
+        {% endblock %}
+
+            <aside class="account_nav _acc-BG">
+                <ul class="account_nav-list">
+
+                    {% with nav_id='home' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.5 17.5009V10.8342C12.5 10.6132 12.4122 10.4012 12.2559 10.2449C12.0996 10.0887 11.8877 10.0009 11.6667 10.0009H8.33333C8.11232 10.0009 7.90036 10.0887 7.74408 10.2449C7.5878 10.4012 7.5 10.6132 7.5 10.8342V17.5009M2.5 8.3342C2.49994 8.09176 2.55278 7.85222 2.65482 7.6323C2.75687 7.41238 2.90566 7.21737 3.09083 7.06087L8.92417 2.0617C9.22499 1.80746 9.60613 1.66797 10 1.66797C10.3939 1.66797 10.775 1.80746 11.0758 2.0617L16.9092 7.06087C17.0943 7.21737 17.2431 7.41238 17.3452 7.6323C17.4472 7.85222 17.5001 8.09176 17.5 8.3342V15.8342C17.5 16.2762 17.3244 16.7002 17.0118 17.0127C16.6993 17.3253 16.2754 17.5009 15.8333 17.5009H4.16667C3.72464 17.5009 3.30072 17.3253 2.98816 17.0127C2.67559 16.7002 2.5 16.2762 2.5 15.8342V8.3342Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Главная</strong>
+                        </a>
+                    </li>
+                    {% endwith %}
+
+                    {% if user.role == 'seller' %}
+
+                        {% with nav_id='products' %}
+                        <li class="account_nav-item">
+                            <a href="{% url nav_id %}"
+                                class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.5 6.25L10 1.875L2.5 6.25M17.5 6.25L10 10.625M17.5 6.25V13.75L10 18.125M2.5 6.25L10 10.625M2.5 6.25V13.75L10 18.125M10 10.625V18.125"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <strong>Товары</strong>
+                            </a>
+                        </li>
+                        {% endwith %}
+
+                        {% with nav_id='advertisement' %}
+                        <li class="account_nav-item">
+                            <a href="{% url nav_id %}"
+                                class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.61667 13.2C8.04333 13.15 7.46167 13.125 6.875 13.125H6.25C5.25544 13.125 4.30161 12.7299 3.59835 12.0266C2.89509 11.3234 2.5 10.3696 2.5 9.375C2.5 8.38044 2.89509 7.42661 3.59835 6.72335C4.30161 6.02009 5.25544 5.625 6.25 5.625H6.875C7.46167 5.625 8.04333 5.6 8.61667 5.55M8.61667 13.2C8.8275 14.0017 9.10333 14.7767 9.4375 15.5192C9.64333 15.9775 9.4875 16.5275 9.05167 16.7783L8.50417 17.095C8.045 17.36 7.45417 17.1925 7.23167 16.7108C6.70358 15.5684 6.30121 14.3719 6.03167 13.1425M8.61667 13.2C8.28915 11.9514 8.1239 10.6658 8.125 9.375C8.125 8.05333 8.29583 6.77167 8.61667 5.55M8.61667 13.2C11.1846 13.4201 13.6852 14.1376 15.9792 15.3125M8.61667 5.55C11.1846 5.32993 13.6852 4.61244 15.9792 3.4375M15.9792 15.3125C15.8808 15.6292 15.775 15.9408 15.6625 16.25M15.9792 15.3125C16.4325 13.8513 16.716 12.3427 16.8242 10.8167M15.9792 3.4375C15.8814 3.12241 15.7759 2.80981 15.6625 2.5M15.9792 3.4375C16.4325 4.8987 16.716 6.40725 16.8242 7.93333M16.8242 7.93333C17.2367 8.2775 17.5 8.79583 17.5 9.375C17.5 9.95417 17.2367 10.4725 16.8242 10.8167M16.8242 7.93333C16.8925 8.89323 16.8925 9.85677 16.8242 10.8167"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <strong>Реклама</strong>
+                            </a>
+                        </li>
+                        {% endwith %}
+
+                    {% else %}
+
+                        {% with nav_id='orders' %}
+                        <li class="account_nav-item">
+                            <a href="{% url nav_id %}"
+                                class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.5 5.83464H15C14.558 5.83464 14.134 5.65904 13.8215 5.34648C13.5089 5.03392 13.3333 4.61 13.3333 4.16797V1.66797M5.83333 6.66797V14.0013C5.83333 14.2513 6 14.5013 6.16667 14.668C6.33333 14.8346 6.58333 15.0013 6.83333 15.0013H12.5M2.5 10.0013V17.3346C2.5 17.5846 2.66667 17.8346 2.83333 18.0013C3 18.168 3.25 18.3346 3.5 18.3346H9.16667M17.5 5.0013V10.418C17.5 11.0846 16.9167 11.668 16.25 11.668H10.4167C9.75 11.668 9.16667 11.0846 9.16667 10.418V2.91797C9.16667 2.2513 9.75 1.66797 10.4167 1.66797H14.1667L17.5 5.0013Z"
+                                        stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <strong>Заказы</strong>
+                            </a>
+                        </li>
+                        {% endwith %}
+
+                        {% with nav_id='favorites' %}
+                        <li class="account_nav-item">
+                            <a href="{% url nav_id %}"
+                                class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.8333 10.6667C17.075 9.45 18.3333 7.99167 18.3333 6.08333C18.3333 4.86776 17.8505 3.70197 16.9909 2.84243C16.1314 1.98289 14.9656 1.5 13.75 1.5C12.2833 1.5 11.25 1.91667 10 3.16667C8.75 1.91667 7.71667 1.5 6.25 1.5C5.03443 1.5 3.86864 1.98289 3.0091 2.84243C2.14956 3.70197 1.66667 4.86776 1.66667 6.08333C1.66667 8 2.91667 9.45833 4.16667 10.6667L10 16.5L15.8333 10.6667Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <strong>Избранное</strong>
+                            </a>
+                        </li>
+                        {% endwith %}
+
+                        {% with nav_id='compare' %}
+                        <li class="account_nav-item">
+                            <a href="{% url nav_id %}"
+                                class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12.3077" cy="7.69193" r="6.15385" stroke="black" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M12.5752 16.0534C12.047 16.7421 11.3791 17.3112 10.6154 17.7234C9.8517 18.1357 9.00943 18.3817 8.14391 18.4454C7.27838 18.5091 6.40917 18.389 5.59334 18.093C4.77752 17.7969 4.03353 17.3317 3.41023 16.7278C2.78693 16.1239 2.29841 15.395 1.97675 14.589C1.65509 13.7829 1.50756 12.9179 1.54385 12.0508C1.58014 11.1837 1.79943 10.3341 2.18732 9.55771C2.57521 8.78135 3.12292 8.09582 3.79451 7.54611"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <strong>Сравнить</strong>
+                            </a>
+                        </li>
+                        {% endwith %}
+
+                    {% endif %}
+                </ul>
+                
+                <ul class="account_nav-list">
+
+                    {% with nav_id='messages' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.58334 16.6664C8.17382 17.4823 10.0034 17.7033 11.7424 17.2895C13.4814 16.8758 15.0155 15.8546 16.0681 14.4099C17.1208 12.9652 17.6229 11.192 17.4838 9.40985C17.3448 7.62772 16.5738 5.95385 15.3098 4.68987C14.0459 3.42589 12.372 2.65492 10.5899 2.51589C8.80775 2.37686 7.03456 2.87892 5.58985 3.93159C4.14515 4.98425 3.12391 6.51831 2.71019 8.25731C2.29647 9.99631 2.51746 11.8259 3.33334 13.4164L1.66667 18.333L6.58334 16.6664Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Сообщения</strong>
+                            <i class="__alert_count">7</i>
+                        </a>
+                    </li>
+                    {% endwith %}
+
+                    {% with nav_id='profile' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.8327 17.5V15.8333C15.8327 14.9493 15.4815 14.1014 14.8564 13.4763C14.2313 12.8512 13.3834 12.5 12.4993 12.5H7.49935C6.61529 12.5 5.76745 12.8512 5.14233 13.4763C4.5172 14.1014 4.16602 14.9493 4.16602 15.8333V17.5M13.3327 5.83333C13.3327 7.67428 11.8403 9.16667 9.99935 9.16667C8.1584 9.16667 6.66602 7.67428 6.66602 5.83333C6.66602 3.99238 8.1584 2.5 9.99935 2.5C11.8403 2.5 13.3327 3.99238 13.3327 5.83333Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Профиль</strong>
+                        </a>
+                    </li>
+                    {% endwith %}
+
+                    {% with nav_id='notifications' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.58268 17.5013C8.72217 17.755 8.92722 17.9666 9.17642 18.114C9.42563 18.2613 9.70983 18.3391 9.99935 18.3391C10.2889 18.3391 10.5731 18.2613 10.8223 18.114C11.0715 17.9666 11.2765 17.755 11.416 17.5013M3.33268 1.66797C2.33268 3.08464 1.66602 4.7513 1.66602 6.66797M18.3327 6.66797C18.3327 4.7513 17.666 3.08464 16.666 1.66797M4.99935 6.66797C4.99935 5.34189 5.52613 4.07012 6.46382 3.13243C7.4015 2.19475 8.67327 1.66797 9.99935 1.66797C11.3254 1.66797 12.5972 2.19475 13.5349 3.13243C14.4726 4.07012 14.9993 5.34189 14.9993 6.66797C14.9993 12.5013 17.4993 14.168 17.4993 14.168H2.49935C2.49935 14.168 4.99935 12.5013 4.99935 6.66797Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Уведомления</strong>
+                            <i class="__alert_count">19</i>
+                        </a>
+                    </li>
+                    {% endwith %}
+
+                    {% with nav_id='balance' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.1667 11.6667H14.175M5.83333 5.83333H15.8333C16.2754 5.83333 16.6993 6.00893 17.0118 6.32149C17.3244 6.63405 17.5 7.05797 17.5 7.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H15.8333"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Баланс</strong>
+                        </a>
+                    </li>
+                    {% endwith %}
+
+                </ul>
+
+                <ul class="account_nav-list">
+
+                    {% with nav_id='reviews' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 1.66699L12.575 6.88366L18.3333 7.72533L14.1667 11.7837L15.15 17.517L10 14.8087L4.85001 17.517L5.83334 11.7837L1.66667 7.72533L7.425 6.88366L10 1.66699Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Отзывы и вопросы</strong>
+                        </a>
+                    </li>
+                    {% endwith %}
+
+                    {% with nav_id='help' %}
+                    <li class="account_nav-item">
+                        <a href="{% url nav_id %}"
+                            class="account_nav-link {% if nav_id == view_id %}_active{% endif %}">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.10768 4.10964L7.64102 7.64297M12.3577 7.64297L15.891 4.10964M12.3577 12.3596L15.891 15.893M7.64102 12.3596L4.10768 15.893M18.3327 10.0013C18.3327 14.6037 14.6017 18.3346 9.99935 18.3346C5.39698 18.3346 1.66602 14.6037 1.66602 10.0013C1.66602 5.39893 5.39698 1.66797 9.99935 1.66797C14.6017 1.66797 18.3327 5.39893 18.3327 10.0013ZM13.3327 10.0013C13.3327 11.8423 11.8403 13.3346 9.99935 13.3346C8.1584 13.3346 6.66602 11.8423 6.66602 10.0013C6.66602 8.16035 8.1584 6.66797 9.99935 6.66797C11.8403 6.66797 13.3327 8.16035 13.3327 10.0013Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <strong>Помощь</strong>
+                        </a>
+                    </li>
+                    {% endwith %}
+                </ul>
+        
+                <ul class="account_nav-list">
+                    <ul class="account_nav-list">
+                        <li class="account_nav-item">
+                            <a href="{% url 'logout' %}" class="account_nav-link" id="logout-button">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <strong>Выйти</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </aside>
+            {% block content %}
+            {% comment %} Здесь контент {% endcomment %}
+            {% endblock %}
+        </section>
+    </main>
+    <script>
+        const socket = new WebSocket(
+            `ws://${window.location.host}/ws/user_activity/`
+        );
+    
+        socket.onopen = () => {
+            console.log("WebSocket connection в работе.");
+        };
+    
+        socket.onclose = () => {
+            console.log("WebSocket connection закрыт.");
+        };
+    </script>
+
+{% endblock %}

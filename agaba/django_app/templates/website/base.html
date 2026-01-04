@@ -1,0 +1,852 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>{{ browser_tab_name }}</title>
+    <!-- desc -->
+    <!-- open graphs -->
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <nav class="header__nav top">
+                <div class="lang_select hidden">
+                    <div class="lang_cntr">
+                        <a class="lang_item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.655 8.25C10.5617 8.25 11.25 8.175 11.25 7.5C11.25 6.81429 10.6011 6.75 9.68314 6.75H8.72046L8.69232 8.25H9.655Z" fill="black" fill-opacity="0.6"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5ZM8.72046 13.5H7.15329L7.12515 12H5.97217V10.5H7.12515V9.75H5.97217V8.25H7.12515L7.15329 5.25H9.68314C12 5.25 12.7503 6.05357 12.7503 7.5C12.7503 8.91429 12 9.75 9.655 9.75H8.69232V10.5H10.808V12H8.69232L8.72046 13.5Z" fill="black" fill-opacity="0.6"/>
+                            </svg>
+                            <strong>Рубли</strong>
+                        </a>
+                    </div>
+                    <div class="lang_hidden-cntr">
+                        <a class="lang_item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0.375C4.68528 0.375 0.375 4.68528 0.375 10C0.375 15.3147 4.68528 19.625 10 19.625C15.3147 19.625 19.625 15.3147 19.625 10C19.625 4.68528 15.3147 0.375 10 0.375ZM10.6236 14.5488V15.4402H9.36819V14.5739C8.57722 14.4945 7.73606 14.2099 7.12522 13.7537L7.74878 12.1969C8.35962 12.6572 9.109 12.992 9.8955 12.992C10.791 12.992 11.2052 12.5568 11.2052 11.8831C11.2052 11.2846 10.6528 11.0086 9.84497 10.5483C8.83228 9.97491 7.23797 9.48953 7.23797 7.74019C7.23797 6.46384 8.19222 5.677 9.36819 5.46353V4.55947H10.6236V5.42159C11.3392 5.48862 11.9752 5.68525 12.5025 6.08262L12.0381 7.72713C11.4523 7.24175 10.8913 7.04066 10.0419 7.04066C9.318 7.04066 8.81991 7.29159 8.81991 7.68106C8.81991 8.21662 9.38056 8.48887 10.3307 9.00347C11.8415 9.81128 12.8751 10.5727 12.8751 11.9704C12.8748 13.5111 12.0254 14.3354 10.6236 14.5488Z" fill="black"/>
+                            </svg>
+                            <strong>Доллары</strong>
+                        </a>
+                        <a class="lang_item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0.375C4.68528 0.375 0.375 4.68528 0.375 10C0.375 15.3147 4.68528 19.625 10 19.625C15.3147 19.625 19.625 15.3147 19.625 10C19.625 4.68528 15.3147 0.375 10 0.375ZM13.0938 10V11.375H11.0312V12.4062H13.0938V13.7812H11.0312V14.8125H9.3125V13.7812H7.25V12.4062H9.3125V11.375H7.25V10H9.27434L6.73781 5.53125H8.70544L10.1722 8.625L11.7741 5.53125H13.7166L11.155 10H13.0938Z" fill="black"/>
+                            </svg>
+                            <strong>Йены</strong>
+                        </a>
+                        <a class="lang_item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0.375C4.68528 0.375 0.375 4.68528 0.375 10C0.375 15.3147 4.68528 19.625 10 19.625C15.3147 19.625 19.625 15.3147 19.625 10C19.625 4.68528 15.3147 0.375 10 0.375ZM13.0938 10V11.375H11.0312V12.4062H13.0938V13.7812H11.0312V14.8125H9.3125V13.7812H7.25V12.4062H9.3125V11.375H7.25V10H9.27434L6.73781 5.53125H8.70544L10.1722 8.625L11.7741 5.53125H13.7166L11.155 10H13.0938Z" fill="black"/>
+                            </svg>
+                            <strong>Тенге</strong>
+                        </a>
+                    </div>
+                </div>
+                <ul class="header__list">
+                    <li>
+                        <a href="" class="header__link">Способы оплаты</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Варианты доставки</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Стать продавцом</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Работа</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Помощь</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="header__nav mid">
+                <a href="{% url 'index' %}" class="header__logo logo">
+                    <img src="{% static 'website/img/details/logoBlackSvg.svg' %}" alt="logoBlackSvg" />
+                    <span>авто<strong>маркет</strong></span>
+                </a>
+                <div class="header__catalog-search">
+                    <div class="catalog_cntr">
+                        <a href="#" class="catalog_btn">
+                            <img src="{% static 'website/img/marks/catalogSvg.svg' %}" alt="catalogSvg" />
+                            <strong>Каталог</strong>
+                        </a>
+
+                        <aside class="catalog__hidden-container">
+
+                            <div class="catalog__hidden-wrap">
+                                {% for category in root_categories %}
+                                <ul class="catalog__hidden-list">
+                                    <li class="catalog__hidden-item _header">
+                                        <a href="{% url 'catalog' slug=category.slug %}" class="catalog__hidden-link">
+                                            <h5>{{ category.name }}</h5>
+                                        </a>
+                                    </li>
+
+                                    {% for child in category.children.all %}
+                                    <li class="catalog__hidden-item">
+                                        <a href="{% url 'catalog' slug=child.slug %}" class="catalog__hidden-link">
+                                            {{ child.name }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+
+                                    {% if category.children.exists %}
+                                    <li class="catalog__hidden-item">
+                                        <button class="catalog__hidden-show_more" type="button">
+                                            <a href="{% url 'catalog' slug=category.slug %}" class="catalog__hidden-link">
+                                                <strong>Все</strong>
+                                            </a>
+                                        </button>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                                {% endfor %}
+                            </div>
+
+                        </aside>
+                    </div>
+
+                    <div class="search_cntr">
+                        <div class="search__input-wrap">
+                            <label class="search_label" for="serachSm">
+                                <img src="{% static 'website/img/marks/searchSvh.svg' %}" alt="searchSvh" />
+                            </label>
+                            <input class="header_search" type="text" name="serachCatalog" id="searchSm" placeholder="Искать на AGABA" {% if query_request %}value={{ query_request }} {% endif %}/>
+                        </div>
+                        <aside class="search__result-container">
+                        </aside>
+                    </div>
+                </div>
+                <div class="header__nav-links">
+                    <a href="/account/compare/" class="nav-link">
+                        <img src="{% static 'website/img/marks/compareSvg.svg' %}" alt="compareSvg" />
+                        <strong>Сравнить</strong>
+                    </a>
+                    <a href="/account/favorites/" class="nav-link">
+                        <img src="{% static 'website/img/marks/followSvg.svg' %}" alt="followSvg" />
+                        <strong>Нравится</strong>
+                    </a>
+                    <a {% if user.is_authenticated %} href="{% url 'home' %}"
+                    {% else %} href="{% url 'auth_user' %}" {% endif %} class="nav-link">
+                        <img src="{% static 'website/img/marks/accSvg.svg' %}" alt="accSvg" />
+
+                        {% if user.is_authenticated %}
+                            <strong>{{ user.username }}</strong>
+                        {% else %}
+                            <strong>Кабинет</strong>
+                        {% endif %}
+
+                    </a>
+                </div>
+            </nav>
+            <ul class="header__nav _pop-list bot">
+
+                {% for category in root_categories %}
+                    <li class="header__nav_pop-item">
+                        <div class="slider_pop-wrp">
+                            <a href="{% url 'catalog' slug=category.slug %}" class="car_nav-link {% if category.children.exists %} select {% endif %}" data-index="{{ forloop.counter0 }}">{{ category.name }}</a>
+                            {% if category.children.exists %}
+                                <aside class="select__container">
+                                    <ul class="select__list">
+                                        <li class="select__item" data-index="{{ forloop.counter0 }}">
+                                            {% for child in category.children.all %}
+                                                <a href="{% url 'catalog' slug=child.slug %}" class="select_type-link">
+                                                    <strong>{{ child.name }}</strong>
+                                                    <i>{{ child.products.count }}</i>
+                                                </a>
+                                            {% endfor %}
+                                        </li>
+                                    </ul>
+                                </aside>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+
+            </ul>
+            <nav class="mobile__menu">
+                <ul class="mobile__nav-list">
+                        <li class="mobile__nav-item">
+                        <button class="mobile__menu-btn mobile__nav-link" type="button">
+                            <img src="{% static 'website/img/marks/burgerMenuSvg.svg' %}" alt="burgerMenuSvg" />
+                            <strong>Меню</strong>
+                        </button>
+                            <div class="mobile__menu-hidden-cntr">
+                                <div class="mob_overlay"></div>
+                                <div class="mobile__menu-hidden-content">
+                                    <ul class="mobile__menu-hidden_list">
+                                        <li class="mobile__menu-hidden_item">
+                                            <a href="{% url 'auth_user' %}" class="mobile__menu-hidden_link">Account</a>
+                                        </li>
+                                        <li class="mobile__menu-hidden_item">
+                                            <a href="" class="mobile__menu-hidden_link">Catalog</a>
+                                        </li>
+                                        <li class="mobile__menu-hidden_item">
+                                            <a href="" class="mobile__menu-hidden_link">CompareItems</a>
+                                        </li>
+                                        <li class="mobile__menu-hidden_item">
+                                            <a href="" class="mobile__menu-hidden_link">FollowItems</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile_sub-bg"></div>
+                            </div>
+                        </li>
+                        <li class="mobile__nav-item">
+                        <a href="" class="mobile__nav-link">
+                            <img src="{% static 'website/img/marks/followSvg.svg' %}" alt="followSvg" />
+                            <strong>Нравится</strong>
+                        </a>
+                    </li>
+                    <li class="mobile__nav-item">
+                        <a href="" class="mobile__nav-link _catalog">
+                            <img src="{% static 'website/img/marks/catalogDarkSvg.svg' %}" alt="catalogDarkSvg" />
+                            <strong>Каталог</strong>
+                        </a>
+                    </li>
+                    <li class="mobile__nav-item">
+                        <a href="" class="mobile__nav-link">
+                            <img src="{% static 'website/img/marks/compareSvg.svg' %}" alt="compareSvg" />
+                            <strong>Сравнить</strong>
+                        </a>
+                    </li>
+                    <li class="mobile__nav-item">
+                        <a href="{% url 'auth_user' %}" class="mobile__nav-link">
+                            <img src="{% static 'website/img/marks/accSvg.svg' %}" alt="accSvg" />
+                            <strong>Кабинет</strong>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="header_mob-btns_cntr">
+                <button class="back_page-btn _grey _header_mob-btns" type="button" onclick="window.history.back();">
+                    <img src="{% static 'website/img/marks/backArrowSvg.svg' %}" alt="backArrowSvg">
+                </button>
+                <button class="npotification_btn _orange _header_mob-btns" type="button">
+                    <img src="{% static 'website/img/marks/notifSvg.svg' %}" alt="notifSvg">
+                    <i class="__notif_count">2</i>
+                </button>
+            </aside>
+        </header>
+
+        {% block main %}
+
+        <main class="main" id="main_fetch">
+
+            <section class="hero_section">
+                <div class="hero_title">
+                    <p>Купить авто на заказ из <i>Германии</i></p>
+                </div>
+                <div class="hero_p">
+                    <img src="{% static 'website/img/marks/rSvg.svg' %}" alt="rSvg" />
+                </div>
+                <div class="hero_img">
+                    <img src="{% static 'website/img/png/heroPng.png' %}" alt="heroPng" />
+                </div>
+                <div class="hero_wym">
+                    <img src="{% static 'website/img/details/wymHeroSvg.svg' %}" alt="wymHeroSvg" />
+                </div>
+            </section>
+            
+            <section class="catalog_section main">
+                <ul class="catalog_list">
+                    {% for product in products|slice:":10" %}
+                        {% include "website/_catalog_item.html" with product=product %}
+                    {% endfor %}
+                </ul>
+            
+                <ul class="catalog_list advert">
+                    {% for adv_img in adverts_small %}
+                        <li class="catalog_item">
+                            <div class="catalog_img advert _sm">
+                                <img src="{% static 'website/img/reklama/' %}{{ adv_img }}" alt="advertPng" />
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            
+                <ul class="catalog_list">
+                    {% for product in products|slice:"10:15" %}
+                        {% include "website/_catalog_item.html" with product=product %}
+                    {% endfor %}
+                </ul>
+            
+                <ul class="catalog_list advert large">
+                    {% for adv_img in adverts_large %}
+                        <li class="catalog_item">
+                            <div class="catalog_img advert">
+                                <img src="{% static 'website/img/reklama/' %}{{ adv_img }}" alt="advertPngLarge" />
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            
+                <ul class="catalog_list">
+                    {% for product in products|slice:"15:20" %}
+                        {% include "website/_catalog_item.html" with product=product %}
+                    {% endfor %}
+                </ul>
+            </section>            
+
+        </main>
+
+        {% endblock %}
+
+        <footer class="footer">
+            <nav class="footer__nav list">
+                <ul class="footer__list logo_inf">
+                    <li>
+                        <a href="" class="footer__logo logo">
+                            <img src="{% static 'website/img/details/logoBotSvg.svg' %}" alt="logoBotSvg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pers_data-btn p_t">Политика обработки персональных данных</a>
+                    </li>
+                    <li>
+                        <a href="" class="trade_platform-btn p_t">Правила пользования торговой площадкой</a>
+                    </li>
+                    <li>
+                        <p>«Agaba», все права защищены © 2024</p>
+                    </li>
+                </ul>
+                <ul class="footer__list">
+                    <li>
+                        <h4>Покупателям</h4>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Как сделать заказ</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Доставка</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Доставка</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Возврат товара</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Правила продажи</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Помощь</a>
+                    </li>
+                </ul>
+                <ul class="footer__list">
+                    <li>
+                        <h4>Партнерам</h4>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Стать продавцом</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Работа</a>
+                    </li>
+                </ul>
+                <ul class="footer__list">
+                    <li>
+                        <h4>Компания</h4>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">О нас</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Реквизиты</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">ВКонтакте</a>
+                    </li>
+                </ul>
+                <ul class="footer__list services">
+                    <li>
+                        <h4>Мы в соцсетях</h4>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">ВКонтакте</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Одноклассники</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">YouTube</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer__nav-link">Телеграм</a>
+                    </li>
+                </ul>
+
+                <div class="qr_code-cntr">
+                    <div class="qr_code">
+                        <img src="{% static 'website/img/details/QRFooterSvg.svg' %}" alt="QRFooterSvg" />
+                    </div>
+                    <h4>Приложение</h4>
+                    <p>Наведите камеру</p>
+                </div>
+            </nav>
+
+            <nav class="footer__nav bot">
+                <ul class="footer__service-list">
+                    <li>
+                        <a href="" class="footer_service-link">
+                            <img src="{% static 'website/img/services/vkBotSvg.svg' %}" alt="vkBotSvg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer_service-link">
+                            <img src="{% static 'website/img/services/okBotSvg.svg' %}" alt="okBotSvg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer_service-link">
+                            <img src="{% static 'website/img/services/tgBotSvg.svg' %}" alt="tgBotSvg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="footer_service-link">
+                            <img src="{% static 'website/img/services/youtubeBotSvg.svg' %}" alt="youtubeBotSvg" />
+                        </a>
+                    </li>
+                </ul>
+                <a href="" class="footer__services">
+                    <img src="{% static 'website/img/png/servicesPng.png' %}" alt="servicesPng" />
+                </a>
+            </nav>
+
+            <nav class="footer__mobile">
+                <a href="" class="pers_data-btn p_t">Политика обработки персональных данных</a>
+                <a href="" class="trade_platform-btn p_t">Правила пользования торговой площадкой</a>
+                <p>«Agaba», все права защищены © 2024</p>
+            </nav>
+        </footer>
+
+        {% block modals %}
+
+        <aside class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__content _balance">
+                <form class="modal__balance_form _withdrawal_fund_form" method="post" name="popolneie" id="" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <ul class="modal__content_list _withdrawal_fund  _modal_balance_list">
+                        <li class="modal__content_item">
+                            <button class="modal__close_btn" type="button">
+                                <img src="{% static 'website/img/modal/close.svg' %}" alt="close modal">
+                            </button>
+                            <h3 class="modal__content_title">Пополнение счета</h3>
+                            <p class="modal__content_text">Чтобы привязать другой номер к кабинету, введите его ниже и подтвердите</p>
+                        </li>
+                        <li class="modal__content_item">                           
+                            <div class="modal__input_cntr">
+                                <label class="modal__label">Сумма для пополнения</label>
+                                
+                                <input type="number" name="amount_replenishment" value="{{ form_rep.amount_replenishment.value|default:'' }}" class="modal__input big_input _grey_input _amount"
+                                    placeholder="0" step="0.01">
+                            </div>
+                        </li>
+                        <li class="modal__content_item">
+                                <ul class="modal__form_list">
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <input type="hidden" id="id_ogrn" name="ogrn" value="{{ form_comp.ogrn.value|default:'' }}">
+                                            <label for="id_company_name_or_inn" class="modal__form_label">Название или ИНН организации</label>
+                                            <input
+                                                class="modal__form_value_input _main_input big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.company_name }}"
+                                                id="id_company_name_or_inn"
+                                                name="name"
+                                            >
+                                        </div>
+                                        <div class="balance_hidden_cntr org_hidden-cntr open">
+                                            <p class="org_title">Глобальный поиск</p>
+                                            <ul class="org_hidden-list" id ="company-list">
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label
+                                                for="id_number_inn" class="modal__form_label">ИНН</label>
+                                            
+                                            <input
+                                                class="modal__form_value_input _inn big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.number_inn }}"
+                                                id="id_number_inn"
+                                                name="inn"
+                                            >
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label for="id_number_kpp" class="modal__form_label">КПП</label>
+                                            <input
+                                                class="modal__form_value_input _kpp big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.number_kpp }}"
+                                                
+                                                id="id_number_kpp"
+                                                name="kpp"
+                                            >
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label
+                                            
+                                                 for="id_legal_address" class="modal__form_label">Юридический адрес</label>
+                                            
+                                            <input
+                                                class="modal__form_value_input big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.legal_address }}"
+                                                
+                                                id="id_legal_address"
+                                                name="legal_address"
+                                            >
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label for="id_edo" class="modal__form_label">Идентификатор ЭДО</label>
+                                            <input
+                                                class="modal__form_value_input big_input _grey_input"
+                                                type="text"
+                                                value="{{ form_comp.edo.value|default:'' }}"  
+                                                id="id_edo"
+                                                name="edo"  
+                                            >
+                                        </div>
+                                    </li>
+                                </ul>
+                            <div class="balance__saved_requisite">
+                                <ul class="balance__saved_list">
+                                    {% for company in companies %}
+                                    <li class="balance__saved_item">
+                                        <div class="balance__saved_cntr">
+                                            <div class="balance__saved_img">
+                                                <img src="{% static 'website/img/balane/reqImg.png' %}" alt="req image">
+                                            </div>
+                                            <div class="balance__saved_datas">
+                                                <h4 class="balance__saved_name">{{ company.name }}</h4>
+                                                <p class="balance__saved_inn">{{ company.inn }}</p>
+                                                <p class="balance__saved_ogrn">{{ company.ogrn }}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="modal__content_item">
+                            <div class="modal__btn_cntr">
+                                <button class="modal__btn _code _orange_btn" name="submit_replenishment" type="submit">
+                                    <strong>Скачать счет</strong>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="modal__content_item">
+                            <div class="modal__btn_cntr _checkbox">
+                                <input type="checkbox" id="showCompanyDetails" name="is_hidden">
+                                <label for="showCompanyDetails">Сохранить реквизиты компании</label>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+                {% if form_rep.errors %}
+                <div class="alert alert-danger">
+                    {{ form_rep.errors }}
+                </div>
+                {% endif %}
+
+                {% if form_comp.errors %}
+                <div class="alert alert-danger">
+                    {{ form_comp.errors }}
+                </div>
+                {% endif %}
+                <form 
+                    class="modal__balance_form _account_replenishment_form"
+                    method="post"
+                    name="snyatie"
+                    id=""
+                    novalidate
+                >
+                    <ul class="modal__content_list _account_replenishment _modal_balance_list">
+                        <li class="modal__content_item">
+                            <button class="modal__close_btn" type="button">
+                                <img src="{% static 'website/img/modal/close.svg' %}" alt="close modal">
+                            </button>
+                            <h3 class="modal__content_title">Вывод средств</h3>
+                            <p class="modal__content_text">Чтобы привязать другой номер к кабинету, введите его ниже и подтвердите</p>
+                        </li>
+                        <li class="modal__content_item">                           
+                            <div class="modal__input_cntr">
+                                <label class="modal__label">Сумма для вывода</label>
+                                <input type="number" name="amount_withdrawal" value="{{ form_wit.amount_withdrawal.value|default:'' }}" class="modal__input big_input _grey_input _amount"
+                                    placeholder="0" step="0.01">
+                            </div>
+                        </li>
+                        <li class="modal__content_item">
+                            <div class="modal__form _changed_modal_form">
+                                <ul class="modal__form_list">
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <input type="hidden" id="id_ogrn" name="ogrn" value="{{ form_comp.ogrn.value|default:'' }}">
+                                            <label for="id_company_name_and_inn" class="modal__form_label">Название или ИНН организации</label>
+                                            <input
+                                                class="modal__form_value_input _main_input big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.company_name }}"
+                                                id="id_company_name_and_inn"
+                                                name="name"
+                                            >
+                                        </div>
+                                        <div class="balance_hidden_cntr org_hidden-cntr open">
+                                            <p class="org_title">Глобальный поиск</p>
+                                            <ul class="org_hidden-list" id ="company-list">
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label
+                                                for="id_number_inn" class="modal__form_label">ИНН</label>
+                                            <input
+                                                class="modal__form_value_input _inn big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.number_inn }}"
+                                                id="id_number_inn"
+                                                name="inn"
+                                            >
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label for="id_number_kpp" class="modal__form_label">КПП</label>
+                                            <input
+                                                class="modal__form_value_input _kpp big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.number_kpp }}"
+                                                
+                                                id="id_number_kpp"
+                                                name="kpp"
+                                            >
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label
+                                            
+                                                 for="id_legal_address" class="modal__form_label">Юридический адрес</label>
+                                            
+                                            <input
+                                                class="modal__form_value_input big_input _grey_input"
+                                                type="text"
+                                                value="{{ form.legal_address }}"
+                                                
+                                                id="id_legal_address"
+                                                name="legal_address"
+                                            >
+                                        </div>
+                                    </li>
+                                    <li class="modal__form_item">
+                                        <div class="modal__form_input_cntr">
+                                            <label for="id_edo" class="modal__form_label">Идентификатор ЭДО</label>
+                                            <input
+                                                class="modal__form_value_input big_input _grey_input"
+                                                type="text"
+                                                value="{{ form_comp.edo.value|default:'' }}"  
+                                                id="id_edo"
+                                                name="edo"  
+                                            >
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="balance__saved_requisite">
+                                    <ul class="balance__saved_list">
+                                        {% for company in companies %}
+                                        <li class="balance__saved_item">
+                                            <div class="balance__saved_cntr">
+                                                <div class="balance__saved_img">
+                                                    <img src="{% static 'website/img/balane/reqImg.png' %}" alt="req image">
+                                                </div>
+                                                <div class="balance__saved_datas">
+                                                    <h4 class="balance__saved_name">{{ company.name }}</h4>
+                                                    <p class="balance__saved_inn">{{ company.inn }}</p>
+                                                    <p class="balance__saved_ogrn">{{ company.ogrn }}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="modal__content_item">
+                            <div class="modal__btn_cntr">
+                                <button class="modal__btn _code _orange_btn" name="submit_withdrawal" type="submit">
+                                    <strong>Скачать счет</strong>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="modal__content_item">
+                            <div class="modal__btn_cntr _checkbox">
+                                <input type="hidden" name="comp-is_hidden" value="1"> <!-- Значение по умолчанию: скрыть -->
+                                <input class="modal__checkbox _orange__checkbox __black_check" type="checkbox" id="showCompanyDetails" name="is_hidden" value="0">
+                                <label for="showCompanyDetails">Сохранить реквизиты компании</label>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </aside>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <script>
+            document.getElementById('id_company_name_or_inn').addEventListener('input', function () {
+                var query = this.value;
+        
+                // Если поле пустое, скрываем модальное окно
+                if (query.trim() === '') return;
+
+        
+                // Отправка запроса на сервер для поиска компаний
+                fetch(`/account/balance/get_company_info/?query=${query}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Ошибка сети');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.error) {
+                            alert(data.error); // Показываем ошибку, если она есть
+                            //hideModal();
+                        } else if (data.companies && data.companies.length > 0) {
+                            // Если найдены компании, показываем их в модальном окне
+                            showModal(data.companies);
+                        } else {
+                            //hideModal();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при получении данных:', error);
+                        //hideModal();
+                    });
+            });
+        
+            function showModal(companies) {
+                console.log(companies)
+                const modal = document.getElementById('company-modal');
+                const companyList = document.getElementById('company-list');
+        
+                // Очищаем предыдущий список компаний
+                companyList.innerHTML = '';
+        
+                // Добавляем компании в модальное окно
+                companies.forEach(company => {
+                    const li = document.createElement('li');
+                    li.classList.add('org_hidden-item');
+                
+                    const companyDataContainer = document.createElement('div');
+                    companyDataContainer.classList.add('balance_company_data');
+                
+                    const nameElement = document.createElement('h5');
+                    nameElement.textContent = company.name;
+                    nameElement.classList.add('company_name');
+                    li.appendChild(nameElement);
+                
+                    const innElement = document.createElement('p');
+                    innElement.textContent = `ИНН: ${company.inn}`;
+                    innElement.classList.add('_inn_value');
+                    companyDataContainer.appendChild(innElement);
+                
+                    const kppElement = document.createElement('p');
+                    kppElement.textContent = `КПП: ${company.kpp}`;
+                    kppElement.classList.add('_kpp_value');
+                    companyDataContainer.appendChild(kppElement);
+                
+                    li.appendChild(companyDataContainer);
+                
+                    li.addEventListener('click', () => {
+                        // Заполняем поля данными выбранной компании
+                        document.getElementById('id_number_inn').value = company.inn;
+                        document.getElementById('id_company_name_or_inn').value = company.name;
+                        document.getElementById('id_legal_address').value = company.address || '';
+                        document.getElementById('id_number_kpp').value = company.kpp || '';
+                        document.getElementById('id_ogrn').value = company.ogrn || '';
+                
+                        // Добавляем класс _up_label к соответствующим label
+                        updateLabelState('id_number_inn');
+                        updateLabelState('id_company_name_or_inn');
+                        updateLabelState('id_legal_address');
+                        updateLabelState('id_number_kpp');
+                        updateLabelState('id_ogrn');
+                    });
+                    companyList.appendChild(li);
+                });
+            }
+        
+            // Функция для добавления/удаления класса _up_label к label
+            function updateLabelState(inputId) {
+                const input = document.getElementById(inputId);
+                if (!input) return; // Если input не найден, выходим
+        
+                const label = document.querySelector(`label[for="${inputId}"]`); // Находим label по атрибуту for
+                if (!label) return; // Если label не найден, выходим
+        
+                if (input.value.length > 0 && !label.classList.contains('_up_label')) {
+                    label.classList.add('_up_label');
+                } else if (input.value.length === 0 && label.classList.contains('_up_label')) {
+                    label.classList.remove('_up_label');
+                }
+            }
+        
+            // Добавляем обработчики события input для отслеживания изменений
+            const inputIds = [
+                'id_number_inn',
+                'id_company_name_or_inn',
+                'id_legal_address',
+                'id_number_kpp',
+                'id_ogrn'
+            ];
+            inputIds.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                if (input) {
+                    input.addEventListener('input', () => {
+                        updateLabelState(inputId);
+                    });
+                     // Добавлено для начальной инициализации.  Если поля уже заполнены, то лейблы должны появиться сразу.
+                    updateLabelState(inputId);
+                }
+            });
+        </script>
+
+        {% endblock %}
+
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="{% static 'website/js/slick.min.js' %}"></script>
+        <script src="{% static 'website/js/slider.js' %}"></script>
+        <script type="module" src="{% static 'website/js/main.js' %}"></script>
+        <script src="{% static 'website/js/funcs/djangoFuncs.js' %}"></script>
+
+    </div>
+</body>
+
+</html>

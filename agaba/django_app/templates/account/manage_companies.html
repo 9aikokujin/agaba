@@ -1,0 +1,197 @@
+<!-- ЭТО ТЕСТОВЫЙ ШАБЛОН НУЖЕН ЧЕЛОВЕЧЕСКИЙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление компаниями</title>
+    <!-- Подключение CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Управление компаниями</h2>
+
+        <!-- Форма для добавления/редактирования компании -->
+        <h4>{{ form_title }}</h4>
+        <form method="post" action="{{ form_action }}" id="company-form">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_inn" class="form-label">ИНН</label>
+                <input type="text" name="inn" id="id_inn" class="form-control" value="{{ form.inn.value|default:'' }}" required>
+                {% if form.inn.errors %}
+                    <ul class="errorlist text-danger">
+                        {% for error in form.inn.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_name" class="form-label">Название компании</label>
+                <input type="text" name="name" id="id_name" class="form-control" value="{{ form.name.value|default:'' }}" required>
+                {% if form.name.errors %}
+                    <ul class="errorlist text-danger">
+                        {% for error in form.name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_legal_address" class="form-label">Юридический адрес</label>
+                <input type="text" name="legal_address" id="id_legal_address" class="form-control" value="{{ form.legal_address.value|default:'' }}">
+                {% if form.legal_address.errors %}
+                    <ul class="errorlist text-danger">
+                        {% for error in form.legal_address.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_kpp" class="form-label">КПП</label>
+                <input type="text" name="kpp" id="id_kpp" class="form-control" value="{{ form.kpp.value|default:'' }}">
+                {% if form.kpp.errors %}
+                    <ul class="errorlist text-danger">
+                        {% for error in form.kpp.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_ogrn" class="form-label">ОГРН</label>
+                <input type="text" name="ogrn" id="id_ogrn" class="form-control" value="{{ form.ogrn.value|default:'' }}">
+                {% if form.ogrn.errors %}
+                    <ul class="errorlist text-danger">
+                        {% for error in form.ogrn.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">{{ submit_button_text }}</button>
+        </form>
+
+        <!-- Список текущих компаний пользователя -->
+        <h4 class="mt-5">Мои компании</h4>
+        {% if user.companys.all %}
+            <ul class="list-group" id="company-list">
+                {% for company in user.companys.all %}
+                <li class="list-group-item d-flex justify-content-between align-items-center company-item"
+                    data-inn="{{ company.inn }}"
+                    data-name="{{ company.name }}"
+                    data-legal-address="{{ company.legal_address }}"
+                    data-kpp="{{ company.kpp }}"
+                    data-ogrn="{{ company.ogrn }}">
+                    {{ company.name }} (ИНН: {{ company.inn }})
+                    <div>
+                        <a href="{% url 'edit_company' company.id %}" class="btn btn-warning btn-sm me-2">Редактировать</a>
+                        <form method="post" action="{% url 'remove_company' company.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                        </form>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>У вас пока нет компаний.</p>
+        {% endif %}
+    </div>
+    <!-- Модальное окно -->
+    <div id="company-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Выберите компанию</h3>
+            <ul id="company-list" style="max-height: 200px; overflow-y: auto;"></ul>
+            <button id="close-modal" class="btn btn-secondary">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Обработчик ввода в поле ИНН
+        document.getElementById('id_inn').addEventListener('input', function () {
+            var query = this.value;
+
+            // Если поле пустое, скрываем модальное окно
+            if (query.trim() === '') {
+                hideModal();
+                return;
+            }
+
+            // Отправка запроса на сервер для поиска компаний
+            fetch(`/account/balance/get_company_info/?query=${query}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Ошибка сети');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error); // Показываем ошибку, если она есть
+                        hideModal();
+                    } else if (data.companies && data.companies.length > 0) {
+                        // Если найдены компании, показываем их в модальном окне
+                        showModal(data.companies);
+                    } else {
+                        hideModal();
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка при получении данных:', error);
+                    hideModal();
+                });
+        });
+
+        // Функция для отображения модального окна с компаниями
+        function showModal(companies) {
+            const modal = document.getElementById('company-modal');
+            const companyList = document.getElementById('company-list');
+
+            // Очищаем предыдущий список компаний
+            companyList.innerHTML = '';
+
+            // Добавляем компании в модальное окно
+            companies.forEach(company => {
+                const li = document.createElement('li');
+                li.textContent = `${company.name} (ИНН: ${company.inn}, КПП: ${company.kpp})`;
+                li.style.cursor = 'pointer';
+                li.addEventListener('click', () => {
+                    // Заполняем поля данными выбранной компании
+                    document.getElementById('id_inn').value = company.inn; // Заполняем ИНН
+                    document.getElementById('id_name').value = company.name; // Заполняем название компании
+                    document.getElementById('id_legal_address').value = company.legal_address || ''; // Заполняем юридический адрес
+                    document.getElementById('id_kpp').value = company.kpp || ''; // Заполняем КПП
+                    document.getElementById('id_ogrn').value = company.ogrn || ''; // Заполняем ОГРН
+
+                    // Скрываем модальное окно
+                    hideModal();
+                });
+                companyList.appendChild(li);
+            });
+
+            // Позиционируем модальное окно под полем ввода ИНН
+            const innField = document.getElementById('id_inn');
+            modal.style.top = `${innField.offsetTop + innField.offsetHeight}px`;
+            modal.style.left = `${innField.offsetLeft}px`;
+            modal.style.width = `${innField.offsetWidth}px`;
+
+            // Показываем модальное окно
+            modal.style.display = 'block';
+        }
+
+        // Функция для скрытия модального окна
+        function hideModal() {
+            const modal = document.getElementById('company-modal');
+            modal.style.display = 'none';
+        }
+
+        // Обработчик закрытия модального окна
+        document.getElementById('close-modal').addEventListener('click', hideModal);
+    </script>
+</body>
+</html>

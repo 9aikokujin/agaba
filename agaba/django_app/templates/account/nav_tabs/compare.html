@@ -1,0 +1,103 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _acc_order_delivery _acc_compare">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _order_delivery">
+    <h2>Сравнения <p class="_heading_descr _fs_px_18">Добавляйте товары к сравнению, чтобы сопоставить параметры</p> </h2>
+    {% if products %}
+        {% if groups %}
+            <nav class="acc__order_tabs __tabs_cntr">
+                {% for group, count in groups.items %}
+                <button class="order__tab_btn _tab_btn orange-text-btn undeline-btn {% if forloop.first %}active{% endif %}"
+                        type="button"
+                        data-group="{{ group }}"
+                        tab-index="{{ forloop.counter }}">
+                    <strong>{{ group }} <i class="_item_counter">{{ count }}</i></strong>
+                </button>
+                {% endfor %}
+            </nav>
+        {% endif %}
+        <div class="acc__compare_cntr _flex_stretch_sb">
+            <!-- ЛЕВАЯ КОЛОНКА: Заголовки характеристик -->
+            <div class="compare__characters _flex_column">
+                <div class="compare__slider_btns _flex_start">
+                    <button class="compare__prev_slider _slider_btn _empty_btn" type="button">
+                        <strong>Назад</strong>
+                    </button>
+                    <button class="compare__next_slider _slider_btn _empty_btn" type="button">
+                        <strong>Далее</strong>
+                    </button>
+                </div>
+
+                <ul class="characters__list _flex_column _pos_rel">
+                    <li class="characters__item">
+                        <h4>Параметры</h4>
+                    </li>
+                    {% for product in products %}
+                        <li class="characters__item"><strong>{{ product.name }}</strong></li>
+                        {% for char in product.characteristics.all %}
+                            <li class="characters__item">
+                                <p>{{ char.name }}: {{ char.value }}</p>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- ПРАВАЯ КОЛОНКА: Карточки товаров с характеристиками -->
+            <ul class="acc__order_delivery catalog_list _compare__list" tab-index="1">
+                {% for product in products %}
+                <li class="catalog_item _compare__item"
+                    data-group="{{ product.group }}"
+                    data-characteristics='[{% for char in product.characteristics.all %}{"name": "{{ char.name }}", "value": "{{ char.value }}"}{% if not forloop.last %}, {% endif %}{% endfor %}]'>
+
+                    <div class="_compare__item_wrap _flex_column">
+                        <button class="compare__delete_btn _empty_btn" data-product-id="{{ product.id }}" id="chto-nibudi">Удалить</button>
+
+                        <div class="catalog_img">
+                            {% if product.product_images.all %}
+                            <img src="{{ product.product_images.first.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                            <img src="/static/img/default-product.jpg" alt="Нет изображения">
+                            {% endif %}
+                        </div>
+
+                        <ul class="catalog_description-list">
+                            <li>
+                                <h5>{{ product.name }} {{ product.brand }}</h5>
+                                <div class="catalog_rating">
+                                    <input class="catalog_star" type="radio" id="catalogStar_{{ product.id }}">
+                                    <label class="catalog_label" for="catalogStar_{{ product.id }}">4,7</label>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="cur_price">{{ product.cur_price }} ₽</p>
+                                {% if product.old_price %}
+                                <p class="old_price">{{ product.old_price }} ₽</p>
+                                {% endif %}
+                            </li>
+                            <li>
+                                <p class="catalog_description">{{ product.description }}</p>
+                            </li>
+                        </ul>
+
+                        <!-- Контейнер для характеристик -->
+                        <ul class="product_characteristics"></ul>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+    {% else %}
+
+        <p>Нет товаров для сравнения.</p>
+
+    {% endif %}
+
+</div>
+{% endblock %}

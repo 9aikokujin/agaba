@@ -1,0 +1,124 @@
+.acc__order_delivery._seller_orders {
+
+}
+
+.acc_main-item._acc_order_item._seller_order {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.acc_main-item._acc_order_item._seller_order::before {
+  position: absolute;
+  content: '';
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid var(--color001); 
+}
+
+.acc__order_delivery._acc-list {
+
+}
+
+.acc__order_delivery._seller_orders .OD_link-btn,
+.acc__order_delivery._seller_orders .OD_link-btn strong,
+.acc__order_delivery._seller_orders .OD_link-btn i {
+  font-weight: 500!important;
+  font-size: 18px;
+  text-transform: none;
+}
+
+.acc__order_delivery._seller_orders .OD_item_title p {
+  color: var(--color000);
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.acc__order_delivery._seller_orders .OD_item_img {
+  width: 140px;
+  height: 100px;
+  min-width: 140px;
+  min-height: 100px;
+  background-color: var(--color0004);
+  padding: 20px;
+}
+
+.acc__order_delivery._seller_orders .OD_item_img img {
+  object-fit: cover;
+}
+
+.acc__order_delivery._seller_orders .OD_item_title > div {
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.order__seller_state {
+  padding: 2px 7px;
+  border-radius: 8px;
+}
+
+.acc__order_delivery._seller_orders ._flex_start > time,
+.order__seller_state strong {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.order__seller_state._prepare {
+  
+}
+
+.order__seller_state._pay {
+
+}
+
+.order__seller_state._delivery {
+
+}
+
+.order__seller_state._shipped {
+  color: var(--colorfff);
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .acc__order_delivery._seller_orders  .acc__order_search {
+    width: 220px;
+  }
+
+}
+
+@media screen and (max-width: 600px)  {
+  .acc__order_delivery._seller_orders .OD_item_img {
+    /* width: 90px;
+    height: 60px;
+    min-width: 90px;
+    min-height: 60px; */
+    padding: 10px;
+  }
+  
+  .acc__order_delivery._seller_orders .OD_item_img img {
+    width: 100%;
+    height: 100%;
+    min-width: unset;
+    min-height: unset;
+  }
+
+  .OD_item_link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acc__order_delivery._seller_orders .OD_item_title {
+    width: 100%!important;
+  }
+
+  .acc__order_delivery._seller_orders .acc__order_search {
+    width: 100%;
+  }
+}

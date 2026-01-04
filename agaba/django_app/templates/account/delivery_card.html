@@ -1,0 +1,192 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block title %}Оформление заказа{% endblock %}
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _delivery-sect">
+{% endblock %}
+{% block content %}
+ <div class="acc_main-cntr _order-pg">
+     <ul class="delivery_page _acc-list">
+        {% with nav_id='orders' %}
+         <li class="acc_main-item _order-back_date">
+             <div class="order_btn-cntr">
+                 <a href="{% url nav_id %}" class="back_btn _small_btn arrow-btn">Мои заказы</a>
+             </div>
+        {% endwith %}
+         {% comment %} нужна логика изменения прогресса {% endcomment %}    
+         </li>
+         <li class="acc_main-item _order_header">
+             <h1>Заказ <i>№{{ delivery_order.number }}</i></h1>
+         </li>
+         <li class="acc_main-item _delivery-progress">
+            {% if delivery_order.delivery_stage == 'Stage_1' %}
+             <div class="delivery__progress-cntr" href="">
+                 <progress
+                     class="delivery__progress _green_progress"
+                     value="2" 
+                     min="0" 
+                     max="100"
+                 >
+                 </progress>
+             </div>
+             {% elif delivery_order.delivery_stage == 'Stage_2' %}
+             <div class="delivery__progress-cntr">
+                <progress
+                    class="delivery__status _green_progress"
+                    value="15" 
+                    min="0" 
+                    max="100"
+                >
+                </progress>
+            </div>
+            {% elif delivery_order.delivery_stage == 'Stage_3' %}
+            <div class="delivery__progress-cntr">
+                <progress
+                    class="delivery__status _green_progress"
+                    value="35" 
+                    min="0" 
+                    max="100"
+                >
+                </progress>
+            </div>
+            
+            {% endif %}
+             <ul class="delivery__progress-inf_list">
+                 <li class="delivery__progress-inf_item _start">
+                     <p>г. {{ delivery_order.cargo.location }}</p>
+                 </li>
+                 <li class="delivery__progress-inf_item _dev-date">
+                     <p>{{ delivery_order.get_delivery_type_display }}</p>
+                     <time datetime="--11-27">до {{ delivery_order.date_delivery|date:"j E Y" }}</time>
+                 </li>
+                 <li class="delivery__progress-inf_item _end">
+                     <p>г. {{ delivery_order.address_delivery }}</p>
+                 </li>
+             </ul>
+         </li>
+         <li class="acc_main-item _order_docs_btn-cntr">
+             <ul class="order_docs-list">
+                 <li class="order_docs-item">
+                     <div class="order_addDoc-img">
+                         <img src="{% static 'website/img/accSide/addDocCvg.svg' %}" alt="addDocCvg">
+                     </div>
+                     <div class="order_doc-description">
+                         <h5 class="order_addDoc-name">
+                             Заказ будет создан после оплаты
+                         </h5>
+                         <p class="order_addDoc-size">{{ delivery_order.cargo.name }} {{ delivery_order.cargo.brand }} TE354, {{ delivery_order.cargo.prod_year }}</p>
+                     </div>
+                 </li>
+             </ul>
+         </li>
+         <li class="acc_main-item _order_docs_btn-cntr">
+             <h4>Документы</h4>
+             <ul class="order_docs-list">
+                 <li class="order_docs-item">
+                     <div class="order_doc-img"> 
+                         <img src="{% static 'website/img/accSide/docImgScg.svg' %}" alt="docImgScg">
+                     </div>
+                     <div class="order_doc-description">
+                         <h5 class="order_doc-name">
+                             Памятка: как происходит сдача груза
+                         </h5>
+                         <p class="order_doc-size">34,5 кБ</p>
+                     </div>
+                     <div class="order_doc-btn_actions">
+                         <a class="order_doc-view_doc-btn _order-docs_btns" target="_blank">
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M2.06251 12.3474C1.97916 12.1229 1.97916 11.8759 2.06251 11.6514C2.87421 9.68324 4.25202 8.00042 6.02128 6.81628C7.79053 5.63214 9.87155 5 12.0005 5C14.1295 5 16.2105 5.63214 17.9797 6.81628C19.749 8.00042 21.1268 9.68324 21.9385 11.6514C22.0218 11.8759 22.0218 12.1229 21.9385 12.3474C21.1268 14.3155 19.749 15.9983 17.9797 17.1825C16.2105 18.3666 14.1295 18.9988 12.0005 18.9988C9.87155 18.9988 7.79053 18.3666 6.02128 17.1825C4.25202 15.9983 2.87421 14.3155 2.06251 12.3474Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                 <path d="M12.0005 14.9994C13.6574 14.9994 15.0005 13.6562 15.0005 11.9994C15.0005 10.3425 13.6574 8.99938 12.0005 8.99938C10.3437 8.99938 9.00051 10.3425 9.00051 11.9994C9.00051 13.6562 10.3437 14.9994 12.0005 14.9994Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </svg>                                            
+                         </a>
+                         <a class="order_doc_download_btn _order-docs_btns" href="/path/to/your/file.pdf" download="">
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M12 16V4M12 16L6 10M12 16L18 10M19 20H5" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </svg>                                            
+                         </a>
+                     </div>
+                 </li>
+                 <li class="order_docs-item">
+                     <div class="order_doc-img">
+                         <img src="{% static 'website/img/accSide/docImgScg.svg' %}" alt="docImgScg">
+                     </div>
+                     <div class="order_doc-description">
+                         <h5 class="order_doc-name">
+                             Памятка: как происходит сдача груза происходит сдача груза
+                         </h5>
+                         <p class="order_doc-size">34,5 кБ</p>
+                     </div>
+                     <div class="order_doc-btn_actions">
+                         <a class="order_doc-view_doc-btn _order-docs_btns" target="_blank">
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M2.06251 12.3474C1.97916 12.1229 1.97916 11.8759 2.06251 11.6514C2.87421 9.68324 4.25202 8.00042 6.02128 6.81628C7.79053 5.63214 9.87155 5 12.0005 5C14.1295 5 16.2105 5.63214 17.9797 6.81628C19.749 8.00042 21.1268 9.68324 21.9385 11.6514C22.0218 11.8759 22.0218 12.1229 21.9385 12.3474C21.1268 14.3155 19.749 15.9983 17.9797 17.1825C16.2105 18.3666 14.1295 18.9988 12.0005 18.9988C9.87155 18.9988 7.79053 18.3666 6.02128 17.1825C4.25202 15.9983 2.87421 14.3155 2.06251 12.3474Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                 <path d="M12.0005 14.9994C13.6574 14.9994 15.0005 13.6562 15.0005 11.9994C15.0005 10.3425 13.6574 8.99938 12.0005 8.99938C10.3437 8.99938 9.00051 10.3425 9.00051 11.9994C9.00051 13.6562 10.3437 14.9994 12.0005 14.9994Z" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </svg>                                            
+                         </a>
+                         <a class="order_doc_download_btn _order-docs_btns" href="/path/to/your/file.pdf" download="">
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M12 16V4M12 16L6 10M12 16L18 10M19 20H5" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </svg>                                            
+                         </a>
+                     </div>
+                 </li>
+             </ul>
+         </li>
+     </ul>
+     <ul class="order_cashless-aside _acc-list">
+         <li class="order_cashless-aside_item">
+             <ul class="delivery_aside_inf-list">
+                 <li class="delivery_aside_inf-item _dev_price">
+                     <p>Стоимость</p>
+                     <p>{{ delivery_order.amount }} ₽ </p>
+                 </li>
+                 <li class="delivery_aside_inf-item _dev_date">
+                     <p>Срок доставки</p>
+                     <p>до {{ delivery_order.date_delivery|date:"j E Y" }} г.</p>
+                 </li>
+                 <li class="delivery_aside_inf-item _dev_chars">
+                     <p>Получатель</p>
+                     <p>{{ delivery_order.company.name }}</p>
+                     <p>{{ user.first_name }} {{ user.last_name }}</p>
+                 </li>
+                 <li class="delivery_aside_inf-item _dev_chars">
+                     <p>Груз</p>
+                     <p>{{ delivery_order.cargo.name }} {{ delivery_order.cargo.brand }} **TE354,** {{ delivery_order.cargo.prod_year }}</p>
+                     <a href="{% url 'order_first_step' delivery_order.order.number %}" class="delivery_aside-order_link">Заказ №{{ delivery_order.order.number }}</a>
+                 </li>
+                 <li class="delivery_aside_inf-item _dev_chars" id="dimensions">
+                     <p>Габариты</p>
+                     <p>{{ delivery_order.dimensions }}</p>
+                     {% comment %} раздергать на разные компоненты {% endcomment %}
+                 </li>
+             </ul>                        
+         </li>
+         <li class="order_cashless-aside_item __chat-bg _acc-BG">
+             <a href=""  class="order_aside-btn _chat-link">
+                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00333 18.0367C4.33225 18.0958 4.6658 18.1254 5 18.125C6.05622 18.1264 7.09132 17.8292 7.98583 17.2675C8.63083 17.4192 9.30583 17.5 10 17.5C14.435 17.5 18.125 14.1917 18.125 10C18.125 5.80833 14.435 2.5 10 2.5C5.565 2.5 1.875 5.80833 1.875 10C1.875 12.0075 2.72917 13.8225 4.10333 15.16C4.29667 15.3483 4.33417 15.5167 4.315 15.6125C4.21201 16.1309 3.97855 16.6145 3.63667 17.0175C3.56569 17.1013 3.51805 17.2023 3.49852 17.3104C3.479 17.4184 3.4883 17.5297 3.52547 17.633C3.56265 17.7364 3.62639 17.8281 3.71028 17.8989C3.79417 17.9698 3.89524 18.0173 4.00333 18.0367ZM6.875 9.0625C6.62636 9.0625 6.3879 9.16127 6.21209 9.33709C6.03627 9.5129 5.9375 9.75136 5.9375 10C5.9375 10.2486 6.03627 10.4871 6.21209 10.6629C6.3879 10.8387 6.62636 10.9375 6.875 10.9375C7.12364 10.9375 7.3621 10.8387 7.53791 10.6629C7.71373 10.4871 7.8125 10.2486 7.8125 10C7.8125 9.75136 7.71373 9.5129 7.53791 9.33709C7.3621 9.16127 7.12364 9.0625 6.875 9.0625ZM9.0625 10C9.0625 9.75136 9.16127 9.5129 9.33709 9.33709C9.5129 9.16127 9.75136 9.0625 10 9.0625C10.2486 9.0625 10.4871 9.16127 10.6629 9.33709C10.8387 9.5129 10.9375 9.75136 10.9375 10C10.9375 10.2486 10.8387 10.4871 10.6629 10.6629C10.4871 10.8387 10.2486 10.9375 10 10.9375C9.75136 10.9375 9.5129 10.8387 9.33709 10.6629C9.16127 10.4871 9.0625 10.2486 9.0625 10ZM13.125 9.0625C12.8764 9.0625 12.6379 9.16127 12.4621 9.33709C12.2863 9.5129 12.1875 9.75136 12.1875 10C12.1875 10.2486 12.2863 10.4871 12.4621 10.6629C12.6379 10.8387 12.8764 10.9375 13.125 10.9375C13.3736 10.9375 13.6121 10.8387 13.7879 10.6629C13.9637 10.4871 14.0625 10.2486 14.0625 10C14.0625 9.75136 13.9637 9.5129 13.7879 9.33709C13.6121 9.16127 13.3736 9.0625 13.125 9.0625Z" fill="white"/>
+                 </svg>                                
+                 <strong>Перейти в общий чат</strong>
+             </a>
+         </li>
+     </ul>
+ </div>
+ {% comment %} я вообще не хотел, но мне очень надо  {% endcomment %}
+<script>
+    // Получаем элемент
+    const dimensionsElement = document.getElementById("dimensions");
+    let text = dimensionsElement.textContent;
+
+    // Находим последнюю "м"
+    const lastMIndex = text.lastIndexOf("м");
+    if (lastMIndex !== -1) {
+        // Разделяем строку
+        const part1 = text.slice(0, lastMIndex + 1).trim(); // До последней "м"
+        const part2 = text.slice(lastMIndex + 1).trim();    // После последней "м"
+
+        // Обновляем содержимое элемента
+        dimensionsElement.innerHTML = `${part1}<br>${part2}`;
+    }
+</script>
+{% endblock %}

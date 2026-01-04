@@ -1,0 +1,346 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block main %}
+
+<main class="main" id="main_fetch">
+
+    <section class="seller_comment-section RMP">
+        <nav class="chars_tab-btns RMP">
+            <button class="RMP-tab_btn orange-text-btn undeline-btn active" type="button" data-tab="1">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5232 3.20745C10.5619 3.11288 10.628 3.03198 10.7128 2.97504C10.7977 2.9181 10.8976 2.8877 10.9998 2.8877C11.102 2.8877 11.2019 2.9181 11.2868 2.97504C11.3717 3.03198 11.4377 3.11288 11.4765 3.20745L13.4244 7.89253C13.4609 7.9802 13.5208 8.05611 13.5976 8.1119C13.6745 8.1677 13.7652 8.20122 13.8598 8.20878L18.918 8.61395C19.3754 8.65062 19.5606 9.2217 19.2122 9.51962L15.3586 12.8215C15.2866 12.883 15.2329 12.9633 15.2035 13.0533C15.1741 13.1434 15.17 13.2398 15.1917 13.332L16.3697 18.2683C16.3933 18.3673 16.3871 18.4711 16.3518 18.5667C16.3165 18.6622 16.2537 18.7451 16.1713 18.8049C16.0889 18.8647 15.9907 18.8988 15.8889 18.9028C15.7872 18.9068 15.6865 18.8806 15.5997 18.8275L11.2684 16.1829C11.1875 16.1335 11.0946 16.1073 10.9998 16.1073C10.9051 16.1073 10.8121 16.1335 10.7312 16.1829L6.39999 18.8284C6.31314 18.8815 6.21249 18.9078 6.11074 18.9037C6.009 18.8997 5.91072 18.8657 5.82833 18.8058C5.74594 18.746 5.68312 18.6631 5.64782 18.5676C5.61252 18.4721 5.60632 18.3682 5.62999 18.2692L6.80791 13.332C6.82975 13.2398 6.82574 13.1434 6.7963 13.0533C6.76687 12.9632 6.71316 12.883 6.64107 12.8215L2.78741 9.51962C2.70981 9.45347 2.65358 9.36577 2.62585 9.26764C2.59813 9.16951 2.60015 9.06536 2.63166 8.96838C2.66317 8.8714 2.72275 8.78595 2.80285 8.72286C2.88296 8.65976 2.97999 8.62186 3.08166 8.61395L8.13983 8.20878C8.23447 8.20122 8.32519 8.1677 8.40202 8.1119C8.47884 8.05611 8.53878 7.9802 8.57524 7.89253L10.5232 3.20745Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>                                 
+                <strong>Вопросы <i> {{question_list.count}} </i></strong>
+            </button>
+            <button class="RMP-tab_btn orange-text-btn undeline-btn" type="button" data-tab="2">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.05575 6.89242C10.1292 5.95283 11.8708 5.95283 12.9443 6.89242C14.0186 7.832 14.0186 9.3555 12.9443 10.2951C12.7582 10.4592 12.5501 10.5939 12.3301 10.7003C11.6472 11.0312 11.0009 11.616 11.0009 12.375V13.0625M19.25 11C19.25 12.0834 19.0366 13.1562 18.622 14.1571C18.2074 15.1581 17.5997 16.0675 16.8336 16.8336C16.0675 17.5997 15.1581 18.2074 14.1571 18.622C13.1562 19.0366 12.0834 19.25 11 19.25C9.91659 19.25 8.8438 19.0366 7.84286 18.622C6.84193 18.2074 5.93245 17.5997 5.16637 16.8336C4.40029 16.0675 3.7926 15.1581 3.37799 14.1571C2.96339 13.1562 2.75 12.0834 2.75 11C2.75 8.81196 3.61919 6.71354 5.16637 5.16637C6.71354 3.61919 8.81196 2.75 11 2.75C13.188 2.75 15.2865 3.61919 16.8336 5.16637C18.3808 6.71354 19.25 8.81196 19.25 11ZM11 15.8125H11.0073V15.8198H11V15.8125Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>                                  
+                <strong>Отзывы о модели <i>{{ reviews.count }}</i></strong>
+            </button>
+        </nav>
+
+        <div class="RMP_comment-question_block _active comments-questions" data-tab="1">
+            <div class="comments-block">
+                {% for question in question_list %}
+                <ul class="comments_list">
+                    <li class="comments_item replies">
+                        <div class="comment-date_question">
+                            <time class="question_date" datetime=""> {{ question.date }}</time>
+                            <h4 class="comment_question-comment">{{ question.text }}</h4>
+                        </div>
+                        <ul class="comment_reply-list">
+                            <li class="comment_reply-item logo">
+                                <div class="comment_reply-item_img">
+                                    <img src="{% static 'website/img/details/replyLogoSvg.svg' %}" alt="replyLogoSvg">
+                                </div>
+                            </li>
+                            <li class="comment_reply-item content">                                    
+                                <h4 class="reply-item_reply-header">Ответ представителя</h4>
+                                <div class="comment_reply-reply-text">
+                                    <p>Здравствуйте. Да конечно, вы можете поставить свое. Также очень много схожих, крепление универсальное и за счет этого вы сможете заменить</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {% endfor %}
+            </div>
+            
+            <div class="comments_rating-statistics_block">
+                <div class="RPM-question-title">
+                    <h2 class="comments_rating-stat">Задать вопрос</h2>
+                    <p class="RPM-question-title_text">Продавец обычно отвечает в течение суток</p>
+                </div>
+                
+                <form class="RMP-question_form" method="post">
+                    {% csrf_token %}
+                    
+                    <ul class="RMP-question_list">
+                        {% if request.user.is_authenticated %}
+                            <!-- 🔹 Если пользователь авторизован, передаём его имя скрытым полем -->
+                            <input type="hidden" name="username" value="{{ request.user.username }}">
+                        {% else %}
+                            <!-- 🔹 Если пользователь НЕ авторизован, показываем поле для ввода -->
+                            <li class="RMP-question_item">
+                                <label for="id_username"></label>
+                                <input class="RMP-question-field big_input" placeholder="Имя *" type="text" name="username" id="id_username" value="{{ form.username.value|default:'' }}">
+                                {% if form.username.errors %}
+                                    <div class="error">
+                                        {% for error in form.username.errors %}
+                                            <p>{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </li>
+                        {% endif %}
+                        
+                        <li class="RMP-question_item">
+                            <label for="id_text"></label>
+                            <textarea class="RMP-question-field textarea big_input" placeholder="Введите ваш вопрос" name="text" id="id_text">{{ form.text.value|default:'' }}</textarea>
+                            {% if form.text.errors %}
+                                <div class="error">
+                                    {% for error in form.text.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </li>
+                    </ul>
+                    
+                    <button class="RMP-question_btn black_btn big_btn" type="submit">Задать вопрос</button>
+                </form>
+            </div>
+        </div>
+        
+
+        <div class="RMP_comment-question_block  reviews" data-tab="2">
+            <div class="comments-block">
+                <h2>Отзывы</h2>
+                <ul class="comments_list">
+                    <li class="comments_item">
+                        <ul class="comment_content_list RMP">
+                            <li class="comment_content-item">
+                                <div class="comment_content-author_img">
+                                    <img src="{% static 'website/img/sellerCard/commentAuthorPhotoPng.png' %}" alt="commentAuthorPhotoPng">
+                                </div>
+                                <div class="comment_content-author_name">
+                                    <h4>Ильяс Тимиров</h4>
+                                    <p class="comment_content-date">Москва, <time datetime="">24 апреля 2023</time></p>
+                                </div>
+                                <div class="comment_content-rating">                                                                           
+                                    <input class="rating_star" type="radio" id="commentRating_1" checked>
+                                    <label class="star_check" for="commentRating_1"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_2" checked>
+                                    <label class="star_check" for="commentRating_2"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_3" checked>
+                                    <label class="star_check" for="commentRating_3"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_4" checked>
+                                    <label class="star_check" for="commentRating_4"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_5">
+                                    <label class="star_check" for="commentRating_5"></label>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Плюсы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque fugit facilis esse reiciendis ipsam obcaecati ea ut, eum, voluptate neque perferendis sequi expedita saepe ad totam aliquam sapiente maxime?Сделка состоялась отлично,вышка порадовала практически всем двигатель отличный,гидравлика самой вышки просто пушка.</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Минусы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque fugit facilis esse reiciendis ipsam obcaecati ea ut, eum, voluptate neque perferendis sequi expedita saepe ad totam aliquam sapiente maxime?Сделка состоялась отлично,вышка порадовала практически всем двигатель отличный,гидравлика самой вышки просто пушка.</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <div class="comment_content-obj_img-cntr">
+                                    <img class="object_img-1" src="{% static 'website/img/sellerCard/imgCommentObjPng.png' %}" alt="imgCommentObjPng">
+                                </div>
+                                <div class="comment_content-obj_img-cntr">
+                                    <img class="object_img-2" src="{% static 'website/img/sellerCard/imgCommentObjPng.png' %}" alt="imgCommentObjPng">
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="comments_item">
+                        <ul class="comment_content_list RMP">
+                            <li class="comment_content-item">
+                                <div class="comment_content-author_img">
+                                    <img src="{% static 'website/img/sellerCard/commentAuthorPhotoPng.png' %}" alt="commentAuthorPhotoPng">
+                                </div>
+                                <div class="comment_content-author_name">
+                                    <h4>Ильяс Тимиров</h4>
+                                    <p class="comment_content-date">Москва, <time datetime="">24 апреля 2023</time></p>
+                                </div>
+                                <div class="comment_content-rating">                                                                           
+                                    <input class="rating_star" type="radio" id="commentRating_1" checked>
+                                    <label class="star_check" for="commentRating_1"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_2" checked>
+                                    <label class="star_check" for="commentRating_2"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_3" checked>
+                                    <label class="star_check" for="commentRating_3"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_4" checked>
+                                    <label class="star_check" for="commentRating_4"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_5">
+                                    <label class="star_check" for="commentRating_5"></label>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Плюсы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque fugit facilis esse reiciendis ipsam obcaecati ea ut, eum, voluptate neque perferendis sequi expedita saepe ad totam aliquam sapiente maxime?Сделка состоялась отлично,вышка порадовала практически всем двигатель отличный,гидравлика самой вышки просто пушка.</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Минусы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque fugit facilis esse reiciendis ipsam obcaecati ea ut, eum, voluptate neque perferendis sequi expedita saepe ad totam aliquam sapiente maxime?Сделка состоялась отлично,вышка порадовала практически всем двигатель отличный,гидравлика самой вышки просто пушка.</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <div class="comment_content-obj_img-cntr">
+                                    <img class="object_img-1" src="{% static 'website/img/sellerCard/imgCommentObjPng.png' %}" alt="imgCommentObjPng">
+                                </div>
+                                <div class="comment_content-obj_img-cntr">
+                                    <img class="object_img-2" src="{% static 'website/img/sellerCard/imgCommentObjPng.png' %}" alt="imgCommentObjPng">
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="comments_item">
+                        <ul class="comment_content_list RMP">
+                            <li class="comment_content-item">
+                                <div class="comment_content-author_img">
+                                    <img src="{% static 'website/img/sellerCard/commentAuthorPhotoPng.png' %}" alt="commentAuthorPhotoPng">
+                                </div>
+                                <div class="comment_content-author_name">
+                                    <h4>Ильяс Тимиров</h4>
+                                    <p class="comment_content-date">Москва, <time datetime="">24 апреля 2023</time></p>
+                                </div>
+                                <div class="comment_content-rating">                                                                           
+                                    <input class="rating_star" type="radio" id="commentRating_1" checked>
+                                    <label class="star_check" for="commentRating_1"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_2" checked>
+                                    <label class="star_check" for="commentRating_2"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_3">
+                                    <label class="star_check" for="commentRating_3"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_4">
+                                    <label class="star_check" for="commentRating_4"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_5">
+                                    <label class="star_check" for="commentRating_5"></label>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Плюсы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque fugit facilis esse reiciendis ipsam obcaecati ea ut, eum, voluptate neque perferendis sequi expedita saepe ad totam aliquam sapiente maxime?Сделка состоялась отлично,вышка порадовала практически всем двигатель отличный,гидравлика самой вышки просто пушка.</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Минусы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque fugit facilis esse reiciendis ipsam obcaecati ea ut, eum, voluptate neque perferendis sequi expedita saepe ad totam aliquam sapiente maxime?Сделка состоялась отлично,вышка порадовала практически всем двигатель отличный,гидравлика самой вышки просто пушка.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <button class="show-more_review-btn big_btn" type="button">Показать еще</button>
+            </div>
+
+            <div class="comments_rating-statistics_block RMP">
+                <h2 class="comments_rating-stat">4.5 <strong>/ 25 оценок</strong></h2>
+                <ul class="comments_rating-statistics_list">
+                    <li class="rating_statistics-item">
+                        <div class="rating_statistics-rating">
+                            <input type="radio" class="rating_statistic-star" id="summaryRating" checked>
+                            <label class="star_check" for="summaryRating"></label>
+                            <input type="radio" class="rating_statistic-star" id="summaryRating" checked>
+                            <label class="star_check" for="summaryRating"></label>
+                            <input type="radio" class="rating_statistic-star" id="summaryRating" checked>
+                            <label class="star_check" for="summaryRating"></label>
+                            <input type="radio" class="rating_statistic-star" id="summaryRating" checked>
+                            <label class="star_check" for="summaryRating"></label>
+                            <input type="radio" class="rating_statistic-star" id="summaryRating" checked>
+                            <label class="star_check" for="summaryRating"></label>
+                            <div class="rating_statistics-counter">
+                                <p class="r_counter">29</p>
+                            </div>
+                        </div>
+                        <div class="rating_statistics-progress">
+                            <progress class="r_progress" value="29" max="100"></progress>
+                        </div>
+                    </li>
+                    <li class="rating_statistics-item">
+                        <div class="rating_statistics-rating">
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <div class="rating_statistics-counter">
+                                <p class="r_counter">33</p>
+                            </div>
+                        </div>
+                        <div class="rating_statistics-progress">
+                            <progress class="r_progress" value="33" max="100"></progress>
+                        </div>
+                    </li>
+                    <li class="rating_statistics-item">
+                        <div class="rating_statistics-rating">
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <div class="rating_statistics-counter">
+                                <p class="r_counter">18</p>
+                            </div>
+                        </div>
+                        <div class="rating_statistics-progress">
+                            <progress class="r_progress" value="18" max="100"></progress>
+                        </div>
+                    </li>
+                    <li class="rating_statistics-item">
+                        <div class="rating_statistics-rating">
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <div class="rating_statistics-counter">
+                                <p class="r_counter">13</p>
+                            </div>
+                        </div>
+                        <div class="rating_statistics-progress">
+                            <progress class="r_progress" value="13" max="100"></progress>
+                        </div>
+                    </li>
+                    <li class="rating_statistics-item">
+                        <div class="rating_statistics-rating">
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_" checked>
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <input type="radio" class="rating_statistic-star" id="ratingCheck_">
+                            <label class="star_check" for="ratingCheck_"></label>
+                            <div class="rating_statistics-counter">
+                                <p class="r_counter">1</p>
+                            </div>
+                        </div>
+                        <div class="rating_statistics-progress">
+                            <progress class="r_progress" value="1" max="100"></progress>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+
+</main>
+
+{% endblock %}

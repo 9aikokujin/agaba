@@ -1,0 +1,194 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 6,
+      "brand": "Volvo",
+      "name": "V-90",
+      "slug": "volvo-v-90-2014",
+      "description": "Лучший автомобиль",
+      "cur_price": "450000.00",
+      "prev_price": "500000.00",
+      "category": 1,
+      "subcategory": 1,
+      "author": 3,
+      "product_reviews": [],
+      "company": 1,
+      "company_name": "ООО Жоские трактора",
+      "condition": "new",
+      "delivery_time": 21,
+      "availability": "in_stock",
+      "location": "Германия",
+      "min_deposit": "15.00",
+      "video_url": null,
+      "status": "on_moderation",
+      "created_at": "2025-04-24T17:50:18.834715+03:00",
+      "updated_at": "2025-04-24T17:56:55.105416+03:00",
+      "price_history": [
+        {
+          "id": 11,
+          "price": "450000.00",
+          "changed_at": "2025-04-24T17:50:18.837553+03:00"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 5,
+          "value": "2.4",
+          "attribute": "Объем двигателя"
+        },
+        {
+          "id": 6,
+          "value": "да",
+          "attribute": "Пятидверная"
+        }
+      ],
+      "documents": [],
+      "photos": [
+        {
+          "id": 4,
+          "position": "front",
+          "url": "/media/product_photos/ekskav.png"
+        }
+      ],
+      "dimensions": {
+        "length": "1050.00",
+        "width": "1050.00",
+        "height": "1050.00",
+        "weight": "1050.00"
+      },
+      "additional_options": [
+        {
+          "id": 6,
+          "name": "Ветровики",
+          "price": "1500.00"
+        },
+        {
+          "id": 7,
+          "name": "Запаска",
+          "price": "0.00"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "brand": "Toyota",
+      "name": "Corolla",
+      "slug": "toyota-corolla-2023",
+      "description": "Надежный автомобиль для повседневного использования.",
+      "cur_price": "23500.00",
+      "prev_price": "24000.00",
+      "category": 1,
+      "subcategory": 1,
+      "author": 3,
+      "product_reviews": [
+        35,
+        2
+      ],
+      "company": 1,
+      "company_name": "ООО Жоские трактора",
+      "condition": "new",
+      "delivery_time": 50,
+      "availability": "on_order",
+      "location": "Moscow",
+      "min_deposit": "5000.00",
+      "video_url": "https://example.com/video.mp4",
+      "status": "active",
+      "created_at": "2025-04-10T17:51:24.509701+03:00",
+      "updated_at": "2025-04-25T15:53:10.621110+03:00",
+      "price_history": [
+        {
+          "id": 4,
+          "price": "250000.00",
+          "changed_at": "2025-04-10T17:51:24.514657+03:00"
+        },
+        {
+          "id": 5,
+          "price": "25000.00",
+          "changed_at": "2025-04-11T14:32:44.348972+03:00"
+        },
+        {
+          "id": 6,
+          "price": "20000.00",
+          "changed_at": "2025-04-11T14:35:26.116117+03:00"
+        },
+        {
+          "id": 7,
+          "price": "25000.00",
+          "changed_at": "2025-04-18T12:43:46.037690+03:00"
+        },
+        {
+          "id": 8,
+          "price": "24000.00",
+          "changed_at": "2025-04-18T12:44:03.128165+03:00"
+        },
+        {
+          "id": 9,
+          "price": "23500.00",
+          "changed_at": "2025-04-18T12:44:19.930065+03:00"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 2,
+          "value": "1.6L",
+          "attribute": "Объем двигателя"
+        },
+        {
+          "id": 3,
+          "value": "Да",
+          "attribute": "Пятидверная"
+        }
+      ],
+      "documents": [
+        {
+          "id": 1,
+          "document_url": "https://example.com/document.pdf",
+          "description": "Инструкция по эксплуатации"
+        }
+      ],
+      "photos": [
+        {
+          "id": 1,
+          "position": "front",
+          "url": "/media/product_photos/traktor.jpg"
+        },
+        {
+          "id": 2,
+          "position": "back",
+          "url": "/media/product_photos/XXL_height.webp"
+        }
+      ],
+      "dimensions": {
+        "length": "4.50",
+        "width": "1.80",
+        "height": "1.50",
+        "weight": "1200.00"
+      },
+      "additional_options": [
+        {
+          "id": 1,
+          "name": "Коврики в подарок",
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "name": "Тонировка",
+          "price": "10000.00"
+        },
+        {
+          "id": 3,
+          "name": "Дворники",
+          "price": "1200.00"
+        },
+        {
+          "id": 4,
+          "name": "Фаркоп",
+          "price": "5000.00"
+        }
+      ]
+    }
+  ]
+}

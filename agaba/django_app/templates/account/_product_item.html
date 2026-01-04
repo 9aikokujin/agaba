@@ -1,0 +1,51 @@
+{% load static %}
+{% load custom_filters %}
+<li class="catalog_item">
+
+    <div class="catalog_img _seller">
+        {% if product.product_images.first %}
+        <img src="{{ product.product_images.first.image.url }}" alt="Product image"/>
+        {% else %}
+        <img src="{% static 'website/img/no_image.png' %}" alt="Product image"/>
+        {% endif %}    
+    </div>
+
+    <ul class="catalog_description-list">
+        {% if product.mod_status == 'active' %}
+            <li>
+                <p class="catalog_discount">-10%</p>
+                <p class="catalog_avaible">
+                    {% if product.in_stock %}
+                    В наличии
+                    {% else %}
+                    Нет в наличии
+                    {% endif %}
+                </p>
+            </li>
+        {% endif %}
+        <li>
+            <p class="cur_price">{{ product.cur_price|format_rubles }}</p>
+            <p class="old_price">{{ product.old_price|format_rubles }}</p>
+        </li>
+        <li>
+            <p class="catalog_description">{{ product.name }}</p>
+        </li>
+        <li>
+            <h5>{{ product.brand }}</h5>
+            <div class="catalog_rating">
+                <input class="catalog_star" type="radio" id="catalogStar_">
+                <label class="catalog_label" for="catalogStar_">4,7</label>
+            </div>
+        </li>
+        <li class="__seller_card_pd">
+            {% if product.mod_status == 'rejected' %}
+                <button class="catalog__public_btn _catalog_btn _m" type="button">Опубликовать</button>
+            {% else %}
+                <button onclick="window.location.href='{% url 'edit_product' slug=product.slug %}'" class="catalog__change_btn _catalog_btn _m" type="button">Редактировать</button>
+            {% endif %}
+            <button class="catalog__delete_btn _catalog_btn _xs" type="button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.99935H17.5M15.8333 4.99935V16.666C15.8333 17.4993 15 18.3327 14.1667 18.3327H5.83333C5 18.3327 4.16667 17.4993 4.16667 16.666V4.99935M6.66667 4.99935V3.33268C6.66667 2.49935 7.5 1.66602 8.33333 1.66602H11.6667C12.5 1.66602 13.3333 2.49935 13.3333 3.33268V4.99935M8.33333 9.16601V14.166M11.6667 9.16601V14.166" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+        </li>
+    </ul>
+</li>

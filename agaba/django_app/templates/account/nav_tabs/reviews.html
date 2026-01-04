@@ -1,0 +1,278 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _acc__RMP_section _mob-style  _pt_sect-60 _acc-main">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _flex_column">
+    <div id="comment_tabs" class="seller_comment-section RMP _acc__RMP_tabs">
+        <h2>Отзывы и вопросы</h2>
+
+        <nav class="chars_tab-btns RMP">
+            <button class="RMP-tab_btn orange-text-btn undeline-btn active" type="button" data-tab="1">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.05575 6.89242C10.1292 5.95283 11.8708 5.95283 12.9443 6.89242C14.0186 7.832 14.0186 9.3555 12.9443 10.2951C12.7582 10.4592 12.5501 10.5939 12.3301 10.7003C11.6472 11.0312 11.0009 11.616 11.0009 12.375V13.0625M19.25 11C19.25 12.0834 19.0366 13.1562 18.622 14.1571C18.2074 15.1581 17.5997 16.0675 16.8336 16.8336C16.0675 17.5997 15.1581 18.2074 14.1571 18.622C13.1562 19.0366 12.0834 19.25 11 19.25C9.91659 19.25 8.8438 19.0366 7.84286 18.622C6.84193 18.2074 5.93245 17.5997 5.16637 16.8336C4.40029 16.0675 3.7926 15.1581 3.37799 14.1571C2.96339 13.1562 2.75 12.0834 2.75 11C2.75 8.81196 3.61919 6.71354 5.16637 5.16637C6.71354 3.61919 8.81196 2.75 11 2.75C13.188 2.75 15.2865 3.61919 16.8336 5.16637C18.3808 6.71354 19.25 8.81196 19.25 11ZM11 15.8125H11.0073V15.8198H11V15.8125Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <strong>Вопросы <i>{{ questions.count }}</i></strong>
+            </button>
+            <button class="RMP-tab_btn orange-text-btn undeline-btn" type="button" data-tab="2">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5232 3.20745C10.5619 3.11288 10.628 3.03198 10.7128 2.97504C10.7977 2.9181 10.8976 2.8877 10.9998 2.8877C11.102 2.8877 11.2019 2.9181 11.2868 2.97504C11.3717 3.03198 11.4377 3.11288 11.4765 3.20745L13.4244 7.89253C13.4609 7.9802 13.5208 8.05611 13.5976 8.1119C13.6745 8.1677 13.7652 8.20122 13.8598 8.20878L18.918 8.61395C19.3754 8.65062 19.5606 9.2217 19.2122 9.51962L15.3586 12.8215C15.2866 12.883 15.2329 12.9633 15.2035 13.0533C15.1741 13.1434 15.17 13.2398 15.1917 13.332L16.3697 18.2683C16.3933 18.3673 16.3871 18.4711 16.3518 18.5667C16.3165 18.6622 16.2537 18.7451 16.1713 18.8049C16.0889 18.8647 15.9907 18.8988 15.8889 18.9028C15.7872 18.9068 15.6865 18.8806 15.5997 18.8275L11.2684 16.1829C11.1875 16.1335 11.0946 16.1073 10.9998 16.1073C10.9051 16.1073 10.8121 16.1335 10.7312 16.1829L6.39999 18.8284C6.31314 18.8815 6.21249 18.9078 6.11074 18.9037C6.009 18.8997 5.91072 18.8657 5.82833 18.8058C5.74594 18.746 5.68312 18.6631 5.64782 18.5676C5.61252 18.4721 5.60632 18.3682 5.62999 18.2692L6.80791 13.332C6.82975 13.2398 6.82574 13.1434 6.7963 13.0533C6.76687 12.9632 6.71316 12.883 6.64107 12.8215L2.78741 9.51962C2.70981 9.45347 2.65358 9.36577 2.62585 9.26764C2.59813 9.16951 2.60015 9.06536 2.63166 8.96838C2.66317 8.8714 2.72275 8.78595 2.80285 8.72286C2.88296 8.65976 2.97999 8.62186 3.08166 8.61395L8.13983 8.20878C8.23447 8.20122 8.32519 8.1677 8.40202 8.1119C8.47884 8.05611 8.53878 7.9802 8.57524 7.89253L10.5232 3.20745Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <strong>Отзывы <i> {{ reviews.count }} </i></strong>
+            </button>
+        </nav>
+
+        <div class="RMP_comment-question_block comments-questions _acc__RMP_quest _active" data-tab="1">
+            <div class="comments-block">
+                {% for question in questions %}
+                <ul class="comments_list">
+                    <li class="comments_item replies _acc__replies">
+                        <div class="comment-date_question _flex_start _pos_rel">
+                            <div class="acc__RMP_item_picture">
+                                <img src="{{ question.product.product_images.first.image.url }}" alt="">
+                            </div>
+                            <h4 class="comment_question-comment _model_name">{{ question.product.name }} {{ question.product.brand}}, {{ question.product.prod_year }} г.</h4>
+                        </div>
+                        <div class="acc__RMP_comment_body">
+                            <time class="question_date" datetime="">{{ question.date }}</time>
+                            <p class="acc__RMP_comment _comment">{{ question.text }}</p>
+                        </div>
+                        <ul class="comment_reply-list _sup__service">
+                            <li class="comment_reply-item logo">
+                                <div class="comment_reply-item_img">
+                                    <img src="/img/details/replyLogoSvg.svg" alt="replyLogoSvg">
+                                </div>
+                            </li>
+                            <li class="comment_reply-item content">
+                                <h4 class="reply-item_reply-header">Ответ представителя</h4>
+                                <div class="comment_reply-reply-text">
+                                    <p>Здравствуйте. Да конечно, вы можете поставить свое. Также очень много схожих, крепление универсальное и за счет этого вы сможете заменить</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {% endfor %}
+                <button class="show-more_review-btn big_btn" type="button">Показать еще</button>
+            </div>
+        </div>
+
+        {% comment %} ОТЗЫВЫ {% endcomment %}
+        <div class="RMP_comment-question_block reviews _acc__RMP_quest" data-tab="2">
+            <div class="comments-block _account__comments-block">
+                <ul class="comments_list">
+                    <div class="comment__under_review _flex_stretch_sb _bg_22205">
+                        <p class="_fs_px_12 _fw_700 _color_00001e">Отзыв на проверке</p>
+                        <p class="_fs_px_12 _fw_400 _color_00001e _opacity_07">Проверка занимает до 2 суток</p>
+                    </div>
+                    
+                    <li class="comments_item">
+                        <ul class="comment_content_list RMP _acc__review_list">
+                            {% for review in reviews %}
+                            <li class="comment_content-item _comment_line _pos_rel">
+
+                                <div class="comment_content-author_img">
+                                    <img src="/img/sellerCard/commentAuthorPhotoPng.png" alt="commentAuthorPhotoPng">
+                                </div>
+                                <div class="comment_content-author_name _seller__name">
+                                    <h4> {{ review.product.author }} </h4>
+                                    <p class="comment_content-date"><time datetime="">{{review.created_at|date:"d E Y" }}</time></p>
+                                </div>
+                                <div class="comment_content-rating">
+                                    <input class="rating_star" type="radio" id="commentRating_1" checked>
+                                    <label class="star_check" for="commentRating_1"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_2" checked>
+                                    <label class="star_check" for="commentRating_2"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_3" checked>
+                                    <label class="star_check" for="commentRating_3"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_4" checked>
+                                    <label class="star_check" for="commentRating_4"></label>
+                                    <input class="rating_star" type="radio" id="commentRating_5">
+                                    <label class="star_check" for="commentRating_5"></label>
+                                </div>
+                                <div class="comment_content-description">
+                                    <h5 class="comment__content_topic">О сотрудничестве</h5>
+                                    <p class="comment_content-text">{{ review.comment }}</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <div class="comment__content_review_item _flex_start">
+                                    <div class="comment_content-author_img">
+                                        <img src="{{ review.product.product_images.first.image.url }}" alt="commentAuthorPhotoPng">
+                                    </div>
+                                    <div class="comment_content-author_name _seller__name">
+                                        <h4>{{ review.product.name }} {{ review.product.brand }} {{ review.product.prod_year }} г.</h4>
+                                    </div>
+                                </div>
+                                <h5>Плюсы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">{{ review.pros }}</p>
+                                </div>
+                            </li>
+                            <li class="comment_content-item">
+                                <h5>Минусы</h5>
+                                <div class="comment_content-description">
+                                    <p class="comment_content-text">{{ review.cons }}</p>
+                                </div>
+                            </li>
+                            {% if review.image %}
+                            <li class="comment_content-item">
+                                
+                                <div class="comment_content-obj_img-cntr">
+                                    <img class="object_img-1" src="{{ review.image.url }}" alt="imgCommentObjPng">
+                                </div>
+                                
+                            </li>
+                                
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+
+                <button class="show-more_review-btn big_btn" type="button">Показать еще</button>
+
+            </div>
+            {% comment %} Отзывы справа в колонке {% endcomment %}
+            <ul class="account__RMP_review_items_list _flex_column">
+                {% for product in products %}
+                <li class="account__review_item _flex_center _bg_f8f8f8" data-modal="modal__add_new_comment">
+                    <div class="account__review_item_img">
+                        <img src="{{ product.product_images.first.image.url }}" alt="commentAuthorPhotoPng">
+                    </div>
+                    <div class="account__review_item_name _flex_column_start">
+                        <h4 class= "_color_009" data-id="{{ product.id }}" >{{ product.name }} {{ product.brand }} TE349, {{ product.prod_year }} </h4>
+                        
+                        <div class="comment_content-rating">
+                            <input class="rating_star" type="radio" id="commentRating_1" checked="">
+                            <label class="star_check" for="commentRating_1"></label>
+                            <input class="rating_star" type="radio" id="commentRating_2" checked="">
+                            <label class="star_check" for="commentRating_2"></label>
+                            <input class="rating_star" type="radio" id="commentRating_3" checked="">
+                            <label class="star_check" for="commentRating_3"></label>
+                            <input class="rating_star" type="radio" id="commentRating_4" checked="">
+                            <label class="star_check" for="commentRating_4"></label>
+                            <input class="rating_star" type="radio" id="commentRating_5">
+                            <label class="star_check" for="commentRating_5"></label>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block modal %}
+<aside class="modal" id="reviewModal">
+    <div class="modal__overlay"></div>
+    <form 
+        class="modal__content modal__add_new_comment" 
+        method="post" 
+        action="{% url 'reviews' tab_id='reviews' %}" 
+        enctype="multipart/form-data"
+    >
+        {% csrf_token %}
+        <ul class="modal__content_list _rent">
+            <!-- Заголовок модального окна -->
+            <li class="modal__content_item">
+                <button class="modal__close_btn" type="button" data-modal="isHidden">
+                    <img src="/img/modal/close.svg" alt="Закрыть модальное окно">
+                </button>
+                <h3 class="modal__content_title">Новый отзыв</h3>
+                <div class="account__review_item _review__modal _bg_transparent _flex_center">
+                    <div class="account__review_item_img">
+                        <img src="{{ product.image.url }}" alt="Фото товара">
+                    </div>
+                    <div class="account__review_item_name _flex_column_start">
+                        <h4 class="_color_009">{{ product.name }}</h4>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Скрытое поле для ID товара -->
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+
+            <!-- Оценка товара -->
+            <li class="modal__form_item">
+                <ul class="stars__cntr _flex_start">
+                    {% for value, label in form.rating.field.choices %}
+                        {% if value %}
+                            <li class="star__field">
+                                <input class="rating_star" type="checkbox" name="{{ form.rating.name }}" id="commentRating_modal_{{ value }}" value="{{ value }}" {% if form.rating.value == value %}checked{% endif %}>
+                                <label class="star_check" for="commentRating_modal_{{ value }}"></label>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+
+            <!-- Текстовые поля формы -->
+            <li class="modal__content_item">
+                <ul class="modal__form_list _acc_rmp_form_list">
+                    <li class="modal__form_item">
+                        <div class="modal__form_input_cntr _flex">
+                            <label for="modalInput_comment" class="modal__form_label">О сотрудничестве с Техносбыт</label>
+                            <textarea 
+                                class="modal__form_value_input _focus_eff big_input _grey_input" 
+                                name="{{ form.comment.name }}" 
+                                id="modalInput_comment"
+                            >{{ form.comment.value|default_if_none:"" }}</textarea>
+                        </div>
+                    </li>
+                    <li class="modal__form_item">
+                        <div class="modal__form_input_cntr _flex">
+                            <label for="modalInput_pros" class="modal__form_label">Плюсы товара</label>
+                            <textarea 
+                                class="modal__form_value_input _focus_eff big_input _grey_input" 
+                                name="{{ form.pros.name }}" 
+                                id="modalInput_pros"
+                            >{{ form.pros.value|default_if_none:"" }}</textarea>
+                        </div>
+                    </li>
+                    <li class="modal__form_item">
+                        <div class="modal__form_input_cntr _flex">
+                            <label for="modalInput_cons" class="modal__form_label">Минусы товара</label>
+                            <textarea 
+                                class="modal__form_value_input _focus_eff big_input _grey_input" 
+                                name="{{ form.cons.name }}" 
+                                id="modalInput_cons"
+                            >{{ form.cons.value|default_if_none:"" }}</textarea>
+                        </div>
+                    </li>
+                    <li class="modal__form_item _file_input _flex_stretch_sb">
+                        <div class="modal__form_input_cntr _bg_0004">
+                            <label for="modalFile_image" class="file__label _flex_center" upload-status="isEmpty">
+                                <svg>...</svg>
+                                <img src="{{ form.image.value|default_if_none:"" }}" alt="Превью загруженного изображения">
+                            </label>
+                            <input 
+                                class="file__input" 
+                                type="file" 
+                                name="{{ form.image.name }}" 
+                                id="modalFile_image"
+                            >
+                        </div>
+                        <div class="modal__form_file_text _flex_column_sb">
+                            <p class="_color_006 _fs_px_13">Это необязательно, но с ними отзыв станет более наглядным.</p>
+                            <p class="_color_006 _fs_px_13">Не загружайте скриншоты переписки — они не пройдут проверку.</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Кнопка отправки формы -->
+            <li class="modal__content_item">
+                <div class="modal__btn_cntr">
+                    <button class="modal__btn _code _orange_btn" type="submit">
+                        <strong>Отправить</strong>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</aside>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static %}
+{% load custom_filters %}
+<li class="catalog_item">
+    <div class="catalog_img">
+
+        <a href='{% url "product" slug=product.slug %}' >
+            {% if product.product_images.first %}
+            <img src="{{ product.product_images.first.image.url }}" alt="Product image"/>
+            {% else %}
+            <img src="{% static 'website/img/no_image.png' %}" alt="Product image"/>
+            {% endif %}
+        </a>
+
+    </div>
+    <ul class="catalog_description-list">
+        <li>
+            <h5>{{ product.brand }}</h5>
+            <div class="catalog_rating">
+                {% comment %} <input class="catalog_star" type="radio" id="catalogStar_" /> {% endcomment %}
+                {% comment %} <label class="catalog_label" for="catalogStar_">4,7</label> {% endcomment %}
+                <p class="catalog_label" style="cursor: default;">4,7</p>
+            </div>
+            <p class="catalog_avaible">
+                {% if product.in_stock %}
+                В наличии
+                {% else %}
+                Нет в наличии
+                {% endif %}
+            </p>
+        </li>
+        <li>
+            <p class="cur_price">{{ product.cur_price|format_rubles }}</p>
+            <p class="old_price">{{ product.old_price|format_rubles }}</p>
+        </li>
+        <li>
+            <a href='{% url "product" slug=product.slug %}' >
+                <p class="catalog_description">{{ product.name }}</p>
+            </a>
+        </li>
+    </ul>
+</li>

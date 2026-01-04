@@ -1,0 +1,183 @@
+.catalog_pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.pagination_select {
+  position: relative;
+}
+
+.pagination-btn strong {
+  font-weight: 400;
+  position: relative;
+  color: var(--colorfff);
+}
+
+.pagination-btn strong::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -22px;
+  background-image: url("../img/marks/arrowDownLight.svg");
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.pagination-btn strong:hover::before {
+  rotate: 180deg;
+  top: 15%;
+}
+
+.pagination-list {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dadcde;
+  border-radius: 10px;
+}
+
+.page-item {
+  display: flex;
+}
+
+.page-item:not(:last-child) {
+  border-right: 1px solid #dadcde;
+}
+
+.page-link {
+  padding: 15px;
+  transition: all 0.3s;
+}
+
+.page-item.current .page-link,
+.page-item:hover {
+  background-color: var(--coloredeeef);
+}
+
+.pagination_page-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page_link  {
+  position: relative;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.page_link.next:hover,
+.page_link.prev:hover {
+  opacity: 1;
+}
+
+.page_link.prev {
+  padding: 14px 15px 14px 36px;
+}
+
+.page_link.next::before,
+.page_link.prev::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 14px;
+  background-image: url("../img/marks/arrowSideBlackSvg.svg");
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+.page_link.prev::before {
+  left: 16px;
+  top: 15px;
+  rotate: 180deg;
+}
+
+.page_link.prev:hover::before {
+  left: 10px;
+}
+
+.page_link.next::before {
+  right: 16px;
+  top: 17px;
+}
+
+.page_link.next:hover::before {
+  right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  
+}
+
+@media screen and (max-width: 900px) {
+  .page_link {
+    font-size: 0;
+    padding: 21px!important;
+  }
+
+  .page_link.next::before {
+      right: 14px;
+      top: 15px;
+  }
+
+  .page_link.prev::before {
+      left: 15px;
+      top: 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-link {
+    font-size: 14px;
+    padding: 13px;
+  }
+
+  .catalog_pagination {
+      flex-wrap: wrap;
+      gap: 30px;
+      position: relative;
+  }
+
+  .pagination_select {
+      width: 100%;
+  }
+
+  .pagination-list {
+      margin: 0 auto;
+  }
+
+  .pagination_page-links {
+      margin-left: unset;
+      position: absolute;
+      bottom: 44px;
+      width: 100%;
+  }
+
+  .page_link {
+      position: absolute;
+  }
+
+  .page_link.next {
+      right: 0;
+  }
+
+  .page_link.prev {
+      left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pagination-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+}

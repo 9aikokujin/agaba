@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../../fonts/inter/Inter_Bold.ttf") format("truetype"),
+       url("../../fonts/inter/Inter_Bold.woff") format("woff"),
+       url("../../fonts/inter/Inter_Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../../fonts/inter/InterMedium.ttf") format("truetype"),
+       url("../../fonts/inter/InterMedium.woff") format("woff"),
+       url("../../fonts/inter/InterMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../../fonts/inter/InterRegular.ttf") format("truetype"),
+       url("../../fonts/inter/InterRegular.woff") format("woff"),
+       url("../../fonts/inter/InterRegular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../../fonts/inter/InterSemiBold.ttf") format("truetype"),
+       url("../../fonts/inter/InterSemiBold.woff") format("woff"),
+       url("../../fonts/inter/InterSemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("../../fonts/roboto/roboto_regular.ttf") format("truetype"),
+       url("../../fonts/roboto/roboto_regular.woff") format("woff"),
+       url("../../fonts/roboto/roboto_regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Commissioner", sans-serif;
+  src: url("../../fonts/Commissioner/commissioner_medium.ttf") format("truetype"),
+       url("../../fonts/Commissioner/commissioner_medium.woff") format("woff"),
+       url("../../fonts/Commissioner/commissioner_medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}

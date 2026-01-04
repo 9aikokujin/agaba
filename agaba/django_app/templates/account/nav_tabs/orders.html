@@ -1,0 +1,249 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+<section class="account_sect _mob-style  _pt_sect-60 _acc_order_delivery">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _order_delivery _acc_order_delivery">
+    <h2>Заказы</h2>
+
+    <nav class="acc__order_tabs __tabs_cntr">
+        <button class="order__tab_btn _tab_btn orange-text-btn undeline-btn" type="button" tab-index="1"><strong>Заказы</strong></button>
+        <button class="order__tab_btn _tab_btn orange-text-btn undeline-btn" type="button" tab-index="2"><strong>Доставки</strong></button>
+    </nav>
+
+    <ul class="acc__order_delivery _acc-list" tab-index="1">
+        <li class="acc_main-item _order_fil _filters">
+            <ul class="acc__order_filter_list">
+                <li class="acc__order_filter_item _all_orders">
+                    <button class="acc__all_orders_btn white-btn btn acc__od" type="button">
+                        <strong>Все заказы</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="acc__all_orders_select">
+                        <ul class="filter_select-list">
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Все заказы</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Заказ 1</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Заказ 2</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Заказ 3</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Заказ 4</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Заказ 5</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Заказ 6</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="acc__order_filter_item _order_search">
+                    <input class="acc__order_search white-btn btn acc__od" placeholder="Введите номер заказа" type="text" name="" id="">
+                </li>
+                <li class="acc__order_filter_item _order_sort">
+                    <button class="acc__sort_btn white-btn btn acc__od" type="button">
+                        <img src="{% static 'website/img/marks/filterListViewSvg.svg' %}" alt="filterListViewSvg">
+                        <strong>По дате добавления</strong>
+                    </button>
+                </li>
+            </ul>
+        </li>
+
+        {% comment %} http://127.0.0.1:8000/order/ZB000001004/ {% endcomment %}
+    {% if orders %}
+        {% for order in orders %}
+        <li class="acc_main-item _acc_order_item _acc-BG">
+            <ul class="acc__OD_list">
+                <li class="acc__OD_item _OD_link">
+                    <div class="OD_link_cntr">
+                        <a href="{% url 'order_first_step' order.number %}" 
+                        class="OD_link-btn arrow-btn">
+                        <strong>Заказ <i>№{{ order.number }}</i></strong>
+                        </a>
+                        <div class="OD_link_text_cntr">
+                            {% if order.stage == 'Stage_1' %}
+                            <p class="OD_status _on_approve"><strong>Одобрение</strong></p>
+                            {% elif order.stage == 'Stage_2' %}
+                            <p class="OD_status _on_prepay"><strong>Аванс</strong></p>
+                            {% elif order.stage == 'Stage_3' %}
+                            <p class="OD_status _on_give_out"><strong>Выдача</strong></p>
+                            {% elif order.stage == 'Stage_4' %}
+                            <p class="OD_status _on_shipped"><strong>Отгружен</strong></p>
+                            {% endif %}
+                            <time class="OD_date" datetime=""><strong>от {{ order.date_created|date:"j E" }}</strong></time>
+                        </div>
+                    </div>
+                </li>
+                <li class="acc__OD_item _OD_item">
+                    <a class="OD_item_link arrow-btn" href="">
+                        <div class="OD_item_img">
+                            {% comment %} <img src="{% static 'website/img/catalog/itemCatalog1.png' %}"
+                                alt="itemCatalog1"> {% endcomment %}
+                            <img src="{{ order.product.product_images.first.image.url }}"
+                                alt="{{ order.product.product_images.first.image.url }}" />
+                        </div>
+                        <div class="OD_item_title">
+                            <h5>{{ order.product.brand }} {{ order.product.name }},  {{ order.product.prod_year }}</h5>
+                            <p>35 л.с., гидроусилитель{% comment %}  сюда вывести характеристики  {% endcomment %}</p>
+                        </div>
+                    </a>
+                    {% comment %} <a href='{% url "product" product_link=product.link %}'
+                        onclick="fetchMain(event)">
+                        <img src="{{ product.product_images.first.image.url }}"
+                            alt="{{ product.product_images.first.image.url }}" />
+                    </a> {% endcomment %}
+                </li>
+                {% if order.stage != 'Stage_4' %}
+                <li class="acc__OD_item _OD_progress">
+                    <div class="OD__progress">
+                        <progress class="OD__status _green_progress" value="40" min="0" max="100">
+                        </progress>
+                    </div>
+                    <div class="OD__status_description">
+                        {% if order.stage == 'Stage_1' %}
+                        <p class="__descr">Ожидаем подтверждения продавца и банка</p>
+                        {% elif order.stage == 'Stage_2' %}
+                        <p class="__descr">Заказ ожидает от вас внесения аванса</p>
+                        {% elif order.stage == 'Stage_3' %}
+                        <p class="__descr">Заказ доставляется</p>
+                        {% endif %}
+                        <time class="__time" datetime="">Осталось 3 часа</time>
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+        </li>
+        {% endfor %}
+    {% else %}
+        Пока нет заказов.
+    {% endif %}
+
+    </ul>
+
+    <ul class="acc__order_delivery _acc-list" tab-index="2">
+        <li class="acc_main-item _order_fil _filters">
+            <ul class="acc__order_filter_list">
+                <li class="acc__order_filter_item _all_orders">
+                    <button class="acc__all_orders_btn _delivery_tab white-btn btn acc__od" type="button">
+                        <strong>Все доставки</strong>
+                        <img src="{% static 'website/img/marks/arrowDownGreySvg.svg' %}" alt="arrowDownGreySvg">
+                    </button>
+                    <div class="acc__all_orders_select">
+                        <ul class="filter_select-list">
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Все доставки</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Доставка 1</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Доставка 2</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Доставка 3</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Доставка 4</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Доставка 5</label>
+                            </li>
+                            <li class="filter_select-item">
+                                <input class="filter_select-checkbox" type="checkbox">
+                                <label class="filter_select-label">Доставка 6</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="acc__order_filter_item _order_search">
+                    <input class="acc__order_search white-btn btn acc__od" placeholder="Введите номер доставки"
+                        type="text" name="" id="">
+                </li>
+                <li class="acc__order_filter_item _order_sort">
+                    <button class="acc__sort_btn white-btn btn acc__od" type="button">
+                        <img src="{% static 'website/img/marks/filterListViewSvg.svg' %}" alt="filterListViewSvg">
+                        <strong>По дате добавления</strong>
+                    </button>
+                </li>
+            </ul>
+        </li>
+        {% if deliveries %}
+        {% for delivery in deliveries %}
+        <li class="acc_main-item _acc_order_item _acc-BG">
+            <ul class="acc__OD_list">
+                <li class="acc__OD_item _OD_link">
+                    <div class="OD_link_cntr">
+                        <a href="{% url 'delivery_card' number=delivery.number %}" class="OD_link-btn arrow-btn">
+                            <strong>Заказ <i>{{ delivery.number }}</i></strong>
+                        </a>
+                        <div class="OD_link_text_cntr">
+                            <p class="OD_status _on_prepay"><strong>{{ delivery.get_delivery_stage_display }}</strong></p>
+                            <time class="OD_date" datetime=""><strong>от {{ delivery.date_created|date:"j E Y" }}</strong></time>
+                        </div>
+                    </div>
+                </li>
+                <li class="acc__OD_item _OD_item">
+                    <a class="OD_item_link arrow-btn" href="">
+                        <div class="OD_item_img">
+                            <img src="{{ delivery.cargo.product_images.first.image.url }}"
+                                alt="{{ delivery.cargo.product_images.first.image.url }}" />
+                        </div>
+                        <div class="OD_item_title">
+                            <h5>{{ delivery.cargo.name }} {{ delivery.cargo.brand }}, {{ delivery.cargo.prod_year }}</h5>
+                            <p>35 л.с., гидроусилитель "ПОМЕНЯТЬ**"</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="acc__OD_item _OD_progress">
+                    <div class="OD__progress">
+                        {% comment %} Нужна логика изменения прогресса доставки {% endcomment %}
+                        <progress class="OD__status _green_progress" value="40" min="0" max="100">
+                        </progress>
+                    </div>
+                    <ul class="delivery__progress-inf_list __OD_inf">
+                        <li class="delivery__progress-inf_item _start">
+                            <p>г. {{ delivery.cargo.location }}</p>
+                        </li>
+                        <li class="delivery__progress-inf_item _dev-date">
+                            <p>тралл</p>
+                            <time datetime="--11-27">до {{ delivery.date_delivery|date:"j E Y" }}</time>
+                        </li>
+                        <li class="delivery__progress-inf_item _end">
+                            <p>г. {{ delivery.address_delivery }}</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    Пока нет доставок.
+    {% endif %}
+
+</div>
+{% endblock %}

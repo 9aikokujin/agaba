@@ -1,0 +1,456 @@
+._acc__RMP_quest .comments-block {
+  width: 100%;
+}
+
+._acc__RMP_quest .comments_item.replies {
+
+}
+
+._acc__RMP_quest .comment-date_question::before,
+.comment_content-item._comment_line::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color001);
+  width: 100%;
+  height: var(--spacing-px-1);
+  bottom: var(--spacing-px-neg-20);
+}
+
+._acc__RMP_quest .comment-date_question {
+  gap: var(--spacing-px-12);
+  width: 100%;
+}
+
+.acc__RMP_item_picture {
+  border-radius: var(--spacing-px-8);
+  width: var(--spacing-px-44);
+  height: var(--spacing-px-34);
+  min-width: var(--spacing-px-44);
+  min-height: var(--spacing-px-34);
+  overflow: hidden;
+  background-color: var(--colorfff);
+}
+
+.acc__RMP_item_picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comment_question-comment._model_name {
+  margin-top: var(--spacing-px-0)!important;
+}
+
+.acc__RMP_comment_body {
+  margin-top: var(--spacing-px-20);
+}
+
+.acc__RMP_comment_body {
+
+}
+
+.acc__RMP_comment_body .question_date {
+  margin-bottom: var(--spacing-px-2);
+}
+
+.acc__RMP_comment._comment {
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: var(--spacing-px-20);
+  color: var(--color009);
+}
+
+.seller_comment-section._acc__RMP_tabs {
+  padding-top: var(--spacing-px-0);
+}
+
+.RMP_comment-question_block.reviews._acc__RMP_quest .comments_list {
+  gap: var(--spacing-px-0);
+}
+
+.RMP_comment-question_block.reviews._acc__RMP_quest .comments_item {
+  margin-bottom: var(--spacing-px-20);
+}
+
+.comment__under_review {
+  gap: var(--spacing-px-20);
+  padding: var(--spacing-px-12) var(--spacing-px-29) var(--spacing-px-21) var(--spacing-px-32);
+  border-radius: var(--spacing-px-8);
+  margin-bottom: var(--spacing-px-neg-10);
+}
+
+.comment__under_review p {
+  text-transform: uppercase;
+  line-height: 1.4;
+
+}
+
+.comment__under_review p:first-child {
+  text-align: left;
+}
+
+.comment__under_review p:last-child {
+  text-align: right;
+}
+
+.comment_content-item._comment_line {
+  margin-bottom: var(--spacing-px-20);
+}
+
+.comment__content_topic {
+  padding-bottom: var(--spacing-px-5);
+}
+
+.comment_content_list._acc__review_list {
+
+}
+
+.comment_content_list._acc__review_list .comment_content-item {
+  gap: var(--spacing-px-14);
+}
+
+.comment__content_review_item {
+  width: var(--percent-100);
+  gap: var(--spacing-px-14);
+}
+
+.comments-block._account__comments-block {
+  max-width: 690px;
+}
+
+.account__RMP_review_items_list {
+  max-width: 312px;
+  gap: var(--spacing-px-16);
+}
+
+.account__review_item {
+  border-radius: var(--spacing-px-8);
+  padding: var(--spacing-px-14);
+  gap: var(--spacing-px-16);
+  overflow: hidden;
+}
+
+.account__review_item_img {
+  border-radius: var(--spacing-px-8);;
+  width: var(--spacing-px-80);
+  height: var(--spacing-px-60);
+  min-width: var(--spacing-px-80);
+  min-height: var(--spacing-px-60);
+  background-color: var(--colorfff);
+  overflow: hidden;
+}
+
+.account__review_item_img img {
+  width: var(--percent-100);
+  height: var(--percent-100);
+  object-fit: cover;
+}
+
+.account__review_item_name {
+  gap: var(--spacing-px-6);
+}
+
+.account__review_item_name h4 {
+  width: var(--percent-100);
+  max-width: var(--spacing-px-195);
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+}
+
+.comment_content_list._acc__review_list .comment_content-rating,
+.account__review_item_name .comment_content-rating {
+  gap: var(--spacing-px-2);
+}
+
+.RMP_comment-question_block.reviews._acc__RMP_quest {
+  gap: var(--spacing-px-45);
+}
+
+.comment_content_list._acc__review_list .star_check,
+.comment_content_list._acc__review_list .star_check::before,
+.account__review_item .star_check,
+.account__review_item .star_check::before,
+.modal__content.modal__add_new_comment .star_check,
+.modal__content.modal__add_new_comment .star_check::before {
+  width: var(--spacing-px-22);
+  height: var(--spacing-px-22);
+  min-width: var(--spacing-px-22);
+  min-height: var(--spacing-px-22);
+}
+
+.modal__content.modal__add_new_comment {
+
+}
+
+.modal__content.modal__add_new_comment .modal__content_title {
+  text-align: left;
+}
+
+.account__review_item._review__modal {
+  padding: var(--spacing-px-6) var(--spacing-px-0) var(--spacing-px-10);
+  overflow: visible;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.account__review_item._review__modal .account__review_item_name h4 {
+  overflow: visible;
+  white-space: unset;
+  word-break: unset;
+  text-overflow: unset;
+  max-width: unset;
+}
+
+.modal__content.modal__add_new_comment .account__review_item_img {
+  width: var(--spacing-px-44);
+  height: var(--spacing-px-44);
+  min-width: var(--spacing-px-44);
+  min-height:  var(--spacing-px-44);
+}
+
+.modal__content.modal__add_new_comment .comment_content-rating {
+  padding: var(--spacing-px-15) var(--spacing-px-0) var(--spacing-px-9);
+}
+
+.modal__form_item._file_input {
+  gap: var(--spacing-px-16);
+}
+
+.file__input {
+  appearance: none;
+  display: none;
+}
+
+.file__label {
+  cursor: pointer;
+  border-radius: var(--spacing-px-8);
+  border: var(--spacing-px-1) solid var(--color001);
+  padding: var(--spacing-px-25);
+  width: var(--spacing-px-90);
+  height: var(--spacing-px-90);
+  min-width: var(--spacing-px-90);
+  min-height: var(--spacing-px-90);
+}
+
+.file__label svg {
+  width: var(--percent-100);
+  height: var(--percent-100);
+  min-width: var(--percent-100);
+  min-height: var(--percent-100);
+}
+
+.file__label svg path {
+  transition: all 0.3s;
+}
+
+.file__label:hover svg path {
+  fill: var(--colorf35b1a);
+  fill-opacity: var(--opacity-1);
+}
+
+.file__label._uploaded {
+  padding: var(--spacing-px-15);
+}
+
+.file__label._uploaded svg {
+  display: none;
+}
+
+.file__label img {
+  display: none;
+}
+
+.file__label._uploaded img {
+  display: block;
+  width: var(--percent-100);
+  height: var(--percent-100);
+  object-fit: cover;
+  border-radius: var(--spacing-px-4);
+}
+
+.delete__uploaded_screenshot {
+  padding: var(--spacing-px-0);
+  background-color: transparent;
+  width: var(--spacing-px-18);
+  min-width: var(--spacing-px-18);
+  height: var(--spacing-px-18);
+  min-height: var(--spacing-px-18);
+  right: var(--spacing-px-2);
+  top: var(--spacing-px-2);
+}
+
+.delete__uploaded_screenshot img {
+  width: var(--percent-100);
+  height: var(--percent-100);
+  object-fit: contain;
+}
+
+
+.modal__form_file_text {
+
+}
+
+.modal__form_file_text p {
+  line-height: 140%;
+}
+
+._acc_rmp_form_list .modal__form_value_input {
+  min-height: var(--spacing-px-90);
+}
+
+._acc_rmp_form_list .modal__form_label {
+  top: var(--spacing-px-16);
+  transform: unset;
+  transition: all 0.3s;
+}
+
+._acc_rmp_form_list .modal__form_item:focus-visible .modal__form_label,
+._acc_rmp_form_list .modal__form_item:focus-within .modal__form_label,
+._acc_rmp_form_list .modal__form_item:hover .modal__form_label,
+._acc_rmp_form_list .modal__form_item .modal__form_input_cntr._focus .modal__form_label {
+  font-size: var(--spacing-px-12);
+  top: var(--spacing-px-10);
+}
+
+.stars__cntr {
+  gap: var(--spacing-px-5);
+}
+
+@media screen and (max-width: 1300px) {
+  .RMP_comment-question_block.reviews._acc__RMP_quest {
+    gap: var(--spacing-px-25);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .acc__RMP_comment._comment {
+    font-size: var(--spacing-px-18);
+  }
+
+  .RMP_comment-question_block.reviews._acc__RMP_quest {
+    flex-direction: column;
+  }
+
+  .account__RMP_review_items_list {
+    flex-wrap: wrap;
+    max-width: var(--percent-100);
+    width: var(--percent-100);
+    flex-direction: unset;
+  }
+
+  .account__review_item {
+    max-width: 312px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .acc__RMP_comment._comment {
+    font-size: var(--spacing-px-16);
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  ._acc__RMP_quest .comment-date_question {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .account__review_item_img {
+    width: var(--spacing-px-60);
+    height: var(--spacing-px-45);
+    min-width: var(--spacing-px-60);
+    min-height: var(--spacing-px-45);
+  }
+
+  .comment_content_list._acc__review_list .star_check,
+  .comment_content_list._acc__review_list .star_check::before,
+  .account__review_item .star_check,
+  .account__review_item .star_check::before {
+    width: var(--spacing-px-16);
+    height: var(--spacing-px-16);
+    min-width: var(--spacing-px-16);
+    min-height: var(--spacing-px-16);
+  }
+
+  .account__review_item {
+    gap: var(--spacing-px-10);
+    gap: var(--spacing-px-10);
+    width: var(--percent-100);
+    justify-content: flex-start;
+    max-width: 222px;
+  }
+
+  .account__review_item_name {
+    max-width: var(--spacing-px-125);
+    width: var(--percent-100);
+  }
+
+  .account__review_item_name h4 {
+    max-width: var(--spacing-px-160);
+  }
+
+  .account__review_item._review__modal .account__review_item_name  {
+    max-width: unset
+  }
+}
+
+@media screen and (max-width: 600px) {
+  ._acc__RMP_quest .comment-date_question {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .acc__RMP_comment_body .question_date {
+    font-size: var(--spacing-px-14);
+  }
+
+  .seller_comment-section._acc__RMP_tabs {
+    gap: var(--spacing-px-20);
+  }
+
+  .comment__under_review {
+    padding: var(--spacing-px-12) var(--spacing-px-15) var(--spacing-px-21);
+    gap: var(--spacing-px-10);
+  }
+
+  .RMP_comment-question_block.reviews._acc__RMP_quest .comments_item {
+    padding: var(--spacing-px-15);
+  }
+
+  .comment_content_list._acc__review_list .comment_content-rating {
+    margin-left: unset;
+    width: var(--percent-100);
+  }
+  
+  .comment__under_review p {
+    font-size: var(--spacing-px-10);
+  }
+
+  .file__label {
+    width: var(--spacing-px-70);
+    height: var(--spacing-px-70);
+    min-width: var(--spacing-px-70);
+    min-height: var(--spacing-px-70);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  ._acc__RMP_quest .comment-date_question::before {
+    bottom: var(--spacing-px-neg-10);
+  }
+
+  .acc__RMP_comment_body {
+    margin-top: var(--spacing-px-0);
+  }
+
+  .comment_reply-list._sup__service {
+    gap: var(--spacing-px-10);
+  }
+
+  .comment_reply-list._sup__service .comment_reply-item {
+    gap: var(--spacing-px-5);
+  }
+}

@@ -1,0 +1,157 @@
+{% extends "account/base_account.html" %}
+{% load static %}
+
+{% block section %}
+    <section class="account_sect _mob-style  _pt_sect-60 _item_messages_sect">
+{% endblock %}
+
+{% block content %}
+<div class="acc_main-cntr _acc_message_item_cntr">
+    {% comment %} шапка чата {% endcomment %}
+    <div class="message_page_content">
+        <ul class="message_page_header">
+            <li class="message_page_header_item _back_btn">
+                <a href="" class="message_back_btn">
+                    <img src="{% static 'website/img/messages_img/backArrow.svg' %}" alt="backArrow">
+                </a>
+            </li>
+            <li class="message_page_header_item _comp_img">
+                <div class="MP__header_img">
+                    <img src="{% static 'website/img/messages_img/iconMessage_3.svg' %}" alt="icon company">
+                </div>
+            </li>
+            <li class="message_page_header_item _comp_name">
+                <h4>{{ room_name }}</h4>
+            </li>
+            <li class="message_page_header_item _comp_stars">
+                <a href="" class="message_page_stars">
+                    <strong>4.9</strong>
+                </a>
+            </li>
+            <li class="message_page_header_item _number">
+                <a href="tel:79999999999" class="message__show_phone">
+                    Показать телефон
+                </a>
+            </li>
+        </ul>
+        {% comment %} тело чата {% endcomment %}
+        <div class="message_page_body">
+            <ul class="message__body_list">
+                <li class="message__body_item _from">
+                    <h5 class="MB__item_header">** пользователь с кем ведем переписку ** <time datetime="">** дата и время написания сообщения **</time></h5>
+                    <div class="MB__item_body">
+                        <p>**Тест сообщения пользователя с которым ведем переписку**</p>
+                    </div>
+                </li>
+                <li class="message__body_item _to">
+                    <h5 class="MB__item_header">** Я **, <time datetime="">** дата и время когда я написал сообщение **</time></h5>
+                    <div class="MB__item_body">
+                        <p>** текст сообщения отправленного мною **</p>
+                    </div>
+                    <div class="MB__item_footer">
+                        <a class="MB_added_document" href="/path/to/file.pdf" target="_blank">
+                            <img src="{% static 'website/img/messages_img/uploadedDocument.png' %}" alt="uploaded Document">
+                            <span class="message_doc_format">pdf</span>
+                        </a>
+                        <a class="MB_added_document" href="/path/to/file.pdf" target="_blank">
+                            <img src="{% static 'website/img/messages_img/uploadedDocument.png' %}" alt="uploaded Document">
+                            <span class="message_doc_format">pdf</span>
+                        </a>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="message_page_footer">
+            <div class="MP__footer_textarea">
+                <textarea class="MP__message_textarea" name="" id="" placeholder="Введите сообщение "></textarea>
+                <span class="MP_footer_counter">0 / 1000 символов</span>
+            </div>
+            <div class="MP__footer_btns">
+                <div class="MP__footer_btns_top">
+                    <button class="message_send_btn black_btn big_btn" type="submit">
+                        <strong>** кнопка Отправить **</strong>
+                    </button>
+                    <div class="MP__footer_upload">
+                        <div class="MP__footer_upload_cntr">
+                            <input 
+                                class="message__input_upload" 
+                                type="file" 
+                                name="" 
+                                id="messageFileUpload"
+                                multiple
+                            >
+                            <label class="message_upload_label" for="messageFileUpload"></label>
+                        </div>
+                        <div class="MP__footer_upload_text">
+                            <p><strong>Добавить файлы</strong>Фото и документы в формате jpg, png и pdf, не более 20 мб</p>
+                        </div>                                                            
+                    </div>
+                </div>
+                <div class="MP__footer_uploaded_files_cntr">
+                    <ul class="MP__footer_uploaded_files_list">
+                        <li class="MP__footer_uploaded_item">
+                            <div class="MP__footer_uploaded_view">
+                                <img
+                                    class="MT__UploadedFileIcon"
+                                    src="{% static 'website/img/messages_img/uploadedDocument.png' %}"
+                                    alt="uploaded document icon 1">
+                                <button type="button" class="MP__footer_delete_file_btn"></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} Остальны чаты {% endcomment %}
+    <aside class="acc_message_item_list">
+        <ul class="message_item_page _acc-list">
+            <li class="acc_main-item">
+                <div class="agaba_chat _message_style _message_column">                              
+                    <div class="agaba_name _messaage_name">
+                        <div class="_message_img">
+                            <img src="{% static 'website/img/messages_img/iconMessage_1.svg' %}" alt="agaba icon">
+                        </div>
+                        <div class="_massage_inf">
+                            <h4>Поддержка AGABA</h4>
+                            <time datetime="">03 июня, 12:04</time>
+                        </div>
+                    </div>
+                    <div class="_message_count_cntr">
+                        <a href="" class="agaba_message _message_item">
+                            Уточните подробности, пожалуйста
+                        </a>
+                        <div class="agaba_count _message_count">
+                            <p>2</p>
+                        </div>
+                    </div>                            
+                </div>
+            </li>
+            <li class="acc_main-item">
+                <div class="default_message _message_style _message_column">
+                    <div class="_messaage_name">
+                        <div class="_message_img">
+                            <img src="{% static 'website/img/messages_img/iconMessage_2.svg' %}" alt="house icon">
+                        </div>
+                        <div class="_massage_inf">
+                            <h4>Авторекс</h4>
+                            <time datetime="">03 июня, 12:04</time>
+                        </div>
+                    </div>
+                    <div class="_message_count_cntr">
+                        <a href="" class="defult_item _message_item">
+                            Проводили оплату через расчетный счет, но деньги до сих пор не поступили. Платежку об оплате об оплате приложили.
+                        </a>
+                        <div class="defult_count _message_count">
+                            <p>2</p>
+                        </div>
+                    </div>                            
+                </div>
+            </li>
+        </ul>
+    </aside>                               
+</div>
+<script type="module" src="{% static 'website/js/funcs/accountMessageActions/funcs/InitChats.js' %}"></script>
+{% endblock %}
